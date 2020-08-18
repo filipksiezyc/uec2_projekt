@@ -9,3 +9,13 @@
 # Log file: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/vivado.log
 # Journal file: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris\vivado.jou
 #-----------------------------------------------------------
+start_gui
+open_project C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr
+update_compile_order -fileset sources_1
+close [ open C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v w ]
+add_files C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1

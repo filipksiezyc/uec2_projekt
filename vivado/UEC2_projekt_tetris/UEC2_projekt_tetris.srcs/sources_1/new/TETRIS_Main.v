@@ -64,29 +64,40 @@ vga_timing vga_timing_source
   .hblnk(hblnk)
   );
 
-  always @(posedge clk)
-  begin
-    // Just pass these through.
-    Hsync <= hsync;
-    Vsync <= vsync;
-    // During blanking, make it it black.
-    if (vblnk || hblnk) {vgaRed,vgaGreen,vgaBlue} <= 12'h0_0_0; 
-    else
-    begin
-      // Active display, top edge, make a yellow line.
-      if (vcount == 0) {vgaRed,vgaGreen,vgaBlue} <= 12'hf_f_0;
-      // Active display, bottom edge, make a red line.
-      else if (vcount == 767) {vgaRed,vgaGreen,vgaBlue} <= 12'hf_0_0;
-      // Active display, left edge, make a green line.
-      else if (hcount == 0) {vgaRed,vgaGreen,vgaBlue} <= 12'h0_f_0;
-      // Active display, right edge, make a blue line.
-      else if (hcount == 1023) {vgaRed,vgaGreen,vgaBlue} <= 12'h0_0_f;
-      // Active display, interior, fill with gray.
-      // You will replace this with your own test.
-      else {vgaRed,vgaGreen,vgaBlue} <= 12'h8_8_8;    
-    end
-  end
+wire [3:0] Green_Out=0, Red_Out=0, Blue_Out=0;
+wire [10:0] vcount_frame=0;
+wire [10:0] hcount_frame=0;
+wire vsync_frame=0, hsync_frame=0;
+wire vblnk_frame=0, hblnk_frame=0;
 
+GAME_FRAME FRAME_VIDEO_CONTROLL(
+   .clk(clk),
+   .hcount(hcount),
+   .vcount(vcount),
+   .hsync(hsync),
+   .vsync(vsync),
+   .hblnk(hblnk),
+   .vblnk(vblnk),
+   .reset(btnC),
+   
+   .VGARed(Red_Out),
+   .VGAGreen(Green_Out),
+   .VGABlue(Blue_Out),
+   .hcount_out(hcount_frame),
+   .vcount_out(vcount_frame),
+   .hsync_out(hsync_frame),
+   .vsync_out(vsync_frame),
+   .hblnk_out(hblnk_frame),
+   .vblnk_out(vblnk_frame)
+    );
 
+always @(posedge clk)begin
+   Vsync<=vsync_frame;
+   Hsync<=hsync_frame;
+ 
+   vgaRed<=Red_Out;
+   vgaGreen<=Green_Out;
+   vgaBlue<=Blue_Out;
+end
 
 endmodule
