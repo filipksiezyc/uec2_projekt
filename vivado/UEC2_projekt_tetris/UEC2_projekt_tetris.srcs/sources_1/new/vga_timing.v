@@ -1,100 +1,58 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 08/17/2020 08:58:23 PM
-// Design Name: 
-// Module Name: vga_timing
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+`timescale 1 ns / 1 ps
 
+// Declare the module and its ports. This is
+// using Verilog-2001 syntax.
 
-module vga_timing(
-    input wire clk,
-    input wire reset,
-    
-    output reg [10:0] hcount,
-    output reg [10:0] vcount,
-    output reg hsync,
-    output reg vsync,
-    output reg hblnk,
-    output reg vblnk
-    );
+module vga_timing (
+  input wire pclk,
+  input wire reset,
 
-reg [10:0] hcount_nxt=0, vcount_nxt=0;
-reg hsync_nxt=0, vsync_nxt=0, hblnk_nxt=0, vblnk_nxt=0;
-    
-//PIXEL COUNTER
-always @* begin
-    if(reset) begin
-        hcount_nxt = 0;
-        vcount_nxt =0;
-        hsync_nxt = 0;
-        hblnk_nxt = 0;
-        vsync_nxt = 0;
-        vblnk_nxt = 0;
-        end
-    else begin
-        if(hcount_nxt == 1344) begin
-            hcount_nxt = 0; 
-            if(vcount_nxt == 806) begin
-                vcount_nxt = 0;
-                end
-            else begin
-                vcount_nxt = vcount_nxt + 1;
-                end
+  output wire [10:0] vcount,
+  output wire vsync,
+  output wire vblnk,
+  output wire [10:0] hcount,
+  output wire hsync,
+  output wire hblnk
+
+  );
+
+reg [10:0] vcountinside=0; 
+reg [10:0] hcountinside=0;
+reg [10:0] vcountinside_nxt=0; 
+reg [10:0] hcountinside_nxt=0;
+reg currentvblnk=0;
+reg currenthblnk=0;
+reg currentvsync=0;
+reg currenthsync=0;
+
+always @(posedge pclk)begin
+            hcountinside_nxt<=hcountinside+1;
+            if(hcountinside==1344)begin
+                hcountinside_nxt<=0;
+                vcountinside_nxt<=vcountinside+1;
+                if(vcountinside==806)begin
+                    vcountinside_nxt<=0;
+                    end
+                end     
             end
-        else begin       
-            hcount_nxt = hcount_nxt + 1;
-            end 
-    end
-        if(hcount>1023)begin
-                hblnk_nxt = 1;
-                if((hcount>1047)&&(hcount<1185))begin
-                    hsync_nxt = 1;
-                    end
-                else begin
-                    hsync_nxt = 0;
-                    end
-                end
-            else begin
-                hblnk_nxt = 0;
-                end 
-            if(vcount>767)begin
-                        vblnk_nxt = 1;
-                        if((vcount>770)&&(hcount<777))begin
-                            vsync_nxt = 1;
-                            end
-                        else begin
-                            vsync_nxt = 0;
-                            end
-                        end
-                    else begin
-                        vblnk_nxt = 0;
-                        end 
+ 
+
+always @* begin 
+       if(reset)begin
+            hcountinside<=0;
+            vcountinside<=0;
+            end
+       else begin
+            hcountinside<=hcountinside_nxt;
+            vcountinside<=vcountinside_nxt;     
+            end
 end
 
+assign hcount=hcountinside;
+assign vcount=vcountinside;
+assign vsync=((vcountinside>770)&&(vcountinside<777));
+assign hsync=((hcountinside>1047)&&(hcountinside<1183));
+assign vblnk=((vcountinside>767)&&(vcountinside<806));
+assign hblnk=((hcountinside>=1023)&&(hcountinside<1344));
 
-
-    
-always @(posedge clk) begin
-        vcount <= vcount_nxt;
-        hcount <= hcount_nxt;
-        hblnk <= hblnk_nxt;
-        vblnk <= vblnk_nxt;
-        hsync <= hsync_nxt;
-        vsync <= vsync_nxt;
-end     
-    
 endmodule

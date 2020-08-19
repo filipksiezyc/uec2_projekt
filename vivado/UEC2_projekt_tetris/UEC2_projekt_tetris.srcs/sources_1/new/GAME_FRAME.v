@@ -41,7 +41,7 @@ module GAME_FRAME(
     output reg vblnk_out
     );
 
-reg VGARed_nxt, VGAGreen_nxt, VGABlue_nxt;
+reg [3:0] VGARed_nxt=0, VGAGreen_nxt=0, VGABlue_nxt=0;
 
 always @* begin
     if(reset) begin
@@ -65,19 +65,7 @@ always @* begin
         end
 end
 
-always @(posedge clk or posedge reset)begin
-    if(reset)begin
-        VGARed <= 0;
-        VGAGreen <= 0;
-        VGABlue <= 0;
-        hcount_out <= 0;
-        vcount_out <= 0;
-        hsync_out <= 0;
-        vsync_out <= 0;
-        hblnk_out <= 0;
-        vblnk_out <= 0;
-        end
-   else begin
+always @(posedge clk)begin
         VGARed <= VGARed_nxt;
         VGAGreen <= VGAGreen_nxt ;
         VGABlue <= VGABlue_nxt;
@@ -87,7 +75,6 @@ always @(posedge clk or posedge reset)begin
         vsync_out <= vsync;
         hblnk_out <= hblnk;
         vblnk_out <= vblnk;
-        end
 end
 
 endmodule

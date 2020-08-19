@@ -34,10 +34,10 @@ module TETRIS_Main (
   );
 
 wire clk100MHz, clk65MHz;
-wire [10:0] vcount=0;
-wire [10:0] hcount=0;
-wire vsync=0, hsync=0;
-wire vblnk=0, hblnk=0;
+wire [10:0] vcount;
+wire [10:0] hcount;
+wire vsync, hsync;
+wire vblnk, hblnk;
 wire locked;
 
 
@@ -53,7 +53,7 @@ IP_clk_generator CLK_divider
 
 vga_timing vga_timing_source
 (
-  .clk(clk65MHz),
+  .pclk(clk65MHz),
   .reset(btnC),
 
   .vcount(vcount),
@@ -64,14 +64,14 @@ vga_timing vga_timing_source
   .hblnk(hblnk)
   );
 
-wire [3:0] Green_Out=0, Red_Out=0, Blue_Out=0;
-wire [10:0] vcount_frame=0;
-wire [10:0] hcount_frame=0;
-wire vsync_frame=0, hsync_frame=0;
-wire vblnk_frame=0, hblnk_frame=0;
+wire [3:0] Green_Out, Red_Out, Blue_Out;
+wire [10:0] vcount_frame;
+wire [10:0] hcount_frame;
+wire vsync_frame, hsync_frame;
+wire vblnk_frame, hblnk_frame;
 
 GAME_FRAME FRAME_VIDEO_CONTROLL(
-   .clk(clk),
+   .clk(clk65MHz),
    .hcount(hcount),
    .vcount(vcount),
    .hsync(hsync),
@@ -91,7 +91,7 @@ GAME_FRAME FRAME_VIDEO_CONTROLL(
    .vblnk_out(vblnk_frame)
     );
 
-always @(posedge clk)begin
+always @(posedge clk65MHz)begin
    Vsync<=vsync_frame;
    Hsync<=hsync_frame;
  
