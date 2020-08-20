@@ -1,0 +1,88 @@
+/*
+
+Xilinx Vivado v2017.3 (64-bit) [Major: 2017, Minor: 3]
+SW Build: 2018833 on Wed Oct  4 19:58:22 MDT 2017
+IP Build: 2016188 on Wed Oct  4 21:52:56 MDT 2017
+
+Process ID: 5364
+License: Customer
+
+Current time: 	Wed Aug 19 23:30:29 CEST 2020
+Time zone: 	Central European Time (Europe/Belgrade)
+
+OS: Windows 8.1
+OS Version: 6.3
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1280x720
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 213 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2017.3/tps/win64/jre
+JVM executable location: 	C:/Xilinx/Vivado/2017.3/tps/win64/jre/bin/java.exe
+
+User name: 	Filip
+User home directory: C:/Users/Filip
+User working directory: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2017.3
+RDI_DATADIR: C:/Xilinx/Vivado/2017.3/data
+RDI_BINDIR: C:/Xilinx/Vivado/2017.3/bin
+
+User preferences location: C:/Users/Filip/AppData/Roaming/Xilinx/Vivado
+Vivado preferences directory: C:/Users/Filip/AppData/Roaming/Xilinx/Vivado/2017.3/vivado.xml
+Vivado layouts directory: C:/Users/Filip/AppData/Roaming/Xilinx/Vivado/2017.3/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2017.3/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/vivado.log
+Vivado journal file location: 	C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/vivado.jou
+Engine tmp dir: 	C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/.Xil/Vivado-5364-FilipPC
+
+GUI allocated memory:	132 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 488 MB
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// [GUI Memory]: 57 MB (+57093kb) [00:00:17]
+// [Engine Memory]: 469 MB (+340597kb) [00:00:17]
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bs (cl):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\Filip\Desktop\uec2_projekt\vivado\UEC2_projekt_tetris\UEC2_projekt_tetris.xpr. Version: Vivado v2017.3 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_CURRENT
+// HMemoryUtils.trashcanNow. Engine heap size: 495 MB. GUI used memory: 32 MB. Current time: 8/19/20 11:30:32 PM CEST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 554 MB (+63794kb) [00:00:25]
+// Tcl Message: open_project C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.3/data/ip'. 
+// Project name: UEC2_projekt_tetris; location: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris; part: xc7a35tcpg236-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 733.516 ; gain = 74.277 
+dismissDialog("Open Project"); // bs (cl)
+// [GUI Memory]: 61 MB (+1515kb) [00:00:30]
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// [Engine Memory]: 584 MB (+2737kb) [00:00:33]
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 65 MB (+766kb) [00:03:32]
+// [GUI Memory]: 68 MB (+91kb) [00:11:37]
+// [GUI Memory]: 72 MB (+115kb) [00:16:23]
+// [GUI Memory]: 76 MB (+649kb) [00:26:48]
+// HMemoryUtils.trashcanNow. Engine heap size: 588 MB. GUI used memory: 36 MB. Current time: 8/20/20 12:00:32 AM CEST

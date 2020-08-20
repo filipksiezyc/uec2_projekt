@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Wed Aug 19 23:29:53 2020
+# Process ID: 5364
+# Current directory: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent912 C:\Users\Filip\Desktop\uec2_projekt\vivado\UEC2_projekt_tetris\UEC2_projekt_tetris.xpr
+# Log file: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/vivado.log
+# Journal file: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr
+update_compile_order -fileset sources_1

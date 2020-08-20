@@ -95,9 +95,9 @@ always @(posedge clk65MHz)begin
    Vsync<=vsync_frame;
    Hsync<=hsync_frame;
  
-   vgaRed<=Red_Out;
-   vgaGreen<=Green_Out;
-   vgaBlue<=Blue_Out;
+   vgaRed <= Red_Out;
+   vgaGreen <= Green_Out;
+   vgaBlue <= Blue_Out;
 end
 
 endmodule
