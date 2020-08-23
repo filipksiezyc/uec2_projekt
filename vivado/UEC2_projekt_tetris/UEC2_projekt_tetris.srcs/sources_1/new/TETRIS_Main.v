@@ -21,7 +21,8 @@
 
 
 module TETRIS_Main (
-  
+  input wire PS2Data,
+  input wire PS2Clk,
   input wire clk,
   input wire btnC,
   
@@ -33,22 +34,21 @@ module TETRIS_Main (
   output reg [3:0] vgaBlue
   );
 
-wire clk100MHz, clk65MHz;
+wire clk50MHz, clk65MHz, clk1Hz;
 wire [10:0] vcount;
 wire [10:0] hcount;
 wire vsync, hsync;
 wire vblnk, hblnk;
 wire locked;
 
-
-IP_clk_generator CLK_divider
+IP_CLK_DIVIDER CLK_GENERATOR 
  (
-  .reset(btnC),
-  .pclk(clk),
-  
-  .locked(locked),
-  .clk100MHz(clk100MHz),
-  .clk65MHz(clk65MHz)
+    .pclk(clk),
+    .reset(btnC),
+ 
+    .locked(locked),
+    .clk50MHz(clk50MHz),
+    .clk65MHz(clk65MHz)
  );
 
 vga_timing vga_timing_source
@@ -69,6 +69,8 @@ wire [10:0] vcount_frame;
 wire [10:0] hcount_frame;
 wire vsync_frame, hsync_frame;
 wire vblnk_frame, hblnk_frame;
+wire [15:0] keycode;
+wire KeyFlag;
 
 GAME_FRAME FRAME_VIDEO_CONTROLL(
    .clk(clk65MHz),
@@ -89,6 +91,22 @@ GAME_FRAME FRAME_VIDEO_CONTROLL(
    .vsync_out(vsync_frame),
    .hblnk_out(hblnk_frame),
    .vblnk_out(vblnk_frame)
+    );
+    
+PS2Receiver Keyboard_Receiver(
+        .clk(clk50MHz),
+        .kclk(PS2Clk),
+        .kdata(PS2Data),
+        
+        .keycode(keycode),
+        .oflag(KeyFlag)
+        );
+
+clk1Hz clk1HZ_generator(
+    .clk50MHz(clk50MHz),
+    .reset(btnC),
+    
+    .clk1Hz(clk1Hz)
     );
 
 always @(posedge clk65MHz)begin

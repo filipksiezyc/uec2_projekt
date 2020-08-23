@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator/IP_clk_generator.xdc rfile:../../../UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator/IP_clk_generator.xdc id:1 order:EARLY scoped_inst:CLK_divider/inst} [current_design]
+set_property SRC_FILE_INFO {cfile:c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc rfile:../../../UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc id:1 order:EARLY scoped_inst:CLK_GENERATOR/inst} [current_design]
 set_property SRC_FILE_INFO {cfile:C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc rfile:../../../UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc id:2} [current_design]
 set_property src_info {type:SCOPED_XDC file:1 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter [get_clocks -of_objects [get_ports pclk]] 0.1
@@ -34,3 +34,7 @@ set_property src_info {type:XDC file:2 line:38 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN J18 [get_ports {vgaBlue[3]}]
 set_property src_info {type:XDC file:2 line:42 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN U18 [get_ports btnC]
+set_property src_info {type:XDC file:2 line:50 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN C17 [get_ports PS2Clk]
+set_property src_info {type:XDC file:2 line:53 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN B17 [get_ports PS2Data]

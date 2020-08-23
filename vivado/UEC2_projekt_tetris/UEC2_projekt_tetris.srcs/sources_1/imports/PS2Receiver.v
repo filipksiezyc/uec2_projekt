@@ -24,6 +24,7 @@ module PS2Receiver(
     input clk,
     input kclk,
     input kdata,
+    
     output reg [15:0] keycode=0,
     output reg oflag
     );
