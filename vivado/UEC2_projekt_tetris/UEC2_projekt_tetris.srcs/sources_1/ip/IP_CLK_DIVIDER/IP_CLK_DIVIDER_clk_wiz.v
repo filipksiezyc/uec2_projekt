@@ -58,6 +58,7 @@
 //----------------------------------------------------------------------------
 // clk50MHz____50.000______0.000______50.0______150.541_____99.281
 // clk65MHz____65.000______0.000______50.0______142.278_____99.281
+// clk_rand____37.500______0.000______50.0______160.492_____99.281
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -72,6 +73,7 @@ module IP_CLK_DIVIDER_clk_wiz
   // Clock out ports
   output        clk50MHz,
   output        clk65MHz,
+  output        clk_rand,
   // Status and control signals
   input         reset,
   output        locked,
@@ -97,7 +99,7 @@ wire clk_in2_IP_CLK_DIVIDER;
 
   wire        clk50MHz_IP_CLK_DIVIDER;
   wire        clk65MHz_IP_CLK_DIVIDER;
-  wire        clk_out3_IP_CLK_DIVIDER;
+  wire        clk_rand_IP_CLK_DIVIDER;
   wire        clk_out4_IP_CLK_DIVIDER;
   wire        clk_out5_IP_CLK_DIVIDER;
   wire        clk_out6_IP_CLK_DIVIDER;
@@ -112,7 +114,6 @@ wire clk_in2_IP_CLK_DIVIDER;
   wire        clkfboutb_unused;
     wire clkout0b_unused;
    wire clkout1b_unused;
-   wire clkout2_unused;
    wire clkout2b_unused;
    wire clkout3_unused;
    wire clkout3b_unused;
@@ -128,6 +129,9 @@ wire clk_in2_IP_CLK_DIVIDER;
   (* KEEP = "TRUE" *) 
   (* ASYNC_REG = "TRUE" *)
   reg  [7 :0] seq_reg2 = 0;
+  (* KEEP = "TRUE" *) 
+  (* ASYNC_REG = "TRUE" *)
+  reg  [7 :0] seq_reg3 = 0;
 
   MMCME2_ADV
   #(.BANDWIDTH            ("OPTIMIZED"),
@@ -146,6 +150,10 @@ wire clk_in2_IP_CLK_DIVIDER;
     .CLKOUT1_PHASE        (0.000),
     .CLKOUT1_DUTY_CYCLE   (0.500),
     .CLKOUT1_USE_FINE_PS  ("FALSE"),
+    .CLKOUT2_DIVIDE       (26),
+    .CLKOUT2_PHASE        (0.000),
+    .CLKOUT2_DUTY_CYCLE   (0.500),
+    .CLKOUT2_USE_FINE_PS  ("FALSE"),
     .CLKIN1_PERIOD        (10.000))
   mmcm_adv_inst
     // Output clocks
@@ -156,7 +164,7 @@ wire clk_in2_IP_CLK_DIVIDER;
     .CLKOUT0B            (clkout0b_unused),
     .CLKOUT1             (clk65MHz_IP_CLK_DIVIDER),
     .CLKOUT1B            (clkout1b_unused),
-    .CLKOUT2             (clkout2_unused),
+    .CLKOUT2             (clk_rand_IP_CLK_DIVIDER),
     .CLKOUT2B            (clkout2b_unused),
     .CLKOUT3             (clkout3_unused),
     .CLKOUT3B            (clkout3b_unused),
@@ -240,6 +248,26 @@ wire clk_in2_IP_CLK_DIVIDER;
     end
     else begin
         seq_reg2 <= {seq_reg2[6:0],locked_int};
+  
+    end
+  end
+
+
+  BUFGCE clkout3_buf
+   (.O   (clk_rand),
+    .CE  (seq_reg3[7]),
+    .I   (clk_rand_IP_CLK_DIVIDER));
+ 
+  BUFH clkout3_buf_en
+   (.O   (clk_rand_IP_CLK_DIVIDER_en_clk),
+    .I   (clk_rand_IP_CLK_DIVIDER));
+ 
+  always @(posedge clk_rand_IP_CLK_DIVIDER_en_clk or posedge reset_high) begin
+    if(reset_high == 1'b1) begin
+	  seq_reg3 <= 8'h00;
+    end
+    else begin
+        seq_reg3 <= {seq_reg3[6:0],locked_int};
   
     end
   end

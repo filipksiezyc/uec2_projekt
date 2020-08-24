@@ -34,7 +34,7 @@ module TETRIS_Main (
   output reg [3:0] vgaBlue
   );
 
-wire clk50MHz, clk65MHz, clk1Hz;
+wire clk50MHz, clk65MHz, clk1Hz, clk05Hz, clk_rand;
 wire [10:0] vcount;
 wire [10:0] hcount;
 wire vsync, hsync;
@@ -48,7 +48,8 @@ IP_CLK_DIVIDER CLK_GENERATOR
  
     .locked(locked),
     .clk50MHz(clk50MHz),
-    .clk65MHz(clk65MHz)
+    .clk65MHz(clk65MHz),
+    .clk_rand(clk_rand)
  );
 
 vga_timing vga_timing_source
@@ -106,8 +107,19 @@ clk1Hz clk1HZ_generator(
     .clk50MHz(clk50MHz),
     .reset(btnC),
     
-    .clk1Hz(clk1Hz)
+    .clk1Hz(clk1Hz),
+    .clk05Hz(clk05Hz)
     );
+    
+wire [2:0] random_block;    
+    
+falserandom_generator random_blocks(
+        .clkrand(clk_rand),
+        .reset(btnC),
+        
+        .rand(random_block)
+        );
+    
 
 always @(posedge clk65MHz)begin
    Vsync<=vsync_frame;

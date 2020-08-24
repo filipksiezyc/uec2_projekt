@@ -58,6 +58,7 @@
 //----------------------------------------------------------------------------
 // clk50MHz____50.000______0.000______50.0______150.541_____99.281
 // clk65MHz____65.000______0.000______50.0______142.278_____99.281
+// clk_rand____37.500______0.000______50.0______160.492_____99.281
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -66,13 +67,14 @@
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "IP_CLK_DIVIDER,clk_wiz_v5_4_2_0,{component_name=IP_CLK_DIVIDER,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=2,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=true,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
+(* CORE_GENERATION_INFO = "IP_CLK_DIVIDER,clk_wiz_v5_4_2_0,{component_name=IP_CLK_DIVIDER,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=3,clkin1_period=10.000,clkin2_period=10.000,use_power_down=false,use_reset=true,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
 module IP_CLK_DIVIDER 
  (
   // Clock out ports
   output        clk50MHz,
   output        clk65MHz,
+  output        clk_rand,
   // Status and control signals
   input         reset,
   output        locked,
@@ -85,6 +87,7 @@ module IP_CLK_DIVIDER
   // Clock out ports  
   .clk50MHz(clk50MHz),
   .clk65MHz(clk65MHz),
+  .clk_rand(clk_rand),
   // Status and control signals               
   .reset(reset), 
   .locked(locked),
