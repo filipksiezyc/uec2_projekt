@@ -48,4 +48,17 @@ module game_logic_unit(
     output reg [10:0] hcount_out,
     output reg [10:0] vcount_out
     );
+
+reg [3:0] state = 0;
+
+localparam TITLESCREEN=0,
+           IDLE=1,
+           MOV_LEFT=2,
+           MOV_RIGHT=3,
+           ROT_LEFT=4,
+           ROT_RIGHT=5,
+           FALL_SLOW=6,
+           FALL_FAST=7,
+           GAME_OVER=8;
+    
 endmodule
