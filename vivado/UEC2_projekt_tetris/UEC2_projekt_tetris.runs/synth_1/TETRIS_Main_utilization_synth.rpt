@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Wed Aug 19 18:27:09 2020
-| Host         : FilipPC running 64-bit major release  (build 9200)
+| Date         : Wed Aug 19 19:37:10 2020
+| Host         : K188 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file TETRIS_Main_utilization_synth.rpt -pb vga_example_utilization_synth.pb
 | Design       : TETRIS_Main
 | Device       : 7a35tcpg236-1

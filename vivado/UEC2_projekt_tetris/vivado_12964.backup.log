@@ -2,20 +2,25 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Tue Aug 25 09:21:27 2020
-# Process ID: 13140
+# Start of session at: Wed Aug 19 19:36:01 2020
+# Process ID: 12964
 # Current directory: C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6476 C:\Users\Juten\Documents\GitHub\uec2_projekt\vivado\UEC2_projekt_tetris\UEC2_projekt_tetris.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11756 C:\Users\Juten\Documents\GitHub\uec2_projekt\vivado\UEC2_projekt_tetris\UEC2_projekt_tetris.xpr
 # Log file: C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/vivado.log
 # Journal file: C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr
+INFO: [Project 1-313] Project file moved from 'C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.3/data/ip'.
 update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Wed Aug 19 19:36:37 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Aug 25 09:21:51 2020...
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 19 19:37:21 2020...
