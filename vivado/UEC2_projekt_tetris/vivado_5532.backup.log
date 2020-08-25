@@ -1,0 +1,630 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sun Aug 23 14:40:53 2020
+# Process ID: 5532
+# Current directory: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1280 C:\Users\Filip\Desktop\uec2_projekt\vivado\UEC2_projekt_tetris\UEC2_projekt_tetris.xpr
+# Log file: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/vivado.log
+# Journal file: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.3/data/ip'.
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 782.828 ; gain = 63.313
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator/IP_clk_generator.xci] -no_script -reset -force -quiet
+remove_files  C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator/IP_clk_generator.xci
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 5.4 -module_name clk_wiz_0 -dir c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip
+set_property -dict [list CONFIG.CLKOUT2_USED {true} CONFIG.PRIMARY_PORT {pclk} CONFIG.CLK_OUT1_PORT {clk50MHz} CONFIG.CLK_OUT2_PORT {clk65MHz} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {50.000} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {65.000} CONFIG.USE_SAFE_CLOCK_STARTUP {true} CONFIG.CLKOUT1_DRIVES {BUFGCE} CONFIG.CLKOUT2_DRIVES {BUFGCE} CONFIG.CLKOUT3_DRIVES {BUFGCE} CONFIG.CLKOUT4_DRIVES {BUFGCE} CONFIG.CLKOUT5_DRIVES {BUFGCE} CONFIG.CLKOUT6_DRIVES {BUFGCE} CONFIG.CLKOUT7_DRIVES {BUFGCE} CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {9.750} CONFIG.MMCM_CLKOUT0_DIVIDE_F {19.500} CONFIG.MMCM_CLKOUT1_DIVIDE {15} CONFIG.NUM_OUT_CLKS {2} CONFIG.CLKOUT1_JITTER {150.541} CONFIG.CLKOUT1_PHASE_ERROR {99.281} CONFIG.CLKOUT2_JITTER {142.278} CONFIG.CLKOUT2_PHASE_ERROR {99.281}] [get_ips clk_wiz_0]
+generate_target {instantiation_template} [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_0'...
+generate_target all [get_files  c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_0'...
+catch { config_ip_cache -export [get_ips -all clk_wiz_0] }
+export_ip_user_files -of_objects [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'create_ip_run' was cancelled
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 5.4 -module_name clk_wiz_1 -dir c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip
+set_property -dict [list CONFIG.CLKOUT2_USED {true} CONFIG.PRIMARY_PORT {pclk} CONFIG.CLK_OUT1_PORT {clk50MHz} CONFIG.CLK_OUT2_PORT {clk65MHz} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {50.000} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {65.000} CONFIG.USE_SAFE_CLOCK_STARTUP {true} CONFIG.CLKOUT1_DRIVES {BUFGCE} CONFIG.CLKOUT2_DRIVES {BUFGCE} CONFIG.CLKOUT3_DRIVES {BUFGCE} CONFIG.CLKOUT4_DRIVES {BUFGCE} CONFIG.CLKOUT5_DRIVES {BUFGCE} CONFIG.CLKOUT6_DRIVES {BUFGCE} CONFIG.CLKOUT7_DRIVES {BUFGCE} CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {9.750} CONFIG.MMCM_CLKOUT0_DIVIDE_F {19.500} CONFIG.MMCM_CLKOUT1_DIVIDE {15} CONFIG.NUM_OUT_CLKS {2} CONFIG.CLKOUT1_JITTER {150.541} CONFIG.CLKOUT1_PHASE_ERROR {99.281} CONFIG.CLKOUT2_JITTER {142.278} CONFIG.CLKOUT2_PHASE_ERROR {99.281}] [get_ips clk_wiz_1]
+generate_target {instantiation_template} [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_1'...
+update_compile_order -fileset sources_1
+set_property generate_synth_checkpoint false [get_files  c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci]
+generate_target all [get_files  c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_wiz_1'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_wiz_1'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_wiz_1'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_wiz_1'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_wiz_1'...
+export_ip_user_files -of_objects [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci] -directory C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files -ipstatic_source_dir C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/modelsim} {questa=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/questa} {riviera=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/riviera} {activehdl=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -reset -force -quiet
+remove_files  -fileset clk_wiz_0 c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+INFO: [Project 1-386] Moving file 'c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci' from fileset 'clk_wiz_0' to fileset 'sources_1'.
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+export_ip_user_files -of_objects  [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci] -no_script -reset -force -quiet
+remove_files  c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/clk_wiz_1/clk_wiz_1.xci
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 5.4 -module_name IP_clk_generator -dir c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip
+set_property -dict [list CONFIG.Component_Name {IP_clk_generator} CONFIG.CLKOUT2_USED {true} CONFIG.PRIMARY_PORT {pclk} CONFIG.CLK_OUT1_PORT {clk50MHz} CONFIG.CLK_OUT2_PORT {clk65MHz} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {50.000} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {65.000} CONFIG.USE_SAFE_CLOCK_STARTUP {true} CONFIG.CLKOUT1_DRIVES {BUFGCE} CONFIG.CLKOUT2_DRIVES {BUFGCE} CONFIG.CLKOUT3_DRIVES {BUFGCE} CONFIG.CLKOUT4_DRIVES {BUFGCE} CONFIG.CLKOUT5_DRIVES {BUFGCE} CONFIG.CLKOUT6_DRIVES {BUFGCE} CONFIG.CLKOUT7_DRIVES {BUFGCE} CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {9.750} CONFIG.MMCM_CLKOUT0_DIVIDE_F {19.500} CONFIG.MMCM_CLKOUT1_DIVIDE {15} CONFIG.NUM_OUT_CLKS {2} CONFIG.CLKOUT1_JITTER {150.541} CONFIG.CLKOUT1_PHASE_ERROR {99.281} CONFIG.CLKOUT2_JITTER {142.278} CONFIG.CLKOUT2_PHASE_ERROR {99.281}] [get_ips IP_clk_generator]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'IP_clk_generator' to 'IP_clk_generator' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator_1/IP_clk_generator.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'IP_clk_generator'...
+update_compile_order -fileset sources_1
+set_property generate_synth_checkpoint false [get_files  c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator_1/IP_clk_generator.xci]
+generate_target all [get_files  c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator_1/IP_clk_generator.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'IP_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'IP_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'IP_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'IP_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'IP_clk_generator'...
+export_ip_user_files -of_objects [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator_1/IP_clk_generator.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator_1/IP_clk_generator.xci] -directory C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files -ipstatic_source_dir C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/modelsim} {questa=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/questa} {riviera=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/riviera} {activehdl=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Sun Aug 23 14:52:11 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
+reset_run synth_1
+export_ip_user_files -of_objects  [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator_1/IP_clk_generator.xci] -no_script -reset -force -quiet
+remove_files  c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator_1/IP_clk_generator.xci
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 5.4 -module_name IP_CLK_DIVIDER -dir c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip
+set_property -dict [list CONFIG.Component_Name {IP_CLK_DIVIDER} CONFIG.CLKOUT2_USED {true} CONFIG.PRIMARY_PORT {pclk} CONFIG.CLK_OUT1_PORT {clk50MHz} CONFIG.CLK_OUT2_PORT {clk65MHz} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {50.000} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {65.000} CONFIG.USE_SAFE_CLOCK_STARTUP {true} CONFIG.CLKOUT1_DRIVES {BUFGCE} CONFIG.CLKOUT2_DRIVES {BUFGCE} CONFIG.CLKOUT3_DRIVES {BUFGCE} CONFIG.CLKOUT4_DRIVES {BUFGCE} CONFIG.CLKOUT5_DRIVES {BUFGCE} CONFIG.CLKOUT6_DRIVES {BUFGCE} CONFIG.CLKOUT7_DRIVES {BUFGCE} CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {9.750} CONFIG.MMCM_CLKOUT0_DIVIDE_F {19.500} CONFIG.MMCM_CLKOUT1_DIVIDE {15} CONFIG.NUM_OUT_CLKS {2} CONFIG.CLKOUT1_JITTER {150.541} CONFIG.CLKOUT1_PHASE_ERROR {99.281} CONFIG.CLKOUT2_JITTER {142.278} CONFIG.CLKOUT2_PHASE_ERROR {99.281}] [get_ips IP_CLK_DIVIDER]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'IP_CLK_DIVIDER' to 'IP_CLK_DIVIDER' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'IP_CLK_DIVIDER'...
+update_compile_order -fileset sources_1
+set_property generate_synth_checkpoint false [get_files  c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xci]
+generate_target all [get_files  c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'IP_CLK_DIVIDER'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'IP_CLK_DIVIDER'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'IP_CLK_DIVIDER'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'IP_CLK_DIVIDER'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'IP_CLK_DIVIDER'...
+export_ip_user_files -of_objects [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xci] -directory C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files -ipstatic_source_dir C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/modelsim} {questa=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/questa} {riviera=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/riviera} {activehdl=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+the value of str is 0.000 
+
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 2
+[Sun Aug 23 15:00:14 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Aug 23 15:03:35 2020...

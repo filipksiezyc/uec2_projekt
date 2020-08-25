@@ -50,15 +50,15 @@ always @* begin
         VGABlue_nxt = 0;
         end
     else begin
-        if((hblnk||vblnk)||((vcount>63)&&(hcount>63)&&(hcount<959)))begin
+        if((hblnk||vblnk)||((vcount>63)&&(hcount>63)&&(hcount<960)))begin
             VGARed_nxt = 0;
             VGAGreen_nxt = 0;
             VGABlue_nxt = 0;
             end
         else begin
-                VGARed_nxt = 3'h8;
-                VGAGreen_nxt = 3'h8;
-                VGABlue_nxt = 3'h8;
+                VGARed_nxt = 8;
+                VGAGreen_nxt = 8;
+                VGABlue_nxt = 8;
             end
         end
 end

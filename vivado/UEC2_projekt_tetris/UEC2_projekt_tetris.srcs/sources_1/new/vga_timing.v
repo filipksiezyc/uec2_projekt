@@ -53,6 +53,6 @@ assign vcount=vcountinside;
 assign vsync=((vcountinside>770)&&(vcountinside<777));
 assign hsync=((hcountinside>1047)&&(hcountinside<1183));
 assign vblnk=((vcountinside>767)&&(vcountinside<806));
-assign hblnk=((hcountinside>=1023)&&(hcountinside<1344));
+assign hblnk=((hcountinside>1023)&&(hcountinside<1344));
 
 endmodule
