@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Wed Aug 19 18:27:09 2020
+| Date         : Sun Aug 23 15:01:36 2020
 | Host         : FilipPC running 64-bit major release  (build 9200)
 | Command      : report_utilization -file TETRIS_Main_utilization_synth.rpt -pb vga_example_utilization_synth.pb
 | Design       : TETRIS_Main
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   36 |     0 |     20800 |  0.17 |
-|   LUT as Logic          |   36 |     0 |     20800 |  0.17 |
+| Slice LUTs*             |   34 |     0 |     20800 |  0.16 |
+|   LUT as Logic          |   34 |     0 |     20800 |  0.16 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
-| Slice Registers         |   42 |     0 |     41600 |  0.10 |
-|   Register as Flip Flop |   42 |     0 |     41600 |  0.10 |
+| Slice Registers         |   44 |     0 |     41600 |  0.11 |
+|   Register as Flip Flop |   44 |     0 |     41600 |  0.11 |
 |   Register as Latch     |    0 |     0 |     41600 |  0.00 |
 | F7 Muxes                |    0 |     0 |     16300 |  0.00 |
 | F8 Muxes                |    0 |     0 |      8150 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 16    |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 26    |          Yes |       Reset |            - |
+| 28    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -149,19 +149,18 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       |   26 |        Flop & Latch |
-| LUT6       |   16 |                 LUT |
-| LUT5       |   16 |                 LUT |
+| FDRE       |   28 |        Flop & Latch |
+| LUT6       |   18 |                 LUT |
 | FDCE       |   16 |        Flop & Latch |
 | OBUF       |   14 |                  IO |
-| LUT3       |    5 |                 LUT |
-| LUT4       |    4 |                 LUT |
-| LUT2       |    2 |                 LUT |
+| LUT5       |    9 |                 LUT |
+| LUT3       |    9 |                 LUT |
+| LUT4       |    8 |                 LUT |
+| LUT2       |    4 |                 LUT |
 | IBUF       |    2 |                  IO |
 | BUFH       |    2 |               Clock |
 | BUFGCTRL   |    2 |               Clock |
 | MMCME2_ADV |    1 |               Clock |
-| LUT1       |    1 |                 LUT |
 | BUFG       |    1 |               Clock |
 +------------+------+---------------------+
 

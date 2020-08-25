@@ -3,16 +3,16 @@
 
 # XDC: new/constrains.xdc
 
-# IP: ip/IP_clk_generator/IP_clk_generator.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==IP_clk_generator || ORIG_REF_NAME==IP_clk_generator} -quiet] -quiet
+# IP: ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==IP_CLK_DIVIDER || ORIG_REF_NAME==IP_CLK_DIVIDER} -quiet] -quiet
 
-# XDC: ip/IP_clk_generator/IP_clk_generator_board.xdc
-set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==IP_clk_generator || ORIG_REF_NAME==IP_clk_generator} -quiet] {/inst } ]/inst ] -quiet] -quiet
+# XDC: ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==IP_CLK_DIVIDER || ORIG_REF_NAME==IP_CLK_DIVIDER} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
-# XDC: ip/IP_clk_generator/IP_clk_generator.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==IP_clk_generator || ORIG_REF_NAME==IP_clk_generator} -quiet] {/inst } ]/inst ] -quiet] -quiet
+# XDC: ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==IP_CLK_DIVIDER || ORIG_REF_NAME==IP_CLK_DIVIDER} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
-# XDC: ip/IP_clk_generator/IP_clk_generator_late.xdc
-#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==IP_clk_generator || ORIG_REF_NAME==IP_clk_generator} -quiet] {/inst } ]/inst ] -quiet] -quiet
+# XDC: ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_late.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==IP_CLK_DIVIDER || ORIG_REF_NAME==IP_CLK_DIVIDER} -quiet] {/inst } ]/inst ] -quiet] -quiet
 
-# XDC: ip/IP_clk_generator/IP_clk_generator_ooc.xdc
+# XDC: ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_ooc.xdc

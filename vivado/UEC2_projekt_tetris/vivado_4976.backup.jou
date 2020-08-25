@@ -1,0 +1,32 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Sun Aug 23 13:43:39 2020
+# Process ID: 4976
+# Current directory: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4456 C:\Users\Filip\Desktop\uec2_projekt\vivado\UEC2_projekt_tetris\UEC2_projekt_tetris.xpr
+# Log file: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/vivado.log
+# Journal file: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr
+update_compile_order -fileset sources_1
+add_files -norecurse {C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v}
+update_compile_order -fileset sources_1
+set_property -dict [list CONFIG.CLKOUT3_USED {false} CONFIG.CLK_OUT1_PORT {clk50MHz} CONFIG.CLK_OUT3_PORT {clk1Hz} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {50.000} CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {50.000} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {9.750} CONFIG.MMCM_CLKIN1_PERIOD {10.000} CONFIG.MMCM_CLKIN2_PERIOD {10.000} CONFIG.MMCM_CLKOUT0_DIVIDE_F {19.500} CONFIG.MMCM_CLKOUT1_DIVIDE {15} CONFIG.MMCM_CLKOUT2_DIVIDE {1} CONFIG.NUM_OUT_CLKS {2} CONFIG.CLKOUT1_JITTER {150.541} CONFIG.CLKOUT1_PHASE_ERROR {99.281} CONFIG.CLKOUT2_JITTER {142.278} CONFIG.CLKOUT2_PHASE_ERROR {99.281} CONFIG.CLKOUT3_JITTER {167.927} CONFIG.CLKOUT3_PHASE_ERROR {124.502}] [get_ips IP_clk_generator]
+generate_target all [get_files  C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator/IP_clk_generator.xci]
+export_ip_user_files -of_objects [get_files C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator/IP_clk_generator.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_clk_generator/IP_clk_generator.xci] -directory C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files -ipstatic_source_dir C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/modelsim} {questa=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/questa} {riviera=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/riviera} {activehdl=C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+close [ open C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk1Hz.v w ]
+add_files C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk1Hz.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
+reset_property  ALL_PROPS  [get_ips IP_clk_generator]
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+wait_on_run synth_1
