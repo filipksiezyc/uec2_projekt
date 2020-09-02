@@ -16,33 +16,38 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/wt [current_project]
-set_property parent.project_path C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/wt [current_project]
+set_property parent.project_path C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/ip [current_project]
+set_property ip_output_repo c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v
-  C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v
-  C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk1Hz.v
-  C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v
-  C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/vga_timing.v
-  C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/TETRIS_Main.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clear_row.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk1Hz.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/falserandom_generator.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/generate_piece.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/ingame_graphic.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/test_move.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/vga_timing.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/TETRIS_Main.v
 }
-read_ip -quiet c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xci
-set_property used_in_implementation false [get_files -all c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_late.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_ooc.xdc]
+read_ip -quiet C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xci
+set_property used_in_implementation false [get_files -all c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_late.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -52,8 +57,8 @@ set_property used_in_implementation false [get_files -all c:/Users/Filip/Desktop
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc
-set_property used_in_implementation false [get_files C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc]
+read_xdc C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc
+set_property used_in_implementation false [get_files C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

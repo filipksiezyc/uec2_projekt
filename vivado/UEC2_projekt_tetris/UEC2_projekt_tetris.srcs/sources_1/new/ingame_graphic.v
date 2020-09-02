@@ -23,53 +23,122 @@
 module ingame_graphic(
     input wire pclk,
     input wire reset,
-    input wire [3:0] VGARed,
-    input wire [3:0] VGABlue,
-    input wire [3:0] VGAGreen,
     input wire hsync,
     input wire vsync,
+    input wire hblnk,
+    input wire vblnk,
     input wire [10:0] hcount,
     input wire [10:0] vcount,
-    input wire [3:0] xpos,
-    input wire [3:0] ypos,
-    input wire [3:0] block_code,
-    input wire [1:0] block_orient,
+    input wire [10:0] block1,
+    input wire [10:0] block2,
+    input wire [10:0] block3,
+    input wire [10:0] block4,
+    input wire [767:0] board,
+    input wire [2:0] block_code,
     
     output reg [3:0] VGARed_out,
     output reg [3:0] VGABlue_out,
     output reg [3:0] VGAGreen_out,
     output reg hsync_out,
-    output reg vsync_out 
+    output reg vsync_out,
+    output reg hblnk_out,
+    output reg vblnk_out  
     );
     
-reg [3:0] VGARed_nxt=0, VGAGreen_nxt=0,VGABlue_nxt=0;
-reg hsync_nxt=0, vsync_nxt=0;
-    
+localparam BLOCK_SIZE=32, LEFT_EDGE=2, GAME_WIDTH=16, SCREEN_WIDTH=32,
+ERROR_PIECE=3'b000, I_PIECE=3'b001, L_PIECE=3'b010, J_PIECE=3'b011,
+T_PIECE=3'b100, SQUARE_PIECE=3'b101, Z_PIECE=3'b110, S_PIECE=3'b111;
+
+wire [10:0] current_block=(hcount/BLOCK_SIZE)+((vcount/BLOCK_SIZE)*SCREEN_WIDTH);
+reg [3:0] VGARed_nxt, VGAGreen_nxt, VGABlue_nxt; 
+reg hsync_nxt, vsync_nxt;
+reg hblnk_nxt, vblnk_nxt;
+
 always @* begin
-    case(block_code)
-        0: if(block_orient==0)begin
-                if((hcount>300&&hcount<600)&&(vcount>300&&vcount<600))begin
-                    VGARed_nxt=4'b1001;
-                    VGABlue_nxt=4'b0010;
-                    VGAGreen_nxt=4'b0011;
-                    end
-                 else begin
-                    VGARed_nxt = VGARed;
-                    VGABlue_nxt = VGAGreen;
-                    VGAGreen_nxt = VGABlue;
-                    end
-                 end
-            else begin
-                    VGARed_nxt = VGARed;   
-                    VGABlue_nxt = VGAGreen;
-                    VGAGreen_nxt = VGABlue;
-                    end
-    default : begin
-           VGARed_nxt = VGARed;   
-           VGABlue_nxt = VGAGreen;
-           VGAGreen_nxt = VGABlue;
-           end
-   endcase
+    if (reset) begin
+        VGARed_nxt=0;
+        VGAGreen_nxt=0;
+        VGABlue_nxt=0;
+        hsync_nxt=0;
+        vsync_nxt=0;
+        hblnk_nxt=0;
+        vblnk_nxt=0;
+    end
+    else if(hcount>=(BLOCK_SIZE*LEFT_EDGE)&&hcount<(BLOCK_SIZE*(LEFT_EDGE+GAME_WIDTH))) begin //checking if we're in the playable area
+    //next, we're chcecking if a part the active piece is within the current 32x32 block
+        if (current_block==block1||current_block==block2||current_block==block3||current_block==block4) begin
+            case (block_code)
+                ERROR_PIECE: begin //error, black
+                VGARed_nxt=0;
+                VGAGreen_nxt=0;
+                VGABlue_nxt=0;
+                end
+                I_PIECE: begin //I shaped, cyan
+                VGARed_nxt=1;
+                VGAGreen_nxt=15;
+                VGABlue_nxt=15;
+                end
+                L_PIECE: begin //L shaped, orange
+                VGARed_nxt=15;
+                VGAGreen_nxt=7;
+                VGABlue_nxt=0;
+                end
+                J_PIECE: begin //J shaped, blue
+                VGARed_nxt=1;
+                VGAGreen_nxt=1;
+                VGABlue_nxt=15;
+                end
+                T_PIECE: begin //T shaped, purple
+                VGARed_nxt=13;
+                VGAGreen_nxt=3;
+                VGABlue_nxt=15;
+                end
+                SQUARE_PIECE: begin //square, yellow
+                VGARed_nxt=15;
+                VGAGreen_nxt=15;
+                VGABlue_nxt=3;
+                end
+                Z_PIECE: begin //Z shaped, red
+                VGARed_nxt=15;
+                VGAGreen_nxt=3;
+                VGABlue_nxt=0;
+                end
+                S_PIECE: begin //S shaped, green
+                VGARed_nxt=1;
+                VGAGreen_nxt=15;
+                VGABlue_nxt=2;
+                end
+                default: begin
+                VGARed_nxt=0;
+                VGAGreen_nxt=0;
+                VGABlue_nxt=0;
+                end
+            endcase
+        end
+        else begin //if the current block is part of the already fallen pieces color it white, else color black
+        VGARed_nxt=board[current_block] ? 15 : 0;
+        VGAGreen_nxt=board[current_block] ? 15 : 0;
+        VGABlue_nxt=board[current_block] ? 15 : 0;
+        end
+    end
+    else begin //if not within playable area, color black (though that is changed in a later module)
+    VGARed_nxt=0;
+    VGAGreen_nxt=0;
+    VGABlue_nxt=0;
+    end
+    hsync_nxt=hsync;
+    vsync_nxt=vsync;
+    hblnk_nxt=hblnk;
+    vblnk_nxt=vblnk;
 end  
     
+always @(posedge pclk) begin
+    VGARed_out<=VGARed_nxt;
+    VGAGreen_out<=VGAGreen_nxt;
+    VGABlue_out<=VGABlue_nxt;
+    hsync_out<=hsync_nxt;
+    vsync_out<=vsync_nxt;
+    hblnk_out<=hblnk_nxt;
+    vblnk_out<=vblnk_nxt;
+end
 endmodule

@@ -65,6 +65,12 @@ vga_timing vga_timing_source
   .hblnk(hblnk)
   );
 
+wire [3:0] Green_to_main, Red_to_main, Blue_to_main;
+wire [10:0] vcount_to_main;
+wire [10:0] hcount_to_main;
+wire vsync_to_main, hsync_to_main;
+wire vblnk_to_main, hblnk_to_main;
+
 wire [3:0] Green_Out, Red_Out, Blue_Out;
 wire [10:0] vcount_frame;
 wire [10:0] hcount_frame;
@@ -72,20 +78,25 @@ wire vsync_frame, hsync_frame;
 wire vblnk_frame, hblnk_frame;
 wire [15:0] keycode;
 wire KeyFlag;
+wire [3:0] state_to_main;
 
 GAME_FRAME FRAME_VIDEO_CONTROLL(
    .clk(clk65MHz),
-   .hcount(hcount),
-   .vcount(vcount),
-   .hsync(hsync),
-   .vsync(vsync),
-   .hblnk(hblnk),
-   .vblnk(vblnk),
+   .hcount(hcount_to_main),
+   .vcount(vcount_to_main),
+   .hsync(hsync_to_main),
+   .vsync(vsync_to_main),
+   .hblnk(hblnk_to_main),
+   .vblnk(vblnk_to_main),
    .reset(btnC),
+   .VGARed(Red_to_main),
+   .VGAGreen(Green_to_main),
+   .VGABlue(Blue_to_main),
+   .state(state_to_main),
    
-   .VGARed(Red_Out),
-   .VGAGreen(Green_Out),
-   .VGABlue(Blue_Out),
+   .VGARed_out(Red_Out),
+   .VGAGreen_out(Green_Out),
+   .VGABlue_out(Blue_Out),
    .hcount_out(hcount_frame),
    .vcount_out(vcount_frame),
    .hsync_out(hsync_frame),
@@ -120,6 +131,33 @@ falserandom_generator random_blocks(
         .rand(random_block)
         );
     
+    
+game_logic_unit tetris_logic(
+    .pclk(clk65MHz),
+    .reset(btnC),
+    .random(random_block),
+    .clk1Hz(clk1Hz),
+    .clk05Hz(clk05Hz),
+    .hsync(hsync),
+    .vsync(vsync),
+    .hblnk(hblnk),
+    .vblnk(vblnk),
+    .hcount(hcount),
+    .vcount(vcount),
+    .keycode(keycode),
+    .oflag(KeyFlag),
+
+    .VGARed_out(Red_to_main),
+    .VGAGreen_out(Green_to_main),
+    .VGABlue_out(Blue_to_main),
+    .hsync_out(hsync_to_main),
+    .vsync_out(vsync_to_main),
+    .hblnk_out(hblnk_to_main),
+    .vblnk_out(vblnk_to_main),
+    .hcount_out(hcount_to_main),
+    .vcount_out(vcount_to_main),
+    .state(state_to_main)
+);
 
 always @(posedge clk65MHz)begin
    Vsync<=vsync_frame;

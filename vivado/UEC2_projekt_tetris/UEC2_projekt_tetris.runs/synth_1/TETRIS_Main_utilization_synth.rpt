@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Sun Aug 23 15:01:36 2020
-| Host         : FilipPC running 64-bit major release  (build 9200)
+| Date         : Wed Sep  2 19:37:40 2020
+| Host         : K188 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file TETRIS_Main_utilization_synth.rpt -pb vga_example_utilization_synth.pb
 | Design       : TETRIS_Main
 | Device       : 7a35tcpg236-1
@@ -27,18 +27,20 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+-----------+-------+
-|        Site Type        | Used | Fixed | Available | Util% |
-+-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   34 |     0 |     20800 |  0.16 |
-|   LUT as Logic          |   34 |     0 |     20800 |  0.16 |
-|   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
-| Slice Registers         |   44 |     0 |     41600 |  0.11 |
-|   Register as Flip Flop |   44 |     0 |     41600 |  0.11 |
-|   Register as Latch     |    0 |     0 |     41600 |  0.00 |
-| F7 Muxes                |    0 |     0 |     16300 |  0.00 |
-| F8 Muxes                |    0 |     0 |      8150 |  0.00 |
-+-------------------------+------+-------+-----------+-------+
++----------------------------+------+-------+-----------+-------+
+|          Site Type         | Used | Fixed | Available | Util% |
++----------------------------+------+-------+-----------+-------+
+| Slice LUTs*                | 5373 |     0 |     20800 | 25.83 |
+|   LUT as Logic             | 5371 |     0 |     20800 | 25.82 |
+|   LUT as Memory            |    2 |     0 |      9600 |  0.02 |
+|     LUT as Distributed RAM |    0 |     0 |           |       |
+|     LUT as Shift Register  |    2 |     0 |           |       |
+| Slice Registers            | 1998 |     0 |     41600 |  4.80 |
+|   Register as Flip Flop    | 1118 |     0 |     41600 |  2.69 |
+|   Register as Latch        |  880 |     0 |     41600 |  2.12 |
+| F7 Muxes                   |  916 |     0 |     16300 |  5.62 |
+| F8 Muxes                   |  427 |     0 |      8150 |  5.24 |
++----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
 
@@ -54,10 +56,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 0     |          Yes |           - |          Set |
-| 16    |          Yes |           - |        Reset |
-| 0     |          Yes |         Set |            - |
-| 28    |          Yes |       Reset |            - |
+| 84    |          Yes |           - |          Set |
+| 820   |          Yes |           - |        Reset |
+| 2     |          Yes |         Set |            - |
+| 1092  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +92,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   16 |     0 |       106 | 15.09 |
+| Bonded IOB                  |   18 |     0 |       106 | 16.98 |
 | Bonded IPADs                |    0 |     0 |        10 |  0.00 |
 | Bonded OPADs                |    0 |     0 |         4 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         5 |  0.00 |
@@ -115,12 +117,12 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    3 |     0 |        32 |  9.38 |
+| BUFGCTRL   |    4 |     0 |        32 | 12.50 |
 | BUFIO      |    0 |     0 |        20 |  0.00 |
 | MMCME2_ADV |    1 |     0 |         5 | 20.00 |
 | PLLE2_ADV  |    0 |     0 |         5 |  0.00 |
 | BUFMRCE    |    0 |     0 |        10 |  0.00 |
-| BUFHCE     |    2 |     0 |        72 |  2.78 |
+| BUFHCE     |    3 |     0 |        72 |  4.17 |
 | BUFR       |    0 |     0 |        20 |  0.00 |
 +------------+------+-------+-----------+-------+
 
@@ -149,17 +151,25 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| FDRE       |   28 |        Flop & Latch |
-| LUT6       |   18 |                 LUT |
-| FDCE       |   16 |        Flop & Latch |
+| LUT6       | 4149 |                 LUT |
+| FDRE       | 1092 |        Flop & Latch |
+| MUXF7      |  916 |               MuxFx |
+| LDCE       |  796 |        Flop & Latch |
+| LUT4       |  625 |                 LUT |
+| LUT5       |  576 |                 LUT |
+| MUXF8      |  427 |               MuxFx |
+| LUT3       |  164 |                 LUT |
+| LDPE       |   84 |        Flop & Latch |
+| LUT2       |   79 |                 LUT |
+| CARRY4     |   29 |          CarryLogic |
+| FDCE       |   24 |        Flop & Latch |
 | OBUF       |   14 |                  IO |
-| LUT5       |    9 |                 LUT |
-| LUT3       |    9 |                 LUT |
-| LUT4       |    8 |                 LUT |
-| LUT2       |    4 |                 LUT |
-| IBUF       |    2 |                  IO |
-| BUFH       |    2 |               Clock |
-| BUFGCTRL   |    2 |               Clock |
+| LUT1       |    8 |                 LUT |
+| IBUF       |    4 |                  IO |
+| BUFH       |    3 |               Clock |
+| BUFGCTRL   |    3 |               Clock |
+| SRL16E     |    2 |  Distributed Memory |
+| FDSE       |    2 |        Flop & Latch |
 | MMCME2_ADV |    1 |               Clock |
 | BUFG       |    1 |               Clock |
 +------------+------+---------------------+

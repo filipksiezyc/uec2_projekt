@@ -29,10 +29,14 @@ module GAME_FRAME(
     input wire hblnk,
     input wire vblnk,
     input wire reset,
+    input wire [3:0] VGARed,
+    input wire [3:0] VGAGreen,
+    input wire [3:0] VGABlue,
+    input wire [3:0] state,
     
-    output reg [3:0] VGARed,
-    output reg [3:0] VGAGreen,
-    output reg [3:0] VGABlue,
+    output reg [3:0] VGARed_out,
+    output reg [3:0] VGAGreen_out,
+    output reg [3:0] VGABlue_out,
     output reg [10:0] hcount_out,
     output reg [10:0] vcount_out,
     output reg hsync_out,
@@ -50,12 +54,12 @@ always @* begin
         VGABlue_nxt = 0;
         end
     else begin
-        if((hblnk||vblnk)||((vcount>63)&&(hcount>63)&&(hcount<960)))begin
-            VGARed_nxt = 0;
-            VGAGreen_nxt = 0;
-            VGABlue_nxt = 0;
+        if((hblnk||vblnk)||((hcount>63)&&(hcount<576)))begin
+            VGARed_nxt = VGARed;
+            VGAGreen_nxt = VGAGreen;
+            VGABlue_nxt = VGABlue;
             end
-        else begin
+        else begin //tutaj by by³y te napisy, cnie
                 VGARed_nxt = 8;
                 VGAGreen_nxt = 8;
                 VGABlue_nxt = 8;
@@ -64,9 +68,9 @@ always @* begin
 end
 
 always @(posedge clk)begin
-        VGARed <= VGARed_nxt;
-        VGAGreen <= VGAGreen_nxt;
-        VGABlue <= VGABlue_nxt;
+        VGARed_out <= VGARed_nxt;
+        VGAGreen_out <= VGAGreen_nxt;
+        VGABlue_out <= VGABlue_nxt;
         hcount_out <= hcount;
         vcount_out <= vcount;
         hsync_out <= hsync;
