@@ -1,0 +1,1045 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
+| Date         : Wed Sep  2 19:50:35 2020
+| Host         : K188 running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -file TETRIS_Main_timing_summary_routed.rpt -warn_on_violation -rpx TETRIS_Main_timing_summary_routed.rpx
+| Design       : TETRIS_Main
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.19 2017-08-11
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  false
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 13 register/latch pins with no clock driven by root clock pin: Keyboard_Receiver/db_clk/O_reg/Q (HIGH)
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 21 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 178 pins that are not constrained for maximum delay due to constant clock. (MEDIUM)
+
+
+5. checking no_input_delay
+--------------------------
+ There are 3 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 14 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     -6.065     -487.516                    420                 1961       -0.297       -1.780                      6                 1961        3.000        0.000                       0                  1912  
+
+
+Timing constraints are not met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock                      Waveform(ns)       Period(ns)      Frequency(MHz)
+-----                      ------------       ----------      --------------
+clk                        {0.000 5.000}      10.000          100.000         
+  clk50MHz_IP_CLK_DIVIDER  {0.000 10.000}     20.000          50.000          
+  clk65MHz_IP_CLK_DIVIDER  {0.000 7.692}      15.385          65.000          
+  clk_rand_IP_CLK_DIVIDER  {0.000 13.333}     26.667          37.500          
+  clkfbout_IP_CLK_DIVIDER  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock                          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----                          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk                                                                                                                                                                          3.000        0.000                       0                     1  
+  clk50MHz_IP_CLK_DIVIDER       14.903        0.000                      0                   84        0.122        0.000                      0                   84        9.500        0.000                       0                    70  
+  clk65MHz_IP_CLK_DIVIDER       -6.065     -438.699                    400                 1866       -0.297       -1.780                      6                 1866        6.712        0.000                       0                  1824  
+  clk_rand_IP_CLK_DIVIDER       24.867        0.000                      0                   11        0.122        0.000                      0                   11       12.833        0.000                       0                    14  
+  clkfbout_IP_CLK_DIVIDER                                                                                                                                                    7.845        0.000                       0                     3  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock               To Clock                     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------               --------                     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+clk50MHz_IP_CLK_DIVIDER  clk65MHz_IP_CLK_DIVIDER       -3.998      -48.686                     25                   25        0.090        0.000                      0                   25  
+clk_rand_IP_CLK_DIVIDER  clk65MHz_IP_CLK_DIVIDER       -3.454       -9.664                      3                    3        0.691        0.000                      0                    3  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk
+  To Clock:  clk
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        3.000ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { clk }
+
+Check Type        Corner  Lib Pin            Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     MMCME2_ADV/CLKIN1  n/a            1.249         10.000      8.751      MMCME2_ADV_X1Y0  CLK_GENERATOR/inst/mmcm_adv_inst/CLKIN1
+Max Period        n/a     MMCME2_ADV/CLKIN1  n/a            100.000       10.000      90.000     MMCME2_ADV_X1Y0  CLK_GENERATOR/inst/mmcm_adv_inst/CLKIN1
+Low Pulse Width   Fast    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  CLK_GENERATOR/inst/mmcm_adv_inst/CLKIN1
+High Pulse Width  Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000       3.000      MMCME2_ADV_X1Y0  CLK_GENERATOR/inst/mmcm_adv_inst/CLKIN1
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk50MHz_IP_CLK_DIVIDER
+  To Clock:  clk50MHz_IP_CLK_DIVIDER
+
+Setup :            0  Failing Endpoints,  Worst Slack       14.903ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.122ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        9.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             14.903ns  (required time - arrival time)
+  Source:                 clk1HZ_generator/counter_reg[20]/C
+                            (rising edge-triggered cell FDRE clocked by clk50MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            clk1HZ_generator/counter_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by clk50MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk50MHz_IP_CLK_DIVIDER
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk50MHz_IP_CLK_DIVIDER rise@20.000ns - clk50MHz_IP_CLK_DIVIDER rise@0.000ns)
+  Data Path Delay:        5.015ns  (logic 1.076ns (21.457%)  route 3.939ns (78.543%))
+  Logic Levels:           5  (LUT3=1 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.028ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.559ns = ( 18.441 - 20.000 ) 
+    Source Clock Delay      (SCD):    -0.954ns
+    Clock Pessimism Removal (CPR):    0.578ns
+  Clock Uncertainty:      0.083ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.151ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk50MHz_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233     2.691    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -6.961    -4.269 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=2, routed)           1.661    -2.608    CLK_GENERATOR/inst/clk50MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y1        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.096    -2.512 r  CLK_GENERATOR/inst/clkout1_buf/O
+                         net (fo=59, routed)          1.558    -0.954    clk1HZ_generator/clk50MHz
+    SLICE_X28Y33         FDRE                                         r  clk1HZ_generator/counter_reg[20]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X28Y33         FDRE (Prop_fdre_C_Q)         0.456    -0.498 f  clk1HZ_generator/counter_reg[20]/Q
+                         net (fo=2, routed)           0.698     0.201    clk1HZ_generator/counter[20]
+    SLICE_X28Y33         LUT4 (Prop_lut4_I0_O)        0.124     0.325 r  clk1HZ_generator/counter[26]_i_7/O
+                         net (fo=1, routed)           0.813     1.138    clk1HZ_generator/counter[26]_i_7_n_0
+    SLICE_X28Y32         LUT5 (Prop_lut5_I4_O)        0.124     1.262 r  clk1HZ_generator/counter[26]_i_6/O
+                         net (fo=1, routed)           0.488     1.750    clk1HZ_generator/counter[26]_i_6_n_0
+    SLICE_X28Y32         LUT6 (Prop_lut6_I5_O)        0.124     1.874 r  clk1HZ_generator/counter[26]_i_3/O
+                         net (fo=1, routed)           0.433     2.307    clk1HZ_generator/counter[26]_i_3_n_0
+    SLICE_X29Y35         LUT6 (Prop_lut6_I0_O)        0.124     2.431 r  clk1HZ_generator/counter[26]_i_2/O
+                         net (fo=28, routed)          1.506     3.937    clk1HZ_generator/counter[26]_i_2_n_0
+    SLICE_X28Y30         LUT3 (Prop_lut3_I0_O)        0.124     4.061 r  clk1HZ_generator/counter[11]_i_1/O
+                         net (fo=1, routed)           0.000     4.061    clk1HZ_generator/counter_0[11]
+    SLICE_X28Y30         FDRE                                         r  clk1HZ_generator/counter_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk50MHz_IP_CLK_DIVIDER rise edge)
+                                                     20.000    20.000 r  
+    W5                                                0.000    20.000 r  clk (IN)
+                         net (fo=0)                   0.000    20.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    21.388 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    22.550    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.217    15.332 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=2, routed)           1.581    16.914    CLK_GENERATOR/inst/clk50MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y1        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.091    17.005 r  CLK_GENERATOR/inst/clkout1_buf/O
+                         net (fo=59, routed)          1.436    18.441    clk1HZ_generator/clk50MHz
+    SLICE_X28Y30         FDRE                                         r  clk1HZ_generator/counter_reg[11]/C
+                         clock pessimism              0.578    19.018    
+                         clock uncertainty           -0.083    18.935    
+    SLICE_X28Y30         FDRE (Setup_fdre_C_D)        0.029    18.964    clk1HZ_generator/counter_reg[11]
+  -------------------------------------------------------------------
+                         required time                         18.964    
+                         arrival time                          -4.061    
+  -------------------------------------------------------------------
+                         slack                                 14.903    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.122ns  (arrival time - required time)
+  Source:                 CLK_GENERATOR/inst/seq_reg1_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk50MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            CLK_GENERATOR/inst/seq_reg1_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk50MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk50MHz_IP_CLK_DIVIDER
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk50MHz_IP_CLK_DIVIDER rise@0.000ns - clk50MHz_IP_CLK_DIVIDER rise@0.000ns)
+  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -1.301ns
+    Source Clock Delay      (SCD):    -1.035ns
+    Clock Pessimism Removal (CPR):    -0.266ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk50MHz_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.667    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.360    -1.693 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.366    -1.327    CLK_GENERATOR/inst/clk50MHz_IP_CLK_DIVIDER
+    BUFHCE_X0Y0          BUFH (Prop_bufh_I_O)         0.020    -1.307 r  CLK_GENERATOR/inst/clkout1_buf_en/O
+                         net (fo=8, routed)           0.272    -1.035    CLK_GENERATOR/inst/clk50MHz_IP_CLK_DIVIDER_en_clk
+    SLICE_X35Y44         FDCE                                         r  CLK_GENERATOR/inst/seq_reg1_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y44         FDCE (Prop_fdce_C_Q)         0.141    -0.894 r  CLK_GENERATOR/inst/seq_reg1_reg[0]/Q
+                         net (fo=1, routed)           0.056    -0.838    CLK_GENERATOR/inst/seq_reg1[0]
+    SLICE_X35Y44         FDCE                                         r  CLK_GENERATOR/inst/seq_reg1_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk50MHz_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.894    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.142    -2.248 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.407    -1.841    CLK_GENERATOR/inst/clk50MHz_IP_CLK_DIVIDER
+    BUFHCE_X0Y0          BUFH (Prop_bufh_I_O)         0.043    -1.798 r  CLK_GENERATOR/inst/clkout1_buf_en/O
+                         net (fo=8, routed)           0.497    -1.301    CLK_GENERATOR/inst/clk50MHz_IP_CLK_DIVIDER_en_clk
+    SLICE_X35Y44         FDCE                                         r  CLK_GENERATOR/inst/seq_reg1_reg[1]/C
+                         clock pessimism              0.266    -1.035    
+    SLICE_X35Y44         FDCE (Hold_fdce_C_D)         0.075    -0.960    CLK_GENERATOR/inst/seq_reg1_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.960    
+                         arrival time                          -0.838    
+  -------------------------------------------------------------------
+                         slack                                  0.122    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk50MHz_IP_CLK_DIVIDER
+Waveform(ns):       { 0.000 10.000 }
+Period(ns):         20.000
+Sources:            { CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0 }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     BUFGCTRL/I0         n/a            2.155         20.000      17.845     BUFGCTRL_X0Y1    CLK_GENERATOR/inst/clkout1_buf/I0
+Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       20.000      193.360    MMCME2_ADV_X1Y0  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         10.000      9.500      SLICE_X30Y41     Keyboard_Receiver/db_clk/Iv_reg/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         10.000      9.500      SLICE_X30Y40     Keyboard_Receiver/db_clk/O_reg/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk65MHz_IP_CLK_DIVIDER
+  To Clock:  clk65MHz_IP_CLK_DIVIDER
+
+Setup :          400  Failing Endpoints,  Worst Slack       -6.065ns,  Total Violation     -438.699ns
+Hold  :            6  Failing Endpoints,  Worst Slack       -0.297ns,  Total Violation       -1.780ns
+PW    :            0  Failing Endpoints,  Worst Slack        6.712ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -6.065ns  (required time - arrival time)
+  Source:                 tetris_logic/board_nxt_reg[56]/D
+                            (positive level-sensitive latch clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Destination:            tetris_logic/board_reg[56]/D
+                            (rising edge-triggered cell FDRE clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Path Group:             clk65MHz_IP_CLK_DIVIDER
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            15.385ns  (clk65MHz_IP_CLK_DIVIDER rise@15.385ns - clk65MHz_IP_CLK_DIVIDER rise@0.000ns)
+  Data Path Delay:        1.478ns  (logic 0.460ns (31.131%)  route 1.018ns (68.869%))
+  Logic Levels:           0  
+  Clock Path Skew:        -12.154ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.560ns = ( 13.825 - 15.385 ) 
+    Source Clock Delay      (SCD):    11.077ns
+    Clock Pessimism Removal (CPR):    0.484ns
+  Clock Uncertainty:      0.079ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.142ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk65MHz_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233     2.691    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -6.961    -4.269 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1
+                         net (fo=2, routed)           1.661    -2.608    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.096    -2.512 r  CLK_GENERATOR/inst/clkout2_buf/O
+                         net (fo=1088, routed)        2.231    -0.281    tetris_logic/clk65MHz
+    SLICE_X50Y38         LUT4 (Prop_lut4_I1_O)        0.152    -0.129 r  tetris_logic/board_nxt_reg[737]_i_3/O
+                         net (fo=137, routed)         8.314     8.185    tetris_logic/current_piece/state_reg[0]_2
+    SLICE_X13Y3          LUT5 (Prop_lut5_I4_O)        0.348     8.533 r  tetris_logic/current_piece/board_nxt_reg[56]_i_2/O
+                         net (fo=1, routed)           0.473     9.007    tetris_logic/current_piece/board_nxt_reg[56]_i_2_n_0
+    SLICE_X13Y3          LUT6 (Prop_lut6_I1_O)        0.124     9.131 r  tetris_logic/current_piece/board_nxt_reg[56]_i_1/O
+                         net (fo=1, routed)           1.947    11.077    tetris_logic/current_piece_n_719
+    SLICE_X53Y18         LDCE                                         r  tetris_logic/board_nxt_reg[56]/G
+  -------------------------------------------------------------------    -------------------
+                         time given to startpoint     7.645    18.723    
+    SLICE_X53Y18                                      0.000    18.723 r  tetris_logic/board_nxt_reg[56]/D
+    SLICE_X53Y18         LDCE (DToQ_ldce_D_Q)         0.460    19.183 r  tetris_logic/board_nxt_reg[56]/Q
+                         net (fo=1, routed)           1.018    20.200    tetris_logic/board_nxt[56]
+    SLICE_X33Y18         FDRE                                         r  tetris_logic/board_reg[56]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk65MHz_IP_CLK_DIVIDER rise edge)
+                                                     15.385    15.385 r  
+    W5                                                0.000    15.385 r  clk (IN)
+                         net (fo=0)                   0.000    15.385    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    16.773 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    17.935    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -7.217    10.717 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1
+                         net (fo=2, routed)           1.581    12.298    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.091    12.389 r  CLK_GENERATOR/inst/clkout2_buf/O
+                         net (fo=1088, routed)        1.435    13.825    tetris_logic/clk65MHz
+    SLICE_X33Y18         FDRE                                         r  tetris_logic/board_reg[56]/C
+                         clock pessimism              0.484    14.308    
+                         clock uncertainty           -0.079    14.229    
+    SLICE_X33Y18         FDRE (Setup_fdre_C_D)       -0.093    14.136    tetris_logic/board_reg[56]
+  -------------------------------------------------------------------
+                         required time                         14.136    
+                         arrival time                         -20.200    
+  -------------------------------------------------------------------
+                         slack                                 -6.065    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -0.297ns  (arrival time - required time)
+  Source:                 CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1
+                            (clock source 'clk65MHz_IP_CLK_DIVIDER'  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Destination:            tetris_logic/clear_row/row_reg[0]/CE
+                            (rising edge-triggered cell FDRE clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Path Group:             clk65MHz_IP_CLK_DIVIDER
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk65MHz_IP_CLK_DIVIDER rise@0.000ns - clk65MHz_IP_CLK_DIVIDER rise@0.000ns)
+  Data Path Delay:        1.125ns  (logic 0.026ns (2.311%)  route 1.099ns (97.689%))
+  Logic Levels:           1  (BUFGCTRL=1)
+  Clock Path Skew:        1.381ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.867ns
+    Source Clock Delay      (SCD):    -1.693ns
+    Clock Pessimism Removal (CPR):    -0.555ns
+  Clock Uncertainty:      0.079ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.142ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk65MHz_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.667    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+  -------------------------------------------------------------------    -------------------
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -2.360    -1.693 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1
+                         net (fo=2, routed)           0.486    -1.207    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.026    -1.181 r  CLK_GENERATOR/inst/clkout2_buf/O
+                         net (fo=1088, routed)        0.613    -0.568    tetris_logic/clear_row/clk65MHz
+    SLICE_X41Y30         FDRE                                         r  tetris_logic/clear_row/row_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk65MHz_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.894    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.248 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1
+                         net (fo=2, routed)           0.530    -1.718    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.029    -1.689 r  CLK_GENERATOR/inst/clkout2_buf/O
+                         net (fo=1088, routed)        0.823    -0.867    tetris_logic/clear_row/clk65MHz
+    SLICE_X41Y30         FDRE                                         r  tetris_logic/clear_row/row_reg[0]/C
+                         clock pessimism              0.555    -0.312    
+                         clock uncertainty            0.079    -0.232    
+    SLICE_X41Y30         FDRE (Hold_fdre_C_CE)       -0.039    -0.271    tetris_logic/clear_row/row_reg[0]
+  -------------------------------------------------------------------
+                         required time                          0.271    
+                         arrival time                          -0.568    
+  -------------------------------------------------------------------
+                         slack                                 -0.297    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk65MHz_IP_CLK_DIVIDER
+Waveform(ns):       { 0.000 7.692 }
+Period(ns):         15.385
+Sources:            { CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1 }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     BUFGCTRL/I0         n/a            2.155         15.385      13.229     BUFGCTRL_X0Y0    CLK_GENERATOR/inst/clkout2_buf/I0
+Max Period        n/a     MMCME2_ADV/CLKOUT1  n/a            213.360       15.385      197.975    MMCME2_ADV_X1Y0  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1
+Low Pulse Width   Slow    SRL16E/CLK          n/a            0.980         7.692       6.712      SLICE_X2Y29      FRAME_VIDEO_CONTROLL/hsync_out_reg_srl3/CLK
+High Pulse Width  Slow    SRL16E/CLK          n/a            0.980         7.692       6.712      SLICE_X2Y29      FRAME_VIDEO_CONTROLL/hsync_out_reg_srl3/CLK
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_rand_IP_CLK_DIVIDER
+  To Clock:  clk_rand_IP_CLK_DIVIDER
+
+Setup :            0  Failing Endpoints,  Worst Slack       24.867ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.122ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack       12.833ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             24.867ns  (required time - arrival time)
+  Source:                 CLK_GENERATOR/inst/seq_reg3_reg[7]/C
+                            (rising edge-triggered cell FDCE clocked by clk_rand_IP_CLK_DIVIDER  {rise@0.000ns fall@13.333ns period=26.667ns})
+  Destination:            CLK_GENERATOR/inst/clkout3_buf/CE0
+                            (rising edge-triggered cell BUFGCTRL clocked by clk_rand_IP_CLK_DIVIDER  {rise@0.000ns fall@13.333ns period=26.667ns})
+  Path Group:             clk_rand_IP_CLK_DIVIDER
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            26.667ns  (clk_rand_IP_CLK_DIVIDER rise@26.667ns - clk_rand_IP_CLK_DIVIDER rise@0.000ns)
+  Data Path Delay:        1.014ns  (logic 0.456ns (44.965%)  route 0.558ns (55.035%))
+  Logic Levels:           0  
+  Clock Path Skew:        -0.539ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -3.086ns = ( 23.580 - 26.667 ) 
+    Source Clock Delay      (SCD):    -2.149ns
+    Clock Pessimism Removal (CPR):    0.398ns
+  Clock Uncertainty:      0.088ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.160ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_rand_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233     2.691    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                     -6.961    -4.269 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT2
+                         net (fo=2, routed)           1.229    -3.040    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER
+    BUFHCE_X0Y2          BUFH (Prop_bufh_I_O)         0.127    -2.913 r  CLK_GENERATOR/inst/clkout3_buf_en/O
+                         net (fo=8, routed)           0.764    -2.149    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER_en_clk
+    SLICE_X35Y46         FDCE                                         r  CLK_GENERATOR/inst/seq_reg3_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y46         FDCE (Prop_fdce_C_Q)         0.456    -1.693 r  CLK_GENERATOR/inst/seq_reg3_reg[7]/Q
+                         net (fo=1, routed)           0.558    -1.135    CLK_GENERATOR/inst/seq_reg3[7]
+    BUFGCTRL_X0Y2        BUFGCTRL                                     r  CLK_GENERATOR/inst/clkout3_buf/CE0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_rand_IP_CLK_DIVIDER rise edge)
+                                                     26.667    26.667 r  
+    W5                                                0.000    26.667 r  clk (IN)
+                         net (fo=0)                   0.000    26.667    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    28.055 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    29.217    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                     -7.217    21.999 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT2
+                         net (fo=2, routed)           1.581    23.580    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y2        BUFGCTRL                                     r  CLK_GENERATOR/inst/clkout3_buf/I0
+                         clock pessimism              0.398    23.978    
+                         clock uncertainty           -0.088    23.891    
+    BUFGCTRL_X0Y2        BUFGCTRL (Setup_bufgctrl_I0_CE0)
+                                                     -0.159    23.732    CLK_GENERATOR/inst/clkout3_buf
+  -------------------------------------------------------------------
+                         required time                         23.732    
+                         arrival time                           1.135    
+  -------------------------------------------------------------------
+                         slack                                 24.867    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.122ns  (arrival time - required time)
+  Source:                 CLK_GENERATOR/inst/seq_reg3_reg[0]/C
+                            (rising edge-triggered cell FDCE clocked by clk_rand_IP_CLK_DIVIDER  {rise@0.000ns fall@13.333ns period=26.667ns})
+  Destination:            CLK_GENERATOR/inst/seq_reg3_reg[1]/D
+                            (rising edge-triggered cell FDCE clocked by clk_rand_IP_CLK_DIVIDER  {rise@0.000ns fall@13.333ns period=26.667ns})
+  Path Group:             clk_rand_IP_CLK_DIVIDER
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_rand_IP_CLK_DIVIDER rise@0.000ns - clk_rand_IP_CLK_DIVIDER rise@0.000ns)
+  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -1.301ns
+    Source Clock Delay      (SCD):    -1.035ns
+    Clock Pessimism Removal (CPR):    -0.266ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_rand_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.667    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                     -2.360    -1.693 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT2
+                         net (fo=2, routed)           0.366    -1.327    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER
+    BUFHCE_X0Y2          BUFH (Prop_bufh_I_O)         0.020    -1.307 r  CLK_GENERATOR/inst/clkout3_buf_en/O
+                         net (fo=8, routed)           0.272    -1.035    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER_en_clk
+    SLICE_X35Y46         FDCE                                         r  CLK_GENERATOR/inst/seq_reg3_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y46         FDCE (Prop_fdce_C_Q)         0.141    -0.894 r  CLK_GENERATOR/inst/seq_reg3_reg[0]/Q
+                         net (fo=1, routed)           0.056    -0.838    CLK_GENERATOR/inst/seq_reg3[0]
+    SLICE_X35Y46         FDCE                                         r  CLK_GENERATOR/inst/seq_reg3_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_rand_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.894    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                     -3.142    -2.248 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT2
+                         net (fo=2, routed)           0.407    -1.841    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER
+    BUFHCE_X0Y2          BUFH (Prop_bufh_I_O)         0.043    -1.798 r  CLK_GENERATOR/inst/clkout3_buf_en/O
+                         net (fo=8, routed)           0.497    -1.301    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER_en_clk
+    SLICE_X35Y46         FDCE                                         r  CLK_GENERATOR/inst/seq_reg3_reg[1]/C
+                         clock pessimism              0.266    -1.035    
+    SLICE_X35Y46         FDCE (Hold_fdce_C_D)         0.075    -0.960    CLK_GENERATOR/inst/seq_reg3_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.960    
+                         arrival time                          -0.838    
+  -------------------------------------------------------------------
+                         slack                                  0.122    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_rand_IP_CLK_DIVIDER
+Waveform(ns):       { 0.000 13.333 }
+Period(ns):         26.667
+Sources:            { CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT2 }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     BUFGCTRL/I0         n/a            2.155         26.667      24.511     BUFGCTRL_X0Y2    CLK_GENERATOR/inst/clkout3_buf/I0
+Max Period        n/a     MMCME2_ADV/CLKOUT2  n/a            213.360       26.667      186.693    MMCME2_ADV_X1Y0  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT2
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         13.333      12.833     SLICE_X42Y28     random_blocks/rand_count_reg[0]/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         13.333      12.833     SLICE_X35Y46     CLK_GENERATOR/inst/seq_reg3_reg[0]/C
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clkfbout_IP_CLK_DIVIDER
+  To Clock:  clkfbout_IP_CLK_DIVIDER
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack        7.845ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clkfbout_IP_CLK_DIVIDER
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { CLK_GENERATOR/inst/mmcm_adv_inst/CLKFBOUT }
+
+Check Type  Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period  n/a     BUFG/I              n/a            2.155         10.000      7.845      BUFGCTRL_X0Y3    CLK_GENERATOR/inst/clkf_buf/I
+Max Period  n/a     MMCME2_ADV/CLKFBIN  n/a            100.000       10.000      90.000     MMCME2_ADV_X1Y0  CLK_GENERATOR/inst/mmcm_adv_inst/CLKFBIN
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk50MHz_IP_CLK_DIVIDER
+  To Clock:  clk65MHz_IP_CLK_DIVIDER
+
+Setup :           25  Failing Endpoints,  Worst Slack       -3.998ns,  Total Violation      -48.686ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.090ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -3.998ns  (required time - arrival time)
+  Source:                 Keyboard_Receiver/keycode_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk50MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            tetris_logic/x_pos_nxt_reg[4]/D
+                            (positive level-sensitive latch clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Path Group:             clk65MHz_IP_CLK_DIVIDER
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            -6.154ns  (clk65MHz_IP_CLK_DIVIDER rise@153.846ns - clk50MHz_IP_CLK_DIVIDER rise@160.000ns)
+  Data Path Delay:        7.786ns  (logic 1.014ns (13.024%)  route 6.772ns (86.976%))
+  Logic Levels:           4  (LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        2.502ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.149ns = ( 154.995 - 153.846 ) 
+    Source Clock Delay      (SCD):    -0.956ns = ( 159.044 - 160.000 ) 
+    Clock Pessimism Removal (CPR):    0.398ns
+  Clock Uncertainty:      0.203ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.151ns
+    Phase Error              (PE):    0.120ns
+  Time Borrowing:         
+    Nominal pulse width:              7.692ns
+    Library setup time:              -0.050ns
+    Computed max time borrow:         7.642ns
+    Time borrowed from endpoint:      7.642ns
+    Open edge uncertainty:           -0.203ns
+    Time given to startpoint:         7.439ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk50MHz_IP_CLK_DIVIDER rise edge)
+                                                    160.000   160.000 r  
+    W5                                                0.000   160.000 r  clk (IN)
+                         net (fo=0)                   0.000   160.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458   161.458 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233   162.691    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -6.961   155.731 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=2, routed)           1.661   157.392    CLK_GENERATOR/inst/clk50MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y1        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.096   157.488 r  CLK_GENERATOR/inst/clkout1_buf/O
+                         net (fo=59, routed)          1.556   159.044    Keyboard_Receiver/CLK
+    SLICE_X12Y29         FDRE                                         r  Keyboard_Receiver/keycode_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X12Y29         FDRE (Prop_fdre_C_Q)         0.518   159.562 r  Keyboard_Receiver/keycode_reg[3]/Q
+                         net (fo=13, routed)          1.322   160.884    tetris_logic/current_piece/keycode_reg[3][0]
+    SLICE_X12Y26         LUT6 (Prop_lut6_I5_O)        0.124   161.008 r  tetris_logic/current_piece/x_pos_nxt_reg[3]_i_3/O
+                         net (fo=1, routed)           1.210   162.218    tetris_logic/current_piece/x_pos_nxt_reg[3]_i_3_n_0
+    SLICE_X12Y26         LUT6 (Prop_lut6_I0_O)        0.124   162.342 r  tetris_logic/current_piece/x_pos_nxt_reg[3]_i_2/O
+                         net (fo=3, routed)           1.055   163.397    tetris_logic/current_piece/x_pos_nxt_reg[3]_i_2_n_0
+    SLICE_X13Y26         LUT4 (Prop_lut4_I0_O)        0.124   163.521 r  tetris_logic/current_piece/x_pos_nxt_reg[4]_i_3/O
+                         net (fo=1, routed)           1.166   164.686    tetris_logic/current_piece/x_pos_nxt_reg[4]_i_3_n_0
+    SLICE_X13Y26         LUT5 (Prop_lut5_I0_O)        0.124   164.810 r  tetris_logic/current_piece/x_pos_nxt_reg[4]_i_1/O
+                         net (fo=1, routed)           2.020   166.830    tetris_logic/current_piece_n_0
+    SLICE_X13Y26         LDCE                                         r  tetris_logic/x_pos_nxt_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk65MHz_IP_CLK_DIVIDER rise edge)
+                                                    153.846   153.846 r  
+    W5                                                0.000   153.846 r  clk (IN)
+                         net (fo=0)                   0.000   153.846    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388   155.234 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162   156.396    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -7.217   149.179 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1
+                         net (fo=2, routed)           1.581   150.760    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.091   150.851 r  CLK_GENERATOR/inst/clkout2_buf/O
+                         net (fo=1088, routed)        2.120   152.971    tetris_logic/current_piece/clk65MHz
+    SLICE_X47Y19         LUT5 (Prop_lut5_I3_O)        0.122   153.093 r  tetris_logic/current_piece/y_pos_nxt_reg[4]_i_6/O
+                         net (fo=3, routed)           1.235   154.328    tetris_logic/current_piece/y_pos_nxt_reg[4]_i_6_n_0
+    SLICE_X15Y27         LUT6 (Prop_lut6_I0_O)        0.263   154.591 r  tetris_logic/current_piece/x_pos_nxt_reg[4]_i_2/O
+                         net (fo=5, routed)           0.404   154.995    tetris_logic/current_piece_n_7
+    SLICE_X13Y26         LDCE                                         r  tetris_logic/x_pos_nxt_reg[4]/G
+                         clock pessimism              0.398   155.393    
+                         clock uncertainty           -0.203   155.190    
+                         time borrowed                7.642   162.832    
+  -------------------------------------------------------------------
+                         required time                        162.832    
+                         arrival time                        -166.830    
+  -------------------------------------------------------------------
+                         slack                                 -3.998    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.090ns  (arrival time - required time)
+  Source:                 Keyboard_Receiver/keycode_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by clk50MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            tetris_logic/show_me_your_moves/test_x_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Path Group:             clk65MHz_IP_CLK_DIVIDER
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk65MHz_IP_CLK_DIVIDER rise@0.000ns - clk50MHz_IP_CLK_DIVIDER rise@0.000ns)
+  Data Path Delay:        0.700ns  (logic 0.186ns (26.563%)  route 0.514ns (73.437%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.315ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.866ns
+    Source Clock Delay      (SCD):    -0.625ns
+    Clock Pessimism Removal (CPR):    -0.555ns
+  Clock Uncertainty:      0.203ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.151ns
+    Phase Error              (PE):    0.120ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk50MHz_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.667    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.360    -1.693 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=2, routed)           0.486    -1.207    CLK_GENERATOR/inst/clk50MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y1        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.026    -1.181 r  CLK_GENERATOR/inst/clkout1_buf/O
+                         net (fo=59, routed)          0.556    -0.625    Keyboard_Receiver/CLK
+    SLICE_X13Y28         FDRE                                         r  Keyboard_Receiver/keycode_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X13Y28         FDRE (Prop_fdre_C_Q)         0.141    -0.484 r  Keyboard_Receiver/keycode_reg[5]/Q
+                         net (fo=11, routed)          0.514     0.030    tetris_logic/show_me_your_moves/keycode_reg[5][0]
+    SLICE_X15Y28         LUT6 (Prop_lut6_I3_O)        0.045     0.075 r  tetris_logic/show_me_your_moves/test_x[3]_i_1/O
+                         net (fo=1, routed)           0.000     0.075    tetris_logic/show_me_your_moves/test_x[3]_i_1_n_0
+    SLICE_X15Y28         FDRE                                         r  tetris_logic/show_me_your_moves/test_x_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk65MHz_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.894    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142    -2.248 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1
+                         net (fo=2, routed)           0.530    -1.718    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.029    -1.689 r  CLK_GENERATOR/inst/clkout2_buf/O
+                         net (fo=1088, routed)        0.824    -0.866    tetris_logic/show_me_your_moves/clk65MHz
+    SLICE_X15Y28         FDRE                                         r  tetris_logic/show_me_your_moves/test_x_reg[3]/C
+                         clock pessimism              0.555    -0.311    
+                         clock uncertainty            0.203    -0.108    
+    SLICE_X15Y28         FDRE (Hold_fdre_C_D)         0.092    -0.016    tetris_logic/show_me_your_moves/test_x_reg[3]
+  -------------------------------------------------------------------
+                         required time                          0.016    
+                         arrival time                           0.075    
+  -------------------------------------------------------------------
+                         slack                                  0.090    
+
+
+
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_rand_IP_CLK_DIVIDER
+  To Clock:  clk65MHz_IP_CLK_DIVIDER
+
+Setup :            3  Failing Endpoints,  Worst Slack       -3.454ns,  Total Violation       -9.664ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.691ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -3.454ns  (required time - arrival time)
+  Source:                 random_blocks/rand_count_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_rand_IP_CLK_DIVIDER  {rise@0.000ns fall@13.333ns period=26.667ns})
+  Destination:            tetris_logic/blk_code_nxt_reg[1]/D
+                            (positive level-sensitive latch clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Path Group:             clk65MHz_IP_CLK_DIVIDER
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            -7.179ns  (clk65MHz_IP_CLK_DIVIDER rise@46.154ns - clk_rand_IP_CLK_DIVIDER rise@53.333ns)
+  Data Path Delay:        5.074ns  (logic 0.642ns (12.653%)  route 4.432ns (87.347%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        1.232ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -0.126ns = ( 46.028 - 46.154 ) 
+    Source Clock Delay      (SCD):    -0.960ns = ( 52.374 - 53.333 ) 
+    Clock Pessimism Removal (CPR):    0.398ns
+  Clock Uncertainty:      0.208ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.160ns
+    Phase Error              (PE):    0.120ns
+  Time Borrowing:         
+    Nominal pulse width:              7.692ns
+    Library setup time:               0.083ns
+    Computed max time borrow:         7.775ns
+    Time borrowed from endpoint:      7.775ns
+    Open edge uncertainty:           -0.208ns
+    Time given to startpoint:         7.568ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_rand_IP_CLK_DIVIDER rise edge)
+                                                     53.333    53.333 r  
+    W5                                                0.000    53.333 r  clk (IN)
+                         net (fo=0)                   0.000    53.333    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458    54.792 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233    56.025    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                     -6.961    49.064 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT2
+                         net (fo=2, routed)           1.661    50.725    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y2        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.096    50.821 r  CLK_GENERATOR/inst/clkout3_buf/O
+                         net (fo=3, routed)           1.552    52.374    random_blocks/clk_rand
+    SLICE_X42Y28         FDRE                                         r  random_blocks/rand_count_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y28         FDRE (Prop_fdre_C_Q)         0.518    52.892 r  random_blocks/rand_count_reg[1]/Q
+                         net (fo=3, routed)           4.432    57.324    random_blocks/random_block[1]
+    SLICE_X42Y29         LUT2 (Prop_lut2_I0_O)        0.124    57.448 r  random_blocks/blk_code_nxt_reg[1]_i_1/O
+                         net (fo=1, routed)           0.000    57.448    tetris_logic/rand_count_reg[2][1]
+    SLICE_X42Y29         LDCE                                         r  tetris_logic/blk_code_nxt_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk65MHz_IP_CLK_DIVIDER rise edge)
+                                                     46.154    46.154 r  
+    W5                                                0.000    46.154 r  clk (IN)
+                         net (fo=0)                   0.000    46.154    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    47.542 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    48.704    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -7.217    41.486 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1
+                         net (fo=2, routed)           1.581    43.067    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.091    43.158 r  CLK_GENERATOR/inst/clkout2_buf/O
+                         net (fo=1088, routed)        2.135    45.294    tetris_logic/current_piece/clk65MHz
+    SLICE_X47Y34         LUT4 (Prop_lut4_I0_O)        0.100    45.394 r  tetris_logic/current_piece/blk_code_nxt_reg[2]_i_2/O
+                         net (fo=4, routed)           0.634    46.028    tetris_logic/current_piece_n_776
+    SLICE_X42Y29         LDCE                                         r  tetris_logic/blk_code_nxt_reg[1]/G
+                         clock pessimism              0.398    46.426    
+                         clock uncertainty           -0.208    46.219    
+                         time borrowed                7.775    53.994    
+  -------------------------------------------------------------------
+                         required time                         53.994    
+                         arrival time                         -57.448    
+  -------------------------------------------------------------------
+                         slack                                 -3.454    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.691ns  (arrival time - required time)
+  Source:                 random_blocks/rand_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_rand_IP_CLK_DIVIDER  {rise@0.000ns fall@13.333ns period=26.667ns})
+  Destination:            tetris_logic/blk_code_nxt_reg[2]/D
+                            (positive level-sensitive latch clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Path Group:             clk65MHz_IP_CLK_DIVIDER
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            -0.513ns  (clk65MHz_IP_CLK_DIVIDER fall@346.154ns - clk_rand_IP_CLK_DIVIDER rise@346.667ns)
+  Data Path Delay:        2.113ns  (logic 0.246ns (11.644%)  route 1.867ns (88.356%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        1.606ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.423ns = ( 346.577 - 346.154 ) 
+    Source Clock Delay      (SCD):    -0.628ns = ( 346.038 - 346.667 ) 
+    Clock Pessimism Removal (CPR):    -0.555ns
+  Clock Uncertainty:      0.208ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.160ns
+    Phase Error              (PE):    0.120ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_rand_IP_CLK_DIVIDER rise edge)
+                                                    346.667   346.667 r  
+    W5                                                0.000   346.667 r  clk (IN)
+                         net (fo=0)                   0.000   346.667    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         0.226   346.893 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440   347.333    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT2)
+                                                     -2.360   344.974 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT2
+                         net (fo=2, routed)           0.486   345.460    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y2        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.026   345.486 r  CLK_GENERATOR/inst/clkout3_buf/O
+                         net (fo=3, routed)           0.553   346.038    random_blocks/clk_rand
+    SLICE_X42Y28         FDRE                                         r  random_blocks/rand_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y28         FDRE (Prop_fdre_C_Q)         0.148   346.186 r  random_blocks/rand_count_reg[2]/Q
+                         net (fo=2, routed)           1.867   348.053    random_blocks/random_block[2]
+    SLICE_X42Y29         LUT2 (Prop_lut2_I0_O)        0.098   348.151 r  random_blocks/blk_code_nxt_reg[2]_i_1/O
+                         net (fo=1, routed)           0.000   348.151    tetris_logic/rand_count_reg[2][2]
+    SLICE_X42Y29         LDCE                                         r  tetris_logic/blk_code_nxt_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk65MHz_IP_CLK_DIVIDER fall edge)
+                                                    346.154   346.154 f  
+    W5                                                0.000   346.154 f  clk (IN)
+                         net (fo=0)                   0.000   346.154    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         0.414   346.568 f  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480   347.048    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.142   343.906 f  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1
+                         net (fo=2, routed)           0.530   344.435    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
+    BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
+                                                      0.029   344.464 f  CLK_GENERATOR/inst/clkout2_buf/O
+                         net (fo=1088, routed)        1.174   345.638    tetris_logic/current_piece/clk65MHz
+    SLICE_X42Y31         LUT6 (Prop_lut6_I5_O)        0.056   345.694 f  tetris_logic/current_piece/board_nxt_reg[753]_i_7/O
+                         net (fo=373, routed)         0.489   346.183    tetris_logic/current_piece/board_nxt_reg[753]_i_7_n_0
+    SLICE_X47Y34         LUT4 (Prop_lut4_I3_O)        0.056   346.239 f  tetris_logic/current_piece/blk_code_nxt_reg[2]_i_2/O
+                         net (fo=4, routed)           0.337   346.577    tetris_logic/current_piece_n_776
+    SLICE_X42Y29         LDCE                                         f  tetris_logic/blk_code_nxt_reg[2]/G
+                         clock pessimism              0.555   347.132    
+                         clock uncertainty            0.208   347.339    
+    SLICE_X42Y29         LDCE (Hold_ldce_G_D)         0.121   347.460    tetris_logic/blk_code_nxt_reg[2]
+  -------------------------------------------------------------------
+                         required time                       -347.460    
+                         arrival time                         348.151    
+  -------------------------------------------------------------------
+                         slack                                  0.691    
+
+
+
+
+

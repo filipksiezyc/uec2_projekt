@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1598187614">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1599068152">
   <File Type="PA-TCL" Name="TETRIS_Main.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="TETRIS_Main_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TETRIS_Main_reports.tcl"/>
   <File Type="RDS-RDS" Name="TETRIS_Main.vds"/>
   <File Type="RDS-UTIL" Name="TETRIS_Main_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="vga_example_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="TETRIS_Main.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="TETRIS_Main_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="TETRIS_Main_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xci">
@@ -29,6 +32,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/clear_row.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/clk1Hz.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -37,6 +47,41 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/imports/debouncer.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/falserandom_generator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/game_logic_unit.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/generate_piece.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ingame_graphic.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/test_move.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

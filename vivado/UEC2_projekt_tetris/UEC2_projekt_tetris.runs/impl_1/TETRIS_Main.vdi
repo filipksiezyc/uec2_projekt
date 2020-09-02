@@ -1,0 +1,669 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Wed Sep  2 19:41:03 2020
+# Process ID: 4228
+# Current directory: C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1
+# Command line: vivado.exe -log TETRIS_Main.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source TETRIS_Main.tcl -notrace
+# Log file: C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main.vdi
+# Journal file: C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source TETRIS_Main.tcl -notrace
+Command: link_design -top TETRIS_Main -part xc7a35tcpg236-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 1377 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.3
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_board.xdc] for cell 'CLK_GENERATOR/inst'
+Finished Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_board.xdc] for cell 'CLK_GENERATOR/inst'
+Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc] for cell 'CLK_GENERATOR/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc:57]
+get_clocks: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1045.629 ; gain = 513.129
+Finished Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc] for cell 'CLK_GENERATOR/inst'
+Parsing XDC File [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc]
+Finished Parsing XDC File [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc]
+Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_late.xdc] for cell 'CLK_GENERATOR/inst'
+Finished Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_late.xdc] for cell 'CLK_GENERATOR/inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+9 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1045.629 ; gain = 795.316
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.602 . Memory (MB): peak = 1045.629 ; gain = 0.000
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 13257a526
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.462 . Memory (MB): peak = 1051.898 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 13114d59f
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.629 . Memory (MB): peak = 1051.898 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 17de654e3
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.717 . Memory (MB): peak = 1051.898 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 1 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 17de654e3
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.855 . Memory (MB): peak = 1051.898 ; gain = 0.000
+INFO: [Opt 31-389] Phase BUFG optimization created 0 cells and removed 0 cells
+
+Phase 5 Shift Register Optimization
+Phase 5 Shift Register Optimization | Checksum: 17de654e3
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.918 . Memory (MB): peak = 1051.898 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1051.898 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 17de654e3
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: c198b2c3
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.282 . Memory (MB): peak = 1051.898 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1051.898 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file TETRIS_Main_drc_opted.rpt -pb TETRIS_Main_drc_opted.pb -rpx TETRIS_Main_drc_opted.rpx
+Command: report_drc -file TETRIS_Main_drc_opted.rpt -pb TETRIS_Main_drc_opted.pb -rpx TETRIS_Main_drc_opted.rpx
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main_drc_opted.rpt.
+report_drc completed successfully
+INFO: [Chipscope 16-241] No debug cores found in the current design.
+Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
+or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1051.898 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 5b61c5bd
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1051.898 ; gain = 0.000
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: d5bd731f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 158e60a7a
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 158e60a7a
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1051.898 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 158e60a7a
+
+Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 2 Global Placement
+Phase 2 Global Placement | Checksum: 152dba0eb
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 152dba0eb
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1adbe7563
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 178336b0c
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 178336b0c
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 3.5 Timing Path Optimizer
+Phase 3.5 Timing Path Optimizer | Checksum: 178336b0c
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:09 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 1116878a0
+
+Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 3.7 Small Shape Detail Placement
+Phase 3.7 Small Shape Detail Placement | Checksum: 2169875c4
+
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 3.8 Re-assign LUT pins
+Phase 3.8 Re-assign LUT pins | Checksum: 17947d7cc
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 3.9 Pipeline Register Optimization
+Phase 3.9 Pipeline Register Optimization | Checksum: 17947d7cc
+
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 3.10 Fast Optimization
+Phase 3.10 Fast Optimization | Checksum: 1a6f80aa9
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:19 . Memory (MB): peak = 1051.898 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 1a6f80aa9
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:19 . Memory (MB): peak = 1051.898 ; gain = 0.000
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 159eabc76
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Place 46-31] BUFG insertion identified 0 candidate nets, 0 success, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 159eabc76
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:21 . Memory (MB): peak = 1076.148 ; gain = 24.250
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-1.584. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 152cb1f2b
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1077.148 ; gain = 25.250
+Phase 4.1 Post Commit Optimization | Checksum: 152cb1f2b
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1077.148 ; gain = 25.250
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 152cb1f2b
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1077.148 ; gain = 25.250
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 152cb1f2b
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1077.148 ; gain = 25.250
+
+Phase 4.4 Final Placement Cleanup
+Phase 4.4 Final Placement Cleanup | Checksum: 13398ec59
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1077.148 ; gain = 25.250
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 13398ec59
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1077.148 ; gain = 25.250
+Ending Placer Task | Checksum: 829f5866
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:29 . Memory (MB): peak = 1077.148 ; gain = 25.250
+INFO: [Common 17-83] Releasing license: Implementation
+45 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:30 . Memory (MB): peak = 1077.148 ; gain = 25.250
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.596 . Memory (MB): peak = 1077.148 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file TETRIS_Main_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1077.711 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file TETRIS_Main_utilization_placed.rpt -pb TETRIS_Main_utilization_placed.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1077.711 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_control_sets -file TETRIS_Main_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1077.711 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: 6c98b35f ConstDB: 0 ShapeSum: 1606a507 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: a785322f
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 1193.648 ; gain = 115.254
+Post Restoration Checksum: NetGraph: 6d9e7cdc NumContArr: 39e6b553 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: a785322f
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 1193.648 ; gain = 115.254
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: a785322f
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 1193.648 ; gain = 115.254
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: a785322f
+
+Time (s): cpu = 00:00:20 ; elapsed = 00:00:17 . Memory (MB): peak = 1193.648 ; gain = 115.254
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 1211b82b8
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:27 . Memory (MB): peak = 1193.648 ; gain = 115.254
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.246 | TNS=-12.762| WHS=-1.665 | THS=-28.577|
+
+Phase 2 Router Initialization | Checksum: 16ab4541f
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:28 . Memory (MB): peak = 1193.648 ; gain = 115.254
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 1c66a2221
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:33 . Memory (MB): peak = 1217.965 ; gain = 139.570
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 7167
+ Number of Nodes with overlaps = 4093
+ Number of Nodes with overlaps = 1750
+ Number of Nodes with overlaps = 904
+ Number of Nodes with overlaps = 418
+ Number of Nodes with overlaps = 240
+ Number of Nodes with overlaps = 192
+ Number of Nodes with overlaps = 140
+ Number of Nodes with overlaps = 81
+ Number of Nodes with overlaps = 55
+ Number of Nodes with overlaps = 38
+ Number of Nodes with overlaps = 23
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-3.983 | TNS=-398.380| WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1218250b1
+
+Time (s): cpu = 00:03:36 ; elapsed = 00:02:16 . Memory (MB): peak = 1244.531 ; gain = 166.137
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 27
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-3.993 | TNS=-403.091| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 1a03eceba
+
+Time (s): cpu = 00:04:45 ; elapsed = 00:03:10 . Memory (MB): peak = 1258.363 ; gain = 179.969
+Phase 4 Rip-up And Reroute | Checksum: 1a03eceba
+
+Time (s): cpu = 00:04:45 ; elapsed = 00:03:10 . Memory (MB): peak = 1258.363 ; gain = 179.969
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 2192af685
+
+Time (s): cpu = 00:04:46 ; elapsed = 00:03:11 . Memory (MB): peak = 1258.363 ; gain = 179.969
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-3.983 | TNS=-398.380| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 14421fea1
+
+Time (s): cpu = 00:04:47 ; elapsed = 00:03:11 . Memory (MB): peak = 1258.363 ; gain = 179.969
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 14421fea1
+
+Time (s): cpu = 00:04:47 ; elapsed = 00:03:11 . Memory (MB): peak = 1258.363 ; gain = 179.969
+Phase 5 Delay and Skew Optimization | Checksum: 14421fea1
+
+Time (s): cpu = 00:04:47 ; elapsed = 00:03:11 . Memory (MB): peak = 1258.363 ; gain = 179.969
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1dd34c918
+
+Time (s): cpu = 00:04:49 ; elapsed = 00:03:12 . Memory (MB): peak = 1258.363 ; gain = 179.969
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-3.983 | TNS=-385.513| WHS=-2.146 | THS=-15.491|
+
+
+Phase 6.1.2 Lut RouteThru Assignment for hold
+Phase 6.1.2 Lut RouteThru Assignment for hold | Checksum: 1c48c16b6
+
+Time (s): cpu = 00:05:22 ; elapsed = 00:03:34 . Memory (MB): peak = 1330.070 ; gain = 251.676
+Phase 6.1 Hold Fix Iter | Checksum: 1c48c16b6
+
+Time (s): cpu = 00:05:22 ; elapsed = 00:03:34 . Memory (MB): peak = 1330.070 ; gain = 251.676
+
+Phase 6.2 Additional Hold Fix
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-4.908 | TNS=-460.980| WHS=-1.874 | THS=-7.765 |
+
+Phase 6.2 Additional Hold Fix | Checksum: 1bcdde997
+
+Time (s): cpu = 00:05:39 ; elapsed = 00:03:47 . Memory (MB): peak = 1330.070 ; gain = 251.676
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 0
+WARNING: [Route 35-468] The router encountered 69 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
+	tetris_logic/current_piece/board_nxt_reg[255]_i_1/I2
+	tetris_logic/current_piece/board_nxt_reg[255]_i_1/I1
+	tetris_logic/x_pos_nxt_reg[2]/D
+	tetris_logic/current_piece/x_pos_nxt_reg[4]_i_3/I0
+	tetris_logic/current_piece/x_pos_nxt_reg[2]_i_1/I1
+	tetris_logic/current_piece/x_pos_nxt_reg[3]_i_1/I2
+	tetris_logic/current_piece/y_pos_nxt_reg[0]_i_1/I3
+	tetris_logic/current_piece/y_pos_nxt_reg[1]_i_1/I3
+	tetris_logic/current_piece/y_pos_nxt_reg[2]_i_1/I3
+	tetris_logic/current_piece/y_pos_nxt_reg[3]_i_1/I3
+	.. and 59 more pins.
+
+Phase 6 Post Hold Fix | Checksum: 16b167e71
+
+Time (s): cpu = 00:12:20 ; elapsed = 00:08:22 . Memory (MB): peak = 1394.758 ; gain = 316.363
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 9.13107 %
+  Global Horizontal Routing Utilization  = 9.35281 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Utilization threshold used for congestion level computation: 0.85
+Congestion Report
+North Dir 4x4 Area, Max Cong = 85.6419%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X20Y26 -> INT_R_X23Y29
+   INT_L_X24Y26 -> INT_R_X27Y29
+South Dir 2x2 Area, Max Cong = 88.0631%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X20Y18 -> INT_R_X21Y19
+   INT_L_X22Y16 -> INT_R_X23Y17
+East Dir 4x4 Area, Max Cong = 88.3272%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X24Y30 -> INT_R_X27Y33
+West Dir 2x2 Area, Max Cong = 90.0735%, Congestion bounded by tiles (Lower Left Tile -> Upper Right Tile):
+   INT_L_X28Y18 -> INT_R_X29Y19
+Phase 7 Route finalize | Checksum: 19fa4f496
+
+Time (s): cpu = 00:12:20 ; elapsed = 00:08:22 . Memory (MB): peak = 1394.758 ; gain = 316.363
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 19fa4f496
+
+Time (s): cpu = 00:12:20 ; elapsed = 00:08:22 . Memory (MB): peak = 1394.758 ; gain = 316.363
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 174646402
+
+Time (s): cpu = 00:12:21 ; elapsed = 00:08:23 . Memory (MB): peak = 1394.758 ; gain = 316.363
+
+Phase 10 Post Router Timing
+
+Phase 10.1 Update Timing
+Phase 10.1 Update Timing | Checksum: 169243fbb
+
+Time (s): cpu = 00:12:22 ; elapsed = 00:08:24 . Memory (MB): peak = 1394.758 ; gain = 316.363
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-6.067 | TNS=-489.946| WHS=-0.298 | THS=-1.791 |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 169243fbb
+
+Time (s): cpu = 00:12:23 ; elapsed = 00:08:24 . Memory (MB): peak = 1394.758 ; gain = 316.363
+WARNING: [Route 35-419] Router was unable to fix hold violation on pin tetris_logic/clear_row/row_reg[0]/CE driven by global clock buffer BUFGCTRL_X0Y0.
+Resolution: Run report_timing_summary to analyze the hold violations.
+WARNING: [Route 35-419] Router was unable to fix hold violation on pin tetris_logic/clear_row/row_reg[1]/CE driven by global clock buffer BUFGCTRL_X0Y0.
+Resolution: Run report_timing_summary to analyze the hold violations.
+WARNING: [Route 35-424] Router was unable to fix hold violation on pin CLK_GENERATOR/inst/clkout2_buf/I0 driven by MMCM site MMCME2_ADV_X1Y0.
+Resolution: Run report_timing_summary to analyze the hold violations.
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:12:23 ; elapsed = 00:08:24 . Memory (MB): peak = 1394.758 ; gain = 316.363
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+63 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:12:25 ; elapsed = 00:08:25 . Memory (MB): peak = 1394.758 ; gain = 317.047
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.893 . Memory (MB): peak = 1394.758 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file TETRIS_Main_drc_routed.rpt -pb TETRIS_Main_drc_routed.pb -rpx TETRIS_Main_drc_routed.rpx
+Command: report_drc -file TETRIS_Main_drc_routed.rpt -pb TETRIS_Main_drc_routed.pb -rpx TETRIS_Main_drc_routed.rpx
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file TETRIS_Main_methodology_drc_routed.rpt -pb TETRIS_Main_methodology_drc_routed.pb -rpx TETRIS_Main_methodology_drc_routed.rpx
+Command: report_methodology -file TETRIS_Main_methodology_drc_routed.rpt -pb TETRIS_Main_methodology_drc_routed.pb -rpx TETRIS_Main_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file TETRIS_Main_power_routed.rpt -pb TETRIS_Main_power_summary_routed.pb -rpx TETRIS_Main_power_routed.rpx
+Command: report_power -file TETRIS_Main_power_routed.rpt -pb TETRIS_Main_power_summary_routed.pb -rpx TETRIS_Main_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+74 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file TETRIS_Main_route_status.rpt -pb TETRIS_Main_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -file TETRIS_Main_timing_summary_routed.rpt -warn_on_violation  -rpx TETRIS_Main_timing_summary_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file TETRIS_Main_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-545] No incremental reuse to report, no incremental placement and routing data was found.
+INFO: [runtcl-4] Executing : report_clock_utilization -file TETRIS_Main_clock_utilization_routed.rpt
+Command: write_bitstream -force TETRIS_Main.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command write_bitstream
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/E[0] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/row_to_clear_nxt_reg[5]_i_2/O, cell tetris_logic/current_piece/row_to_clear_nxt_reg[5]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/blk_code_reg[0][0] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/blk_code_nxt_reg[2]_i_2/O, cell tetris_logic/current_piece/blk_code_nxt_reg[2]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][0] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[0]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[0]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][100] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[100]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[100]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][101] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[101]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[101]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][102] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[102]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[102]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][103] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[103]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[103]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][104] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[104]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[104]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][105] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[105]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[105]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][106] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[106]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[106]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][107] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[107]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[107]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][108] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[108]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[108]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][109] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[109]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[109]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][10] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[10]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[10]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][110] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[110]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[110]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][111] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[111]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[111]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][112] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[112]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[112]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][113] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[113]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[113]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][114] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[114]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[114]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][115] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[115]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[115]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][116] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[116]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[116]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][117] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[117]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[117]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][118] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[118]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[118]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][119] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[119]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[119]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][11] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[11]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[11]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][120] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[120]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[120]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][121] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[121]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[121]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][122] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[122]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[122]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][123] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[123]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[123]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][124] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[124]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[124]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][125] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[125]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[125]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][126] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[126]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[126]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][127] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[127]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[127]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][128] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[128]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[128]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][129] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[129]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[129]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][12] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[12]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[12]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][130] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[130]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[130]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][131] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[131]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[131]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][132] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[132]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[132]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][133] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[133]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[133]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][134] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[134]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[134]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][135] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[135]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[135]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][136] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[136]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[136]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][137] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[137]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[137]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][138] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[138]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[138]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][139] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[139]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[139]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][13] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[13]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[13]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][140] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[140]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[140]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][141] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[141]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[141]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][142] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[142]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[142]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][143] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[143]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[143]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][144] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[144]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[144]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][145] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[145]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[145]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][146] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[146]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[146]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][147] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[147]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[147]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][148] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[148]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[148]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][149] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[149]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[149]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][14] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[14]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[14]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][150] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[150]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[150]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][151] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[151]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[151]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][152] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[152]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[152]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][153] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[153]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[153]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][154] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[154]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[154]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][155] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[155]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[155]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][156] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[156]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[156]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][157] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[157]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[157]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][158] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[158]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[158]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][159] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[159]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[159]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][15] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[15]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[15]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][160] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[160]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[160]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][161] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[161]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[161]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][162] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[162]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[162]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][163] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[163]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[163]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][164] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[164]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[164]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][165] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[165]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[165]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][166] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[166]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[166]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][167] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[167]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[167]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][168] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[168]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[168]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][169] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[169]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[169]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][16] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[16]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[16]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][170] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[170]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[170]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][171] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[171]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[171]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][172] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[172]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[172]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][173] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[173]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[173]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][174] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[174]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[174]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][175] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[175]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[175]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][176] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[176]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[176]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][177] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[177]_i_2/O, cell tetris_logic/current_piece/board_nxt_reg[177]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][178] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[178]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[178]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][179] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[179]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[179]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][17] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[17]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[17]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][180] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[180]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[180]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][181] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[181]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[181]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][182] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[182]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[182]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][183] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[183]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[183]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][184] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[184]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[184]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][185] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[185]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[185]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][186] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[186]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[186]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][187] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[187]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[187]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net tetris_logic/current_piece/board_reg[767][188] is a gated clock net sourced by a combinational pin tetris_logic/current_piece/board_nxt_reg[188]_i_1/O, cell tetris_logic/current_piece/board_nxt_reg[188]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+INFO: [Common 17-14] Message 'DRC PDRC-153' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 774 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Project 1-821] Please set project.enableDesignId to be 'true'.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./TETRIS_Main.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+91 Infos, 105 Warnings, 1 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:18 ; elapsed = 00:00:15 . Memory (MB): peak = 1596.293 ; gain = 201.535
+INFO: [Common 17-206] Exiting Vivado at Wed Sep  2 19:50:51 2020...
