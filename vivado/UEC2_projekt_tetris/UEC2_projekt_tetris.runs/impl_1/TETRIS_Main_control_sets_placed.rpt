@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Wed Sep  2 19:42:00 2020
-| Host         : K188 running 64-bit major release  (build 9200)
+| Date         : Thu Sep  3 16:49:31 2020
+| Host         : FilipPC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -file TETRIS_Main_control_sets_placed.rpt
 | Design       : TETRIS_Main
 | Device       : xc7a35t
@@ -21,7 +21,7 @@ Table of Contents
 +-------------------------------+-------+
 |             Status            | Count |
 +-------------------------------+-------+
-| Number of unique control sets |   792 |
+| Number of unique control sets |   793 |
 +-------------------------------+-------+
 
 
@@ -31,12 +31,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |            1760 |         1245 |
+| No           | No                    | No                     |            1739 |         1284 |
 | No           | No                    | Yes                    |              24 |            3 |
-| No           | Yes                   | No                     |             171 |           89 |
+| No           | Yes                   | No                     |             171 |           83 |
 | Yes          | No                    | No                     |              18 |            8 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              26 |            9 |
+| Yes          | Yes                   | No                     |              26 |            8 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 

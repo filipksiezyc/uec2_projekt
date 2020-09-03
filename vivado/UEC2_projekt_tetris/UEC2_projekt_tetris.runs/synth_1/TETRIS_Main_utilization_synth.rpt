@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Wed Sep  2 19:37:40 2020
-| Host         : K188 running 64-bit major release  (build 9200)
+| Date         : Thu Sep  3 16:47:42 2020
+| Host         : FilipPC running 64-bit major release  (build 9200)
 | Command      : report_utilization -file TETRIS_Main_utilization_synth.rpt -pb vga_example_utilization_synth.pb
 | Design       : TETRIS_Main
 | Device       : 7a35tcpg236-1
@@ -30,16 +30,16 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 5373 |     0 |     20800 | 25.83 |
-|   LUT as Logic             | 5371 |     0 |     20800 | 25.82 |
+| Slice LUTs*                | 5272 |     0 |     20800 | 25.35 |
+|   LUT as Logic             | 5270 |     0 |     20800 | 25.34 |
 |   LUT as Memory            |    2 |     0 |      9600 |  0.02 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |    2 |     0 |           |       |
-| Slice Registers            | 1998 |     0 |     41600 |  4.80 |
-|   Register as Flip Flop    | 1118 |     0 |     41600 |  2.69 |
+| Slice Registers            | 1977 |     0 |     41600 |  4.75 |
+|   Register as Flip Flop    | 1097 |     0 |     41600 |  2.64 |
 |   Register as Latch        |  880 |     0 |     41600 |  2.12 |
-| F7 Muxes                   |  916 |     0 |     16300 |  5.62 |
-| F8 Muxes                   |  427 |     0 |      8150 |  5.24 |
+| F7 Muxes                   |  888 |     0 |     16300 |  5.45 |
+| F8 Muxes                   |  407 |     0 |      8150 |  4.99 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -59,7 +59,7 @@ Table of Contents
 | 84    |          Yes |           - |          Set |
 | 820   |          Yes |           - |        Reset |
 | 2     |          Yes |         Set |            - |
-| 1092  |          Yes |       Reset |            - |
+| 1071  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -151,16 +151,16 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| LUT6       | 4149 |                 LUT |
-| FDRE       | 1092 |        Flop & Latch |
-| MUXF7      |  916 |               MuxFx |
+| LUT6       | 3615 |                 LUT |
+| LUT5       | 1147 |                 LUT |
+| FDRE       | 1071 |        Flop & Latch |
+| MUXF7      |  888 |               MuxFx |
 | LDCE       |  796 |        Flop & Latch |
-| LUT4       |  625 |                 LUT |
-| LUT5       |  576 |                 LUT |
-| MUXF8      |  427 |               MuxFx |
-| LUT3       |  164 |                 LUT |
+| LUT4       |  472 |                 LUT |
+| MUXF8      |  407 |               MuxFx |
+| LUT3       |  166 |                 LUT |
 | LDPE       |   84 |        Flop & Latch |
-| LUT2       |   79 |                 LUT |
+| LUT2       |   83 |                 LUT |
 | CARRY4     |   29 |          CarryLogic |
 | FDCE       |   24 |        Flop & Latch |
 | OBUF       |   14 |                  IO |

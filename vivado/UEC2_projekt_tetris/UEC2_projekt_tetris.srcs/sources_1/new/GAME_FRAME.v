@@ -32,7 +32,6 @@ module GAME_FRAME(
     input wire [3:0] VGARed,
     input wire [3:0] VGAGreen,
     input wire [3:0] VGABlue,
-    input wire [3:0] state,
     
     output reg [3:0] VGARed_out,
     output reg [3:0] VGAGreen_out,
@@ -54,17 +53,24 @@ always @* begin
         VGABlue_nxt = 0;
         end
     else begin
-        if((hblnk||vblnk)||((hcount>63)&&(hcount<576)))begin
-            VGARed_nxt = VGARed;
-            VGAGreen_nxt = VGAGreen;
-            VGABlue_nxt = VGABlue;
+        if(hblnk||vblnk)begin
+            VGARed_nxt = 0;
+            VGAGreen_nxt = 0;
+            VGABlue_nxt = 0;
             end
-        else begin //tutaj by by³y te napisy, cnie
+        else begin
+            if((hcount>63)&&(hcount<576))begin
+                VGARed_nxt = VGARed;
+                VGAGreen_nxt = VGAGreen;
+                VGABlue_nxt = VGABlue;
+                end
+            else begin //tutaj by by³y te napisy, cnie
                 VGARed_nxt = 8;
                 VGAGreen_nxt = 8;
                 VGABlue_nxt = 8;
+                end
             end
-        end
+       end
 end
 
 always @(posedge clk)begin

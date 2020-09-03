@@ -24,7 +24,6 @@ module clk1Hz(
     input wire clk50MHz,
     input wire reset,
     
-    output wire clk05Hz,
     output wire clk1Hz
     );
     
@@ -47,23 +46,7 @@ always @(posedge clk50MHz) begin
     end
 end
 
-always @(posedge clk50MHz) begin
-    if(reset)begin
-        clk05Hz_out<=0;
-        counter05Hz<=0;
-        end
-    else begin
-        if(counter05Hz == 25000000)begin
-            counter05Hz <= 0;
-            clk05Hz_out<= (~(clk05Hz_out));
-            end
-        else begin
-            counter05Hz <= counter05Hz+1;
-            end
-    end
-end
 
 assign clk1Hz=clk_out;    
-assign clk05Hz=clk05Hz_out;
     
 endmodule

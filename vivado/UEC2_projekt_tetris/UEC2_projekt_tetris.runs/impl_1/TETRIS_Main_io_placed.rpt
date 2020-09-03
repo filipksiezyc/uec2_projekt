@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date                      : Wed Sep  2 19:42:00 2020
-| Host                      : K188 running 64-bit major release  (build 9200)
+| Date                      : Thu Sep  3 16:49:31 2020
+| Host                      : FilipPC running 64-bit major release  (build 9200)
 | Command                   : report_io -file TETRIS_Main_io_placed.rpt
 | Design                    : TETRIS_Main
 | Device                    : xc7a35t

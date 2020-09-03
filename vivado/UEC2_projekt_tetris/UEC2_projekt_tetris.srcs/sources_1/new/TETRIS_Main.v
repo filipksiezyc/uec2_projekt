@@ -34,7 +34,7 @@ module TETRIS_Main (
   output reg [3:0] vgaBlue
   );
 
-wire clk50MHz, clk65MHz, clk1Hz, clk05Hz, clk_rand;
+wire clk50MHz, clk65MHz, clk1Hz,  clk_rand;
 wire [10:0] vcount;
 wire [10:0] hcount;
 wire vsync, hsync;
@@ -78,7 +78,6 @@ wire vsync_frame, hsync_frame;
 wire vblnk_frame, hblnk_frame;
 wire [15:0] keycode;
 wire KeyFlag;
-wire [3:0] state_to_main;
 
 GAME_FRAME FRAME_VIDEO_CONTROLL(
    .clk(clk65MHz),
@@ -92,7 +91,6 @@ GAME_FRAME FRAME_VIDEO_CONTROLL(
    .VGARed(Red_to_main),
    .VGAGreen(Green_to_main),
    .VGABlue(Blue_to_main),
-   .state(state_to_main),
    
    .VGARed_out(Red_Out),
    .VGAGreen_out(Green_Out),
@@ -118,8 +116,7 @@ clk1Hz clk1HZ_generator(
     .clk50MHz(clk50MHz),
     .reset(btnC),
     
-    .clk1Hz(clk1Hz),
-    .clk05Hz(clk05Hz)
+    .clk1Hz(clk1Hz)
     );
     
 wire [2:0] random_block;    
@@ -137,7 +134,6 @@ game_logic_unit tetris_logic(
     .reset(btnC),
     .random(random_block),
     .clk1Hz(clk1Hz),
-    .clk05Hz(clk05Hz),
     .hsync(hsync),
     .vsync(vsync),
     .hblnk(hblnk),
@@ -155,8 +151,7 @@ game_logic_unit tetris_logic(
     .hblnk_out(hblnk_to_main),
     .vblnk_out(vblnk_to_main),
     .hcount_out(hcount_to_main),
-    .vcount_out(vcount_to_main),
-    .state(state_to_main)
+    .vcount_out(vcount_to_main)
 );
 
 always @(posedge clk65MHz)begin

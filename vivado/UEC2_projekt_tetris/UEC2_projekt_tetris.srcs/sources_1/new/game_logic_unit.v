@@ -25,7 +25,6 @@ module game_logic_unit(
     input wire reset,
     input wire [2:0] random,
     input wire clk1Hz,
-    input wire clk05Hz,
     input wire hsync,
     input wire vsync,
     input wire hblnk,
@@ -43,8 +42,7 @@ module game_logic_unit(
     output reg hblnk_out,
     output reg vblnk_out,
     output reg [10:0] hcount_out,
-    output reg [10:0] vcount_out,
-    output reg [3:0] state
+    output reg [10:0] vcount_out
     );
 
 localparam TITLESCREEN=0, GAMEPLAY=1, MOV_LEFT=2, MOV_RIGHT=3, ROT_LEFT=4,
@@ -55,6 +53,7 @@ SPACE_BUTTON=16'h29, ENTER_BUTTON=16'h5A,
 
 LEFT_EDGE=2, GAME_WIDTH=16, SCREEN_WIDTH=32,GAME_HEIGHT=24, ERROR_BLOCK=11'b11111111111;
  
+reg [3:0] state=0; 
 reg [3:0] state_nxt=0;
  //entire board, divided into 32x32 pixel squares. Every "1" means there is an immovable block          
 reg [((SCREEN_WIDTH*GAME_HEIGHT)-1):0] board=0;
