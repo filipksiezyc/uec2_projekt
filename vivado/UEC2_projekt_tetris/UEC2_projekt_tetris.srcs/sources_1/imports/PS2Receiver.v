@@ -78,7 +78,7 @@ always@(posedge clk) begin
         oflag <= 1'b1;
         dataprev <= datacur;
     end else
-        oflag <= 'b0;
+        oflag <= 1'b0;
     pflag <= flag;
 end
 

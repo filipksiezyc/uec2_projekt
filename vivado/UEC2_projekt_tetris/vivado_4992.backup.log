@@ -2,28 +2,20 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Wed Sep  2 17:06:31 2020
-# Process ID: 8088
+# Start of session at: Wed Sep  2 20:02:10 2020
+# Process ID: 4992
 # Current directory: C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6300 C:\Users\Juten\Documents\GitHub\uec2_projekt\vivado\UEC2_projekt_tetris\UEC2_projekt_tetris.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent10096 C:\Users\Juten\Documents\GitHub\uec2_projekt\vivado\UEC2_projekt_tetris\UEC2_projekt_tetris.xpr
 # Log file: C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/vivado.log
 # Journal file: C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.3/data/ip'.
 update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-reset_run synth_1
-launch_runs synth_1 -jobs 2
-wait_on_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-wait_on_run impl_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Sep  2 20:03:01 2020...
