@@ -17,6 +17,7 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -70,4 +71,4 @@ synth_design -top TETRIS_Main -part xc7a35tcpg236-1
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
 write_checkpoint -force -noxdef TETRIS_Main.dcp
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file TETRIS_Main_utilization_synth.rpt -pb vga_example_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file TETRIS_Main_utilization_synth.rpt -pb TETRIS_Main_utilization_synth.pb"

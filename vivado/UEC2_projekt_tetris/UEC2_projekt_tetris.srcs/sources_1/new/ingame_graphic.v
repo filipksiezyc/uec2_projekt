@@ -34,7 +34,7 @@ module ingame_graphic(
     input wire [10:0] block3,
     input wire [10:0] block4,
     input wire [767:0] board,
-    input wire [2:0] block_code,
+    input wire [3:0] block_code,
     
     output reg [3:0] VGARed_out,
     output reg [3:0] VGABlue_out,
@@ -46,8 +46,9 @@ module ingame_graphic(
     );
     
 localparam BLOCK_SIZE=32, LEFT_EDGE=2, GAME_WIDTH=16, SCREEN_WIDTH=32,
-ERROR_PIECE=3'b000, I_PIECE=3'b001, L_PIECE=3'b010, J_PIECE=3'b011,
-T_PIECE=3'b100, SQUARE_PIECE=3'b101, Z_PIECE=3'b110, S_PIECE=3'b111;
+ERROR_PIECE=4'b0000, I_PIECE=4'b0001, L_PIECE=4'b0010, J_PIECE=4'b0011,
+T_PIECE=4'b0100, SQUARE_PIECE=4'b0101, Z_PIECE=4'b0110, S_PIECE=4'b0111, 
+END_SCREEN=4'b1000;
 
 wire [10:0] current_block=(hcount/BLOCK_SIZE)+((vcount/BLOCK_SIZE)*SCREEN_WIDTH);
 reg [3:0] VGARed_nxt, VGAGreen_nxt, VGABlue_nxt; 
@@ -69,49 +70,49 @@ always @* begin
         if (current_block==block1||current_block==block2||current_block==block3||current_block==block4) begin
             case (block_code)
                 ERROR_PIECE: begin //error, black
-                VGARed_nxt=0;
-                VGAGreen_nxt=0;
-                VGABlue_nxt=0;
+                    VGARed_nxt=0;
+                    VGAGreen_nxt=0;
+                    VGABlue_nxt=0;
                 end
                 I_PIECE: begin //I shaped, cyan
-                VGARed_nxt=1;
-                VGAGreen_nxt=15;
-                VGABlue_nxt=15;
+                    VGARed_nxt=1;
+                    VGAGreen_nxt=15;
+                    VGABlue_nxt=15;
                 end
                 L_PIECE: begin //L shaped, orange
-                VGARed_nxt=15;
-                VGAGreen_nxt=7;
-                VGABlue_nxt=0;
+                    VGARed_nxt=15;
+                    VGAGreen_nxt=7;
+                    VGABlue_nxt=0;
                 end
                 J_PIECE: begin //J shaped, blue
-                VGARed_nxt=1;
-                VGAGreen_nxt=1;
-                VGABlue_nxt=15;
+                    VGARed_nxt=1;
+                    VGAGreen_nxt=1;
+                    VGABlue_nxt=15;
                 end
                 T_PIECE: begin //T shaped, purple
-                VGARed_nxt=13;
-                VGAGreen_nxt=3;
-                VGABlue_nxt=15;
+                    VGARed_nxt=13;
+                    VGAGreen_nxt=3;
+                    VGABlue_nxt=15;
                 end
                 SQUARE_PIECE: begin //square, yellow
-                VGARed_nxt=15;
-                VGAGreen_nxt=15;
-                VGABlue_nxt=3;
+                    VGARed_nxt=15;
+                    VGAGreen_nxt=15;
+                    VGABlue_nxt=3;
                 end
                 Z_PIECE: begin //Z shaped, red
-                VGARed_nxt=15;
-                VGAGreen_nxt=3;
-                VGABlue_nxt=0;
+                    VGARed_nxt=15;
+                    VGAGreen_nxt=3;
+                    VGABlue_nxt=0;
                 end
                 S_PIECE: begin //S shaped, green
-                VGARed_nxt=1;
-                VGAGreen_nxt=15;
-                VGABlue_nxt=2;
+                    VGARed_nxt=1;
+                    VGAGreen_nxt=15;
+                    VGABlue_nxt=2;
                 end
                 default: begin
-                VGARed_nxt=0;
-                VGAGreen_nxt=0;
-                VGABlue_nxt=0;
+                    VGARed_nxt=0;
+                    VGAGreen_nxt=0;
+                    VGABlue_nxt=0;
                 end
             endcase
         end
@@ -122,9 +123,9 @@ always @* begin
         end
     end
     else begin //if not within playable area, color black (though that is changed in a later module)
-    VGARed_nxt=0;
-    VGAGreen_nxt=0;
-    VGABlue_nxt=0;
+        VGARed_nxt=0;
+        VGAGreen_nxt=0;
+        VGABlue_nxt=0;
     end
     hsync_nxt=hsync;
     vsync_nxt=vsync;

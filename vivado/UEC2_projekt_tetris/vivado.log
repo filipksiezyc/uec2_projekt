@@ -2,23 +2,36 @@
 # Vivado v2017.3 (64-bit)
 # SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
 # IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
-# Start of session at: Thu Sep  3 15:01:59 2020
-# Process ID: 3184
+# Start of session at: Tue Sep  8 12:26:04 2020
+# Process ID: 420
 # Current directory: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3276 C:\Users\Filip\Desktop\uec2_projekt\vivado\UEC2_projekt_tetris\UEC2_projekt_tetris.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2180 C:\Users\Filip\Desktop\uec2_projekt\vivado\UEC2_projekt_tetris\UEC2_projekt_tetris.xpr
 # Log file: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/vivado.log
 # Journal file: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr
-INFO: [Project 1-313] Project file moved from 'C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.3/data/ip'.
-open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 734.027 ; gain = 80.230
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 763.082 ; gain = 43.238
 update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Tue Sep  8 12:27:26 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
+[Tue Sep  8 12:27:26 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
+reset_run impl_1
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'reset_run' was cancelled
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Tue Sep  8 13:02:15 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
+[Tue Sep  8 13:02:15 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
 open_hw
 connect_hw_server
 INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
@@ -30,7 +43,7 @@ INFO: [Labtools 27-2221] Launch Output:
     ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 
 
-connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 747.684 ; gain = 0.898
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 815.254 ; gain = 0.000
 open_hw_target
 INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183711513A
 set_property PROGRAM.FILE {C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main.bit} [get_hw_devices xc7a35t_0]
@@ -51,9 +64,145 @@ Resolution:
 For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
-[Thu Sep  3 15:05:23 2020] Launched synth_1...
+[Tue Sep  8 15:33:57 2020] Launched synth_1...
 Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
-[Thu Sep  3 15:05:23 2020] Launched impl_1...
+[Tue Sep  8 15:33:57 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183711513A
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Tue Sep  8 17:11:37 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 2
+[Tue Sep  8 17:26:58 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Tue Sep  8 17:31:57 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183711513A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Tue Sep  8 18:29:27 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
+[Tue Sep  8 18:29:27 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Tue Sep  8 18:52:27 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
+[Tue Sep  8 18:52:27 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 892 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.3
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/.Xil/Vivado-420-FilipPC/dcp5/TETRIS_Main_board.xdc]
+Finished Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/.Xil/Vivado-420-FilipPC/dcp5/TETRIS_Main_board.xdc]
+Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/.Xil/Vivado-420-FilipPC/dcp5/TETRIS_Main_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc:57]
+get_clocks: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2177.629 ; gain = 511.746
+Finished Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/.Xil/Vivado-420-FilipPC/dcp5/TETRIS_Main_early.xdc]
+Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/.Xil/Vivado-420-FilipPC/dcp5/TETRIS_Main.xdc]
+Finished Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/.Xil/Vivado-420-FilipPC/dcp5/TETRIS_Main.xdc]
+Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/.Xil/Vivado-420-FilipPC/dcp5/TETRIS_Main_late.xdc]
+Finished Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/.Xil/Vivado-420-FilipPC/dcp5/TETRIS_Main_late.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2188.715 ; gain = 11.086
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2188.715 ; gain = 11.086
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:43 ; elapsed = 00:00:34 . Memory (MB): peak = 2286.125 ; gain = 867.762
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+startgroup
+set_property is_route_fixed 1 [get_nets {tetris_logic/p_1_out[113] }]
+set_property is_bel_fixed 1 [get_cells {tetris_logic/board_nxt_reg[100] tetris_logic/board_nxt_reg[101] tetris_logic/board_nxt_reg[102] tetris_logic/board_nxt_reg[103] tetris_logic/board_nxt_reg[104] tetris_logic/board_nxt_reg[105] tetris_logic/board_nxt_reg[106] tetris_logic/board_nxt_reg[107] tetris_logic/board_nxt_reg[108] tetris_logic/board_nxt_reg[109] tetris_logic/board_nxt_reg[110] tetris_logic/board_nxt_reg[111] tetris_logic/board_nxt_reg[112] tetris_logic/board_nxt_reg[113] tetris_logic/board_nxt_reg[98] tetris_logic/board_nxt_reg[99] tetris_logic/board_nxt_reg[113]_i_2 }]
+set_property is_loc_fixed 1 [get_cells {tetris_logic/board_nxt_reg[100] tetris_logic/board_nxt_reg[101] tetris_logic/board_nxt_reg[102] tetris_logic/board_nxt_reg[103] tetris_logic/board_nxt_reg[104] tetris_logic/board_nxt_reg[105] tetris_logic/board_nxt_reg[106] tetris_logic/board_nxt_reg[107] tetris_logic/board_nxt_reg[108] tetris_logic/board_nxt_reg[109] tetris_logic/board_nxt_reg[110] tetris_logic/board_nxt_reg[111] tetris_logic/board_nxt_reg[112] tetris_logic/board_nxt_reg[113] tetris_logic/board_nxt_reg[98] tetris_logic/board_nxt_reg[99] tetris_logic/board_nxt_reg[113]_i_2 }]
+endgroup
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183711513A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183711513A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183711513A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183711513A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+reset_run impl_1 -prev_step 
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+WARNING: [Vivado 12-872] Run step 'Design Initialization' is out-of-date.
+[Tue Sep  8 19:40:12 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Tue Sep  8 19:42:06 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
+[Tue Sep  8 19:42:06 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
+reset_run impl_1
+set_property target_constrs_file C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc [current_fileset -constrset]
+save_constraints -force
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Tue Sep  8 19:59:15 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
+[Tue Sep  8 19:59:15 2020] Launched impl_1...
 Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
@@ -69,44 +218,41 @@ Resolution:
 For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
 ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183711513A
 INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183711513A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183711513A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183711513A
+INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
 INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
 WARNING: [Labtools 27-3361] The debug hub core was not detected.
 Resolution: 
 1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
 2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
 For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
-WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
-ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210183711513A
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 2
-[Thu Sep  3 15:40:36 2020] Launched synth_1...
+[Tue Sep  8 20:37:49 2020] Launched synth_1...
 Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
-[Thu Sep  3 15:40:36 2020] Launched impl_1...
-Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-[Thu Sep  3 15:41:56 2020] Launched synth_1...
-Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
-[Thu Sep  3 15:41:57 2020] Launched impl_1...
-Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183711513A
-INFO: [Labtools 27-1435] Device xc7a35t (JTAG device index = 0) is not programmed (DONE status = 0).
-WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
-reset_run impl_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-[Thu Sep  3 16:39:06 2020] Launched synth_1...
-Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
-[Thu Sep  3 16:39:06 2020] Launched impl_1...
-Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 2
-[Thu Sep  3 16:43:55 2020] Launched synth_1...
-Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
-[Thu Sep  3 16:43:55 2020] Launched impl_1...
+[Tue Sep  8 20:37:49 2020] Launched impl_1...
 Run output will be captured here: C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
 set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
@@ -121,4 +267,4 @@ Resolution:
 2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
 For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Sep  3 17:23:35 2020...
+INFO: [Common 17-206] Exiting Vivado at Tue Sep  8 21:16:11 2020...
