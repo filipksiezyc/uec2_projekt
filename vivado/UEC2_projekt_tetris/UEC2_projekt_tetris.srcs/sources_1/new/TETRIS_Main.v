@@ -26,6 +26,8 @@ module TETRIS_Main (
   input wire clk,
   input wire btnC,
   
+  output wire led,
+  
   output reg Vsync,
   output reg Hsync,
   
@@ -77,7 +79,7 @@ wire [10:0] hcount_frame;
 wire vsync_frame, hsync_frame;
 wire vblnk_frame, hblnk_frame;
 wire [15:0] keycode;
-wire KeyFlag;
+
 
 GAME_FRAME FRAME_VIDEO_CONTROLL(
    .clk(clk65MHz),
@@ -108,8 +110,7 @@ PS2Receiver Keyboard_Receiver(
         .kclk(PS2Clk),
         .kdata(PS2Data),
         
-        .keycode(keycode),
-        .oflag(KeyFlag)
+        .keycode(keycode)
         );
 
 clk1Hz clk1HZ_generator(
@@ -120,6 +121,7 @@ clk1Hz clk1HZ_generator(
     );
     
 wire [2:0] random_block;    
+reg blink=0;
     
 falserandom_generator random_blocks(
         .clkrand(clk_rand),
@@ -141,7 +143,6 @@ game_logic_unit tetris_logic(
     .hcount(hcount),
     .vcount(vcount),
     .keycode(keycode),
-    .oflag(KeyFlag),
 
     .VGARed_out(Red_to_main),
     .VGAGreen_out(Green_to_main),
@@ -157,10 +158,13 @@ game_logic_unit tetris_logic(
 always @(posedge clk65MHz)begin
    Vsync<=vsync_frame;
    Hsync<=hsync_frame;
+   blink<=clk1Hz;
  
    vgaRed <= Red_Out;
    vgaGreen <= Green_Out;
    vgaBlue <= Blue_Out;
 end
+
+assign led=blink;
 
 endmodule

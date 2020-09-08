@@ -1,9 +1,9 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Thu Sep  3 16:47:42 2020
+| Date         : Tue Sep  8 20:41:15 2020
 | Host         : FilipPC running 64-bit major release  (build 9200)
-| Command      : report_utilization -file TETRIS_Main_utilization_synth.rpt -pb vga_example_utilization_synth.pb
+| Command      : report_utilization -file TETRIS_Main_utilization_synth.rpt -pb TETRIS_Main_utilization_synth.pb
 | Design       : TETRIS_Main
 | Device       : 7a35tcpg236-1
 | Design State : Synthesized
@@ -30,16 +30,16 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                | 5272 |     0 |     20800 | 25.35 |
-|   LUT as Logic             | 5270 |     0 |     20800 | 25.34 |
+| Slice LUTs*                | 4896 |     0 |     20800 | 23.54 |
+|   LUT as Logic             | 4894 |     0 |     20800 | 23.53 |
 |   LUT as Memory            |    2 |     0 |      9600 |  0.02 |
 |     LUT as Distributed RAM |    0 |     0 |           |       |
 |     LUT as Shift Register  |    2 |     0 |           |       |
-| Slice Registers            | 1977 |     0 |     41600 |  4.75 |
-|   Register as Flip Flop    | 1097 |     0 |     41600 |  2.64 |
-|   Register as Latch        |  880 |     0 |     41600 |  2.12 |
-| F7 Muxes                   |  888 |     0 |     16300 |  5.45 |
-| F8 Muxes                   |  407 |     0 |      8150 |  4.99 |
+| Slice Registers            | 1871 |     0 |     41600 |  4.50 |
+|   Register as Flip Flop    | 1103 |     0 |     41600 |  2.65 |
+|   Register as Latch        |  768 |     0 |     41600 |  1.85 |
+| F7 Muxes                   |  539 |     0 |     16300 |  3.31 |
+| F8 Muxes                   |  260 |     0 |      8150 |  3.19 |
 +----------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -56,10 +56,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 84    |          Yes |           - |          Set |
-| 820   |          Yes |           - |        Reset |
-| 2     |          Yes |         Set |            - |
-| 1071  |          Yes |       Reset |            - |
+| 0     |          Yes |           - |          Set |
+| 792   |          Yes |           - |        Reset |
+| 109   |          Yes |         Set |            - |
+| 970   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -92,7 +92,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   18 |     0 |       106 | 16.98 |
+| Bonded IOB                  |   19 |     0 |       106 | 17.92 |
 | Bonded IPADs                |    0 |     0 |        10 |  0.00 |
 | Bonded OPADs                |    0 |     0 |         4 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         5 |  0.00 |
@@ -117,7 +117,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    4 |     0 |        32 | 12.50 |
+| BUFGCTRL   |    5 |     0 |        32 | 15.63 |
 | BUFIO      |    0 |     0 |        20 |  0.00 |
 | MMCME2_ADV |    1 |     0 |         5 | 20.00 |
 | PLLE2_ADV  |    0 |     0 |         5 |  0.00 |
@@ -151,27 +151,26 @@ Table of Contents
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| LUT6       | 3615 |                 LUT |
-| LUT5       | 1147 |                 LUT |
-| FDRE       | 1071 |        Flop & Latch |
-| MUXF7      |  888 |               MuxFx |
-| LDCE       |  796 |        Flop & Latch |
-| LUT4       |  472 |                 LUT |
-| MUXF8      |  407 |               MuxFx |
-| LUT3       |  166 |                 LUT |
-| LDPE       |   84 |        Flop & Latch |
+| LUT6       | 2421 |                 LUT |
+| LUT5       | 1577 |                 LUT |
+| FDRE       |  970 |        Flop & Latch |
+| LUT4       |  851 |                 LUT |
+| LDCE       |  768 |        Flop & Latch |
+| MUXF7      |  539 |               MuxFx |
+| MUXF8      |  260 |               MuxFx |
+| LUT3       |  224 |                 LUT |
+| FDSE       |  109 |        Flop & Latch |
 | LUT2       |   83 |                 LUT |
 | CARRY4     |   29 |          CarryLogic |
 | FDCE       |   24 |        Flop & Latch |
-| OBUF       |   14 |                  IO |
-| LUT1       |    8 |                 LUT |
+| OBUF       |   15 |                  IO |
+| LUT1       |    6 |                 LUT |
 | IBUF       |    4 |                  IO |
 | BUFH       |    3 |               Clock |
 | BUFGCTRL   |    3 |               Clock |
 | SRL16E     |    2 |  Distributed Memory |
-| FDSE       |    2 |        Flop & Latch |
+| BUFG       |    2 |               Clock |
 | MMCME2_ADV |    1 |               Clock |
-| BUFG       |    1 |               Clock |
 +------------+------+---------------------+
 
 

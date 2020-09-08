@@ -1,12 +1,12 @@
 # Constraints for CLK
 set_property PACKAGE_PIN W5 [get_ports clk]
-    set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
 
 # Constraints for VS and HS
-set_property PACKAGE_PIN R19 [get_ports {Vsync}]
-set_property IOSTANDARD LVCMOS33 [get_ports {Vsync}]
-set_property PACKAGE_PIN P19 [get_ports {Hsync}]
-set_property IOSTANDARD LVCMOS33 [get_ports {Hsync}]
+set_property PACKAGE_PIN R19 [get_ports Vsync]
+set_property IOSTANDARD LVCMOS33 [get_ports Vsync]
+set_property PACKAGE_PIN P19 [get_ports Hsync]
+set_property IOSTANDARD LVCMOS33 [get_ports Hsync]
 
 # Constraints for RED
 set_property PACKAGE_PIN G19 [get_ports {vgaRed[0]}]
@@ -39,17 +39,21 @@ set_property PACKAGE_PIN J18 [get_ports {vgaBlue[3]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vgaBlue[3]}]
 
 #Constrains for btnC (RESET BUTTON)
-set_property PACKAGE_PIN U18 [get_ports btnC]						
-	set_property IOSTANDARD LVCMOS33 [get_ports btnC]
+set_property PACKAGE_PIN U18 [get_ports btnC]
+set_property IOSTANDARD LVCMOS33 [get_ports btnC]
 
 # Constraints for CFGBVS
 set_property CFGBVS VCCO [current_design]
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 
 #USB HID (PS/2)
-set_property PACKAGE_PIN C17 [get_ports PS2Clk]						
-	set_property IOSTANDARD LVCMOS33 [get_ports PS2Clk]
-	set_property PULLUP true [get_ports PS2Clk]
-set_property PACKAGE_PIN B17 [get_ports PS2Data]					
-	set_property IOSTANDARD LVCMOS33 [get_ports PS2Data]	
-	set_property PULLUP true [get_ports PS2Data]
+set_property PACKAGE_PIN C17 [get_ports PS2Clk]
+set_property IOSTANDARD LVCMOS33 [get_ports PS2Clk]
+set_property PULLUP true [get_ports PS2Clk]
+set_property PACKAGE_PIN B17 [get_ports PS2Data]
+set_property IOSTANDARD LVCMOS33 [get_ports PS2Data]
+set_property PULLUP true [get_ports PS2Data]
+
+#LED FOR DEBUGG 
+set_property PACKAGE_PIN U16 [get_ports {led}]					
+	set_property IOSTANDARD LVCMOS33 [get_ports {led}]

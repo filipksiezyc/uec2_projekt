@@ -25,8 +25,7 @@ module PS2Receiver(
     input kclk,
     input kdata,
     
-    output reg [15:0] keycode=0,
-    output reg oflag
+    output reg [15:0] keycode=0
     );
     
     wire kclkf, kdataf;
@@ -75,10 +74,8 @@ reg pflag;
 always@(posedge clk) begin
     if (flag == 1'b1 && pflag == 1'b0) begin
         keycode <= {dataprev, datacur};
-        oflag <= 1'b1;
         dataprev <= datacur;
     end else
-        oflag <= 1'b0;
     pflag <= flag;
 end
 
