@@ -189,7 +189,7 @@ reg [5:0] row_to_clear_nxt=0;
  
 //this wire turns to 1 when current position intersects with inactive blocks
 //and the moving piece is still at the top of the board
-wire game_over=0; 
+wire game_over; 
 assign game_over=y_pos==0 && check_if_intersects(blk1,blk2,blk3,blk4); 
  
 always @(*) begin
@@ -251,10 +251,10 @@ always @(*) begin
                     end
                 else begin
                         board_nxt=board;
-                        #1board_nxt[blk1]=1;
-                        #1board_nxt[blk2]=1;
-                        #1board_nxt[blk3]=1;
-                        #1board_nxt[blk4]=1;                   
+                        board_nxt[blk1]=1;
+                        board_nxt[blk2]=1;
+                        board_nxt[blk3]=1;
+                        board_nxt[blk4]=1;                   
                         blk_code_nxt=(random+1);
                         x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
                         y_pos_nxt=0;
@@ -349,10 +349,10 @@ always @(*) begin
                             end
                         else begin
                                 board_nxt=board;
-                                #1board_nxt[blk1]=1;
-                                #1board_nxt[blk2]=1;
-                                #1board_nxt[blk3]=1;
-                                #1board_nxt[blk4]=1;
+                                board_nxt[blk1]=1;
+                                board_nxt[blk2]=1;
+                                board_nxt[blk3]=1;
+                                board_nxt[blk4]=1;
                                 blk_code_nxt=(random+1);
                                 x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
                                 y_pos_nxt=0;
@@ -375,11 +375,13 @@ always @(*) begin
  
         CLEAR_ROW: begin
             if (row_to_clear==0) begin
-                board_nxt[LEFT_EDGE +:GAME_WIDTH]<=0;
+                board_nxt=board;
+                board_nxt[LEFT_EDGE +:GAME_WIDTH]=0;
                 row_to_clear_nxt=row_to_clear;
                 state_nxt=GAMEPLAY;
             end
             else begin
+                board_nxt=board;
                 board_nxt[((row_to_clear*SCREEN_WIDTH)+LEFT_EDGE) +:GAME_WIDTH]=board[(((row_to_clear-1)*SCREEN_WIDTH)+LEFT_EDGE) +:GAME_WIDTH];
                 row_to_clear_nxt=row_to_clear-1;
                 state_nxt=GAMEPLAY;
