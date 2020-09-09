@@ -14,19 +14,19 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 2184 
+INFO: Helper process launched with PID 15904 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 361.797 ; gain = 93.813
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 351.598 ; gain = 92.852
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'TETRIS_Main' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/TETRIS_Main.v:23]
-INFO: [Synth 8-638] synthesizing module 'IP_CLK_DIVIDER' [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.v:72]
-INFO: [Synth 8-638] synthesizing module 'IP_CLK_DIVIDER_clk_wiz' [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:70]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:128]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:128]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:131]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:131]
-INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:134]
-INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:134]
+INFO: [Synth 8-638] synthesizing module 'TETRIS_Main' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/TETRIS_Main.v:23]
+INFO: [Synth 8-638] synthesizing module 'IP_CLK_DIVIDER' [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.v:72]
+INFO: [Synth 8-638] synthesizing module 'IP_CLK_DIVIDER_clk_wiz' [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:70]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:128]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:128]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:131]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:131]
+INFO: [Synth 8-5534] Detected attribute (* KEEP = "TRUE" *) [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:134]
+INFO: [Synth 8-5534] Detected attribute (* ASYNC_REG = "TRUE" *) [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:134]
 INFO: [Synth 8-638] synthesizing module 'IBUF' [C:/Xilinx/Vivado/2017.3/scripts/rt/data/unisim_comp.v:19468]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
@@ -93,24 +93,24 @@ INFO: [Synth 8-638] synthesizing module 'BUFGCE' [C:/Xilinx/Vivado/2017.3/script
 INFO: [Synth 8-256] done synthesizing module 'BUFGCE' (4#1) [C:/Xilinx/Vivado/2017.3/scripts/rt/data/unisim_comp.v:617]
 INFO: [Synth 8-638] synthesizing module 'BUFH' [C:/Xilinx/Vivado/2017.3/scripts/rt/data/unisim_comp.v:806]
 INFO: [Synth 8-256] done synthesizing module 'BUFH' (5#1) [C:/Xilinx/Vivado/2017.3/scripts/rt/data/unisim_comp.v:806]
-INFO: [Synth 8-256] done synthesizing module 'IP_CLK_DIVIDER_clk_wiz' (6#1) [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:70]
-INFO: [Synth 8-256] done synthesizing module 'IP_CLK_DIVIDER' (7#1) [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.v:72]
-INFO: [Synth 8-638] synthesizing module 'vga_timing' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/vga_timing.v:6]
-INFO: [Synth 8-256] done synthesizing module 'vga_timing' (8#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/vga_timing.v:6]
-INFO: [Synth 8-638] synthesizing module 'GAME_FRAME' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:23]
-INFO: [Synth 8-256] done synthesizing module 'GAME_FRAME' (9#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:23]
-INFO: [Synth 8-638] synthesizing module 'PS2Receiver' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v:23]
-INFO: [Synth 8-638] synthesizing module 'debouncer' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v:23]
+INFO: [Synth 8-256] done synthesizing module 'IP_CLK_DIVIDER_clk_wiz' (6#1) [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_clk_wiz.v:70]
+INFO: [Synth 8-256] done synthesizing module 'IP_CLK_DIVIDER' (7#1) [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.v:72]
+INFO: [Synth 8-638] synthesizing module 'vga_timing' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/vga_timing.v:6]
+INFO: [Synth 8-256] done synthesizing module 'vga_timing' (8#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/vga_timing.v:6]
+INFO: [Synth 8-638] synthesizing module 'GAME_FRAME' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:23]
+INFO: [Synth 8-256] done synthesizing module 'GAME_FRAME' (9#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:23]
+INFO: [Synth 8-638] synthesizing module 'PS2Receiver' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v:23]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v:23]
 	Parameter COUNT_MAX bound to: 19 - type: integer 
 	Parameter COUNT_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'debouncer' (10#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v:55]
-INFO: [Synth 8-256] done synthesizing module 'PS2Receiver' (11#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v:23]
-INFO: [Synth 8-638] synthesizing module 'clk1Hz' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk1Hz.v:23]
-INFO: [Synth 8-256] done synthesizing module 'clk1Hz' (12#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk1Hz.v:23]
-INFO: [Synth 8-638] synthesizing module 'falserandom_generator' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/falserandom_generator.v:23]
-INFO: [Synth 8-256] done synthesizing module 'falserandom_generator' (13#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/falserandom_generator.v:23]
-INFO: [Synth 8-638] synthesizing module 'game_logic_unit' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:23]
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (10#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v:55]
+INFO: [Synth 8-256] done synthesizing module 'PS2Receiver' (11#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v:23]
+INFO: [Synth 8-638] synthesizing module 'clk1Hz' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk1Hz.v:23]
+INFO: [Synth 8-256] done synthesizing module 'clk1Hz' (12#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk1Hz.v:23]
+INFO: [Synth 8-638] synthesizing module 'falserandom_generator' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/falserandom_generator.v:23]
+INFO: [Synth 8-256] done synthesizing module 'falserandom_generator' (13#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/falserandom_generator.v:23]
+INFO: [Synth 8-638] synthesizing module 'game_logic_unit' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:23]
 	Parameter TITLESCREEN bound to: 0 - type: integer 
 	Parameter GAMEPLAY bound to: 1 - type: integer 
 	Parameter MOV_LEFT bound to: 2 - type: integer 
@@ -132,7 +132,7 @@ INFO: [Synth 8-638] synthesizing module 'game_logic_unit' [C:/Users/Filip/Deskto
 	Parameter SCREEN_WIDTH bound to: 32 - type: integer 
 	Parameter GAME_HEIGHT bound to: 24 - type: integer 
 	Parameter ERROR_BLOCK bound to: 11'b11111111111 
-INFO: [Synth 8-638] synthesizing module 'generate_piece' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/generate_piece.v:23]
+INFO: [Synth 8-638] synthesizing module 'generate_piece' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/generate_piece.v:23]
 	Parameter SCREEN_WIDTH bound to: 32 - type: integer 
 	Parameter ERROR_BLOCK bound to: 11'b11111111111 
 	Parameter ERROR_PIECE bound to: 4'b0000 
@@ -144,8 +144,8 @@ INFO: [Synth 8-638] synthesizing module 'generate_piece' [C:/Users/Filip/Desktop
 	Parameter Z_PIECE bound to: 4'b0110 
 	Parameter S_PIECE bound to: 4'b0111 
 	Parameter END_SCREEN bound to: 4'b1000 
-INFO: [Synth 8-256] done synthesizing module 'generate_piece' (14#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/generate_piece.v:23]
-INFO: [Synth 8-638] synthesizing module 'ingame_graphic' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/ingame_graphic.v:23]
+INFO: [Synth 8-256] done synthesizing module 'generate_piece' (14#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/generate_piece.v:23]
+INFO: [Synth 8-638] synthesizing module 'ingame_graphic' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/ingame_graphic.v:23]
 	Parameter BLOCK_SIZE bound to: 32 - type: integer 
 	Parameter LEFT_EDGE bound to: 2 - type: integer 
 	Parameter GAME_WIDTH bound to: 16 - type: integer 
@@ -159,25 +159,25 @@ INFO: [Synth 8-638] synthesizing module 'ingame_graphic' [C:/Users/Filip/Desktop
 	Parameter Z_PIECE bound to: 4'b0110 
 	Parameter S_PIECE bound to: 4'b0111 
 	Parameter END_SCREEN bound to: 4'b1000 
-INFO: [Synth 8-256] done synthesizing module 'ingame_graphic' (15#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/ingame_graphic.v:23]
-INFO: [Synth 8-638] synthesizing module 'test_move' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/test_move.v:23]
+INFO: [Synth 8-256] done synthesizing module 'ingame_graphic' (15#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/ingame_graphic.v:23]
+INFO: [Synth 8-638] synthesizing module 'test_move' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/test_move.v:23]
 	Parameter A_BUTTON bound to: 16'b0000000000011100 
 	Parameter W_BUTTON bound to: 16'b0000000000011101 
 	Parameter S_BUTTON bound to: 16'b0000000000011011 
 	Parameter D_BUTTON bound to: 16'b0000000000100011 
 	Parameter SPACE_BUTTON bound to: 16'b0000000000101001 
 	Parameter ENTER_BUTTON bound to: 16'b0000000001011010 
-INFO: [Synth 8-256] done synthesizing module 'test_move' (16#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/test_move.v:23]
-INFO: [Synth 8-638] synthesizing module 'clear_row' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clear_row.v:23]
+INFO: [Synth 8-256] done synthesizing module 'test_move' (16#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/test_move.v:23]
+INFO: [Synth 8-638] synthesizing module 'clear_row' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clear_row.v:23]
 	Parameter GAME_HEIGHT bound to: 24 - type: integer 
 	Parameter GAME_WIDTH bound to: 16 - type: integer 
 	Parameter SCREEN_WIDTH bound to: 32 - type: integer 
 	Parameter LEFT_EDGE bound to: 2 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'clear_row' (17#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clear_row.v:23]
-INFO: [Synth 8-256] done synthesizing module 'game_logic_unit' (18#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:23]
-INFO: [Synth 8-256] done synthesizing module 'TETRIS_Main' (19#1) [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/TETRIS_Main.v:23]
+INFO: [Synth 8-256] done synthesizing module 'clear_row' (17#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clear_row.v:23]
+INFO: [Synth 8-256] done synthesizing module 'game_logic_unit' (18#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:23]
+INFO: [Synth 8-256] done synthesizing module 'TETRIS_Main' (19#1) [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/TETRIS_Main.v:23]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 409.891 ; gain = 141.906
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 401.695 ; gain = 142.949
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -187,7 +187,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 409.891 ; gain = 141.906
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 401.695 ; gain = 142.949
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -196,63 +196,62 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_board.xdc] for cell 'CLK_GENERATOR/inst'
-Finished Parsing XDC File [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_board.xdc] for cell 'CLK_GENERATOR/inst'
-Parsing XDC File [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc] for cell 'CLK_GENERATOR/inst'
-Finished Parsing XDC File [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc] for cell 'CLK_GENERATOR/inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TETRIS_Main_propImpl.xdc].
+Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_board.xdc] for cell 'CLK_GENERATOR/inst'
+Finished Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_board.xdc] for cell 'CLK_GENERATOR/inst'
+Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc] for cell 'CLK_GENERATOR/inst'
+Finished Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc] for cell 'CLK_GENERATOR/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TETRIS_Main_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/TETRIS_Main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 INFO: [Timing 38-2] Deriving generated clocks
-Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc]
-Finished Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TETRIS_Main_propImpl.xdc].
+Parsing XDC File [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc]
+Finished Parsing XDC File [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/constrs_1/new/constrains.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TETRIS_Main_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/TETRIS_Main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/dont_touch.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TETRIS_Main_propImpl.xdc].
+Parsing XDC File [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TETRIS_Main_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/TETRIS_Main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_late.xdc] for cell 'CLK_GENERATOR/inst'
-Finished Parsing XDC File [c:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_late.xdc] for cell 'CLK_GENERATOR/inst'
+Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_late.xdc] for cell 'CLK_GENERATOR/inst'
+Finished Parsing XDC File [c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER_late.xdc] for cell 'CLK_GENERATOR/inst'
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 3 instances were transformed.
   BUFGCE => BUFGCTRL: 3 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.019 . Memory (MB): peak = 743.047 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 735.945 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 743.047 ; gain = 475.063
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 735.945 ; gain = 477.199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 743.047 ; gain = 475.063
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 735.945 ; gain = 477.199
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property DONT_TOUCH = true for CLK_GENERATOR/inst. (constraint file  C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/dont_touch.xdc, line 10).
+Applied set_property DONT_TOUCH = true for CLK_GENERATOR/inst. (constraint file  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/dont_touch.xdc, line 10).
 Applied set_property DONT_TOUCH = true for CLK_GENERATOR. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 743.047 ; gain = 475.063
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 735.945 ; gain = 477.199
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "vcountinside_nxt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "O" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "count" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element count_reg was removed.  [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v:33]
+WARNING: [Synth 8-6014] Unused sequential element count_reg was removed.  [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v:33]
 INFO: [Synth 8-5544] ROM "cnt" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v:55]
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg was removed.  [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v:55]
 INFO: [Synth 8-5545] ROM "clk_out" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/test_move.v:54]
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:286]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/test_move.v:54]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:286]
 INFO: [Synth 8-5546] ROM "state_nxt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "state_nxt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "y_pos_nxt" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-327] inferring latch for variable 'board_nxt_reg' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:200]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:44 ; elapsed = 00:00:46 . Memory (MB): peak = 743.047 ; gain = 475.063
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 735.945 ; gain = 477.199
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -260,15 +259,17 @@ Report RTL Partitions:
 |      |RTL Partition               |Replication |Instances |
 +------+----------------------------+------------+----------+
 |1     |IP_CLK_DIVIDER_clk_wiz__GC0 |           1|        32|
-|2     |game_logic_unit__GB0        |           1|     48497|
-|3     |game_logic_unit__GB1        |           1|     13446|
-|4     |TETRIS_Main__GC0            |           1|      1578|
+|2     |game_logic_unit__GB0        |           1|     22848|
+|3     |game_logic_unit__GB1        |           1|     26452|
+|4     |game_logic_unit__GB2        |           1|     11790|
+|5     |TETRIS_Main__GC0            |           1|      1578|
 +------+----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     32 Bit       Adders := 2     
 	   2 Input     27 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 14    
 	   2 Input      7 Bit       Adders := 3     
@@ -290,28 +291,26 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 2     
 	                1 Bit    Registers := 21    
 +---Muxes : 
+	   5 Input    768 Bit        Muxes := 1     
 	   2 Input    768 Bit        Muxes := 10    
-	   5 Input    768 Bit        Muxes := 3     
 	   2 Input     27 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 4     
-	   5 Input     16 Bit        Muxes := 2     
 	   4 Input     11 Bit        Muxes := 14    
 	   2 Input     11 Bit        Muxes := 40    
-	   5 Input      6 Bit        Muxes := 3     
 	   2 Input      6 Bit        Muxes := 10    
+	   5 Input      6 Bit        Muxes := 3     
 	   2 Input      4 Bit        Muxes := 11    
 	  10 Input      4 Bit        Muxes := 3     
 	   4 Input      4 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 7     
+	   5 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 8     
 	   6 Input      2 Bit        Muxes := 2     
 	   5 Input      2 Bit        Muxes := 1     
-	   4 Input      2 Bit        Muxes := 2     
 	   4 Input      1 Bit        Muxes := 9     
 	   2 Input      1 Bit        Muxes := 17    
-	   5 Input      1 Bit        Muxes := 5     
 	   6 Input      1 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 5     
 	   3 Input      1 Bit        Muxes := 1     
 	  12 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
@@ -330,21 +329,6 @@ Module IP_CLK_DIVIDER_clk_wiz
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 3     
-Module ingame_graphic 
-Detailed RTL Component Info : 
-+---Registers : 
-	                4 Bit    Registers := 3     
-	                1 Bit    Registers := 4     
-+---Muxes : 
-	   2 Input      4 Bit        Muxes := 6     
-	  10 Input      4 Bit        Muxes := 3     
-	   4 Input      1 Bit        Muxes := 1     
-Module clear_row 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      6 Bit       Adders := 1     
-+---Registers : 
-	                6 Bit    Registers := 1     
 Module generate_piece__1 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -358,6 +342,15 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
+Module ingame_graphic 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 3     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 6     
+	  10 Input      4 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 1     
 Module test_move 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -383,9 +376,16 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit        Muxes := 2     
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
+Module clear_row 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
 Module game_logic_unit 
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input     32 Bit       Adders := 2     
 	   2 Input      7 Bit       Adders := 3     
 	   2 Input      6 Bit       Adders := 4     
 	   2 Input      3 Bit       Adders := 1     
@@ -399,23 +399,21 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 4     
 +---Muxes : 
+	   5 Input    768 Bit        Muxes := 1     
 	   2 Input    768 Bit        Muxes := 10    
-	   5 Input    768 Bit        Muxes := 3     
-	   2 Input     16 Bit        Muxes := 4     
-	   5 Input     16 Bit        Muxes := 2     
 	   5 Input      6 Bit        Muxes := 3     
 	   2 Input      6 Bit        Muxes := 6     
 	   2 Input      4 Bit        Muxes := 1     
 	   4 Input      4 Bit        Muxes := 1     
-	   5 Input      3 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 3     
 	   6 Input      2 Bit        Muxes := 1     
-	   5 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 10    
-	   5 Input      1 Bit        Muxes := 5     
-	   4 Input      1 Bit        Muxes := 8     
 	   6 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 8     
+	   5 Input      1 Bit        Muxes := 5     
 Module vga_timing 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -498,61 +496,58 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4471] merging register 'row_to_clear_reg[5:0]' into 'row_to_clear_reg[5:0]' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:420]
-WARNING: [Synth 8-6014] Unused sequential element row_to_clear_reg was removed.  [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:420]
-WARNING: [Synth 8-6014] Unused sequential element row_reg was removed.  [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clear_row.v:45]
+WARNING: [Synth 8-6014] Unused sequential element row_reg was removed.  [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clear_row.v:45]
+INFO: [Synth 8-4471] merging register 'row_to_clear_reg[5:0]' into 'row_to_clear_reg[5:0]' [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:422]
+WARNING: [Synth 8-6014] Unused sequential element row_to_clear_reg was removed.  [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:422]
 INFO: [Synth 8-5546] ROM "state_nxt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "state_nxt" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element FRAME_VIDEO_CONTROLL/hcount_out_reg was removed.  [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:80]
-WARNING: [Synth 8-6014] Unused sequential element FRAME_VIDEO_CONTROLL/vcount_out_reg was removed.  [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:81]
-WARNING: [Synth 8-6014] Unused sequential element FRAME_VIDEO_CONTROLL/hblnk_out_reg was removed.  [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:84]
-WARNING: [Synth 8-6014] Unused sequential element FRAME_VIDEO_CONTROLL/vblnk_out_reg was removed.  [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:85]
+WARNING: [Synth 8-6014] Unused sequential element FRAME_VIDEO_CONTROLL/hcount_out_reg was removed.  [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:80]
+WARNING: [Synth 8-6014] Unused sequential element FRAME_VIDEO_CONTROLL/vcount_out_reg was removed.  [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:81]
+WARNING: [Synth 8-6014] Unused sequential element FRAME_VIDEO_CONTROLL/hblnk_out_reg was removed.  [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:84]
+WARNING: [Synth 8-6014] Unused sequential element FRAME_VIDEO_CONTROLL/vblnk_out_reg was removed.  [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v:85]
 INFO: [Synth 8-5546] ROM "vga_timing_source/vcountinside_nxt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5545] ROM "clk1HZ_generator/clk_out" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
-WARNING: [Synth 8-6014] Unused sequential element Keyboard_Receiver/cnt_reg was removed.  [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v:55]
-WARNING: [Synth 8-6014] Unused sequential element Keyboard_Receiver/db_clk/count_reg was removed.  [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v:33]
-WARNING: [Synth 8-6014] Unused sequential element Keyboard_Receiver/db_data/count_reg was removed.  [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v:33]
+WARNING: [Synth 8-6014] Unused sequential element Keyboard_Receiver/cnt_reg was removed.  [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v:55]
+WARNING: [Synth 8-6014] Unused sequential element Keyboard_Receiver/db_clk/count_reg was removed.  [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v:33]
+WARNING: [Synth 8-6014] Unused sequential element Keyboard_Receiver/db_data/count_reg was removed.  [C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v:33]
+INFO: [Synth 8-3886] merging instance 'tetris_logici_0/current_piece/width_reg[3]' (FDR) to 'tetris_logici_0/current_piece/height_reg[3]'
 INFO: [Synth 8-3886] merging instance 'tetris_logici_0/ingame_graphics/VGABlue_out_reg[2]' (FD) to 'tetris_logici_0/ingame_graphics/VGABlue_out_reg[3]'
 INFO: [Synth 8-3886] merging instance 'tetris_logici_0/ingame_graphics/VGARed_out_reg[2]' (FD) to 'tetris_logici_0/ingame_graphics/VGARed_out_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tetris_logici_0/current_piece/\height_reg[3] )
+INFO: [Synth 8-3886] merging instance 'tetris_logici_0/state_reg[1]' (FDR) to 'tetris_logici_0/state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tetris_logici_0/\state_reg[2] )
 INFO: [Synth 8-3886] merging instance 'tetris_logici_0/VGABlue_out_reg[2]' (FD) to 'tetris_logici_0/VGABlue_out_reg[3]'
 INFO: [Synth 8-3886] merging instance 'tetris_logici_0/VGARed_out_reg[2]' (FD) to 'tetris_logici_0/VGARed_out_reg[3]'
-INFO: [Synth 8-3886] merging instance 'tetris_logici_1/current_piece/width_reg[3]' (FDR) to 'tetris_logici_1/current_piece/height_reg[3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (tetris_logici_1/current_piece/\height_reg[3] )
-INFO: [Synth 8-3886] merging instance 'tetris_logici_1/state_reg[1]' (FDR) to 'tetris_logici_1/state_reg[2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (tetris_logici_1/\state_reg[2] )
-CRITICAL WARNING: [Synth 8-3352] multi-driven net game_over0 with 1st driver pin 'tetris_logici_1/game_over0_inferred/game_over0' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:177]
-CRITICAL WARNING: [Synth 8-3352] multi-driven net game_over0 with 2nd driver pin 'GND' [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:177]
-CRITICAL WARNING: [Synth 8-5559] multi-driven net game_over0 is connected to constant driver, other driver is ignored [C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v:177]
-WARNING: [Synth 8-3332] Sequential element (blk1_reg[10]) is unused and will be removed from module generate_piece__1.
-WARNING: [Synth 8-3332] Sequential element (blk2_reg[10]) is unused and will be removed from module generate_piece__1.
-WARNING: [Synth 8-3332] Sequential element (blk3_reg[10]) is unused and will be removed from module generate_piece__1.
-WARNING: [Synth 8-3332] Sequential element (blk4_reg[10]) is unused and will be removed from module generate_piece__1.
-WARNING: [Synth 8-3332] Sequential element (width_reg[3]) is unused and will be removed from module generate_piece__1.
-WARNING: [Synth 8-3332] Sequential element (width_reg[2]) is unused and will be removed from module generate_piece__1.
-WARNING: [Synth 8-3332] Sequential element (width_reg[1]) is unused and will be removed from module generate_piece__1.
-WARNING: [Synth 8-3332] Sequential element (width_reg[0]) is unused and will be removed from module generate_piece__1.
 WARNING: [Synth 8-3332] Sequential element (height_reg[3]) is unused and will be removed from module generate_piece__1.
-WARNING: [Synth 8-3332] Sequential element (height_reg[2]) is unused and will be removed from module generate_piece__1.
-WARNING: [Synth 8-3332] Sequential element (height_reg[1]) is unused and will be removed from module generate_piece__1.
-WARNING: [Synth 8-3332] Sequential element (height_reg[0]) is unused and will be removed from module generate_piece__1.
 WARNING: [Synth 8-3332] Sequential element (test_y_reg[5]) is unused and will be removed from module test_move.
+WARNING: [Synth 8-3332] Sequential element (blk1_reg[10]) is unused and will be removed from module generate_piece.
+WARNING: [Synth 8-3332] Sequential element (blk2_reg[10]) is unused and will be removed from module generate_piece.
+WARNING: [Synth 8-3332] Sequential element (blk3_reg[10]) is unused and will be removed from module generate_piece.
+WARNING: [Synth 8-3332] Sequential element (blk4_reg[10]) is unused and will be removed from module generate_piece.
+WARNING: [Synth 8-3332] Sequential element (width_reg[3]) is unused and will be removed from module generate_piece.
+WARNING: [Synth 8-3332] Sequential element (width_reg[2]) is unused and will be removed from module generate_piece.
+WARNING: [Synth 8-3332] Sequential element (width_reg[1]) is unused and will be removed from module generate_piece.
+WARNING: [Synth 8-3332] Sequential element (width_reg[0]) is unused and will be removed from module generate_piece.
 WARNING: [Synth 8-3332] Sequential element (height_reg[3]) is unused and will be removed from module generate_piece.
-INFO: [Synth 8-3886] merging instance 'i_2/Keyboard_Receiver/dataprev_reg[0]' (FDE) to 'i_2/Keyboard_Receiver/keycode_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/Keyboard_Receiver/dataprev_reg[1]' (FDE) to 'i_2/Keyboard_Receiver/keycode_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/Keyboard_Receiver/dataprev_reg[2]' (FDE) to 'i_2/Keyboard_Receiver/keycode_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/Keyboard_Receiver/dataprev_reg[3]' (FDE) to 'i_2/Keyboard_Receiver/keycode_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_2/Keyboard_Receiver/dataprev_reg[4]' (FDE) to 'i_2/Keyboard_Receiver/keycode_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_2/Keyboard_Receiver/dataprev_reg[5]' (FDE) to 'i_2/Keyboard_Receiver/keycode_reg[5]'
-INFO: [Synth 8-3886] merging instance 'i_2/Keyboard_Receiver/dataprev_reg[6]' (FDE) to 'i_2/Keyboard_Receiver/keycode_reg[6]'
-INFO: [Synth 8-3886] merging instance 'i_2/Keyboard_Receiver/dataprev_reg[7]' (FDE) to 'i_2/Keyboard_Receiver/keycode_reg[7]'
+WARNING: [Synth 8-3332] Sequential element (height_reg[2]) is unused and will be removed from module generate_piece.
+WARNING: [Synth 8-3332] Sequential element (height_reg[1]) is unused and will be removed from module generate_piece.
+WARNING: [Synth 8-3332] Sequential element (height_reg[0]) is unused and will be removed from module generate_piece.
+INFO: [Synth 8-3886] merging instance 'i_3/Keyboard_Receiver/dataprev_reg[0]' (FDE) to 'i_3/Keyboard_Receiver/keycode_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_3/Keyboard_Receiver/dataprev_reg[1]' (FDE) to 'i_3/Keyboard_Receiver/keycode_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_3/Keyboard_Receiver/dataprev_reg[2]' (FDE) to 'i_3/Keyboard_Receiver/keycode_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_3/Keyboard_Receiver/dataprev_reg[3]' (FDE) to 'i_3/Keyboard_Receiver/keycode_reg[3]'
+INFO: [Synth 8-3886] merging instance 'i_3/Keyboard_Receiver/dataprev_reg[4]' (FDE) to 'i_3/Keyboard_Receiver/keycode_reg[4]'
+INFO: [Synth 8-3886] merging instance 'i_3/Keyboard_Receiver/dataprev_reg[5]' (FDE) to 'i_3/Keyboard_Receiver/keycode_reg[5]'
+INFO: [Synth 8-3886] merging instance 'i_3/Keyboard_Receiver/dataprev_reg[6]' (FDE) to 'i_3/Keyboard_Receiver/keycode_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_3/Keyboard_Receiver/dataprev_reg[7]' (FDE) to 'i_3/Keyboard_Receiver/keycode_reg[7]'
+INFO: [Synth 8-3886] merging instance 'tetris_logici_0/current_piece/width_reg[1]' (FDR) to 'tetris_logici_0/current_piece/height_reg[1]'
 INFO: [Synth 8-3886] merging instance 'tetris_logici_0/ingame_graphics/VGAGreen_out_reg[0]' (FD) to 'tetris_logici_0/ingame_graphics/VGARed_out_reg[0]'
 INFO: [Synth 8-3886] merging instance 'tetris_logici_0/VGAGreen_out_reg[0]' (FD) to 'tetris_logici_0/VGARed_out_reg[0]'
-INFO: [Synth 8-3886] merging instance 'tetris_logici_1/current_piece/width_reg[1]' (FDR) to 'tetris_logici_1/current_piece/height_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/FRAME_VIDEO_CONTROLL/VGAGreen_out_reg[0]' (FDR) to 'i_2/FRAME_VIDEO_CONTROLL/VGARed_out_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/vgaGreen_reg[0]' (FD) to 'i_2/vgaRed_reg[0]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (tetris_logici_1/\y_pos_reg[5] )
+INFO: [Synth 8-3886] merging instance 'i_3/FRAME_VIDEO_CONTROLL/VGAGreen_out_reg[0]' (FDR) to 'i_3/FRAME_VIDEO_CONTROLL/VGARed_out_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_3/vgaGreen_reg[0]' (FD) to 'i_3/vgaRed_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (tetris_logici_0/\y_pos_reg[5] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:49 ; elapsed = 00:01:56 . Memory (MB): peak = 906.992 ; gain = 639.008
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:06 ; elapsed = 00:03:10 . Memory (MB): peak = 873.656 ; gain = 614.910
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -560,21 +555,22 @@ Report RTL Partitions:
 |      |RTL Partition               |Replication |Instances |
 +------+----------------------------+------------+----------+
 |1     |IP_CLK_DIVIDER_clk_wiz__GC0 |           1|        32|
-|2     |game_logic_unit__GB0        |           1|     13011|
-|3     |game_logic_unit__GB1        |           1|      6780|
-|4     |TETRIS_Main__GC0            |           1|       491|
+|2     |game_logic_unit__GB0        |           1|     16227|
+|3     |game_logic_unit__GB1        |           1|     10302|
+|4     |game_logic_unit__GB2        |           1|         1|
+|5     |TETRIS_Main__GC0            |           1|       491|
 +------+----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:04 ; elapsed = 00:02:11 . Memory (MB): peak = 906.992 ; gain = 639.008
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:19 ; elapsed = 00:03:23 . Memory (MB): peak = 873.656 ; gain = 614.910
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:50 ; elapsed = 00:02:59 . Memory (MB): peak = 955.480 ; gain = 687.496
+Finished Timing Optimization : Time (s): cpu = 00:04:21 ; elapsed = 00:04:26 . Memory (MB): peak = 1098.840 ; gain = 840.094
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -582,13 +578,14 @@ Report RTL Partitions:
 |      |RTL Partition               |Replication |Instances |
 +------+----------------------------+------------+----------+
 |1     |IP_CLK_DIVIDER_clk_wiz__GC0 |           1|        32|
-|2     |TETRIS_Main_GT0             |           1|     20282|
+|2     |game_logic_unit__GB2        |           1|         1|
+|3     |TETRIS_Main_GT0             |           1|     23556|
 +------+----------------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:57 ; elapsed = 00:03:06 . Memory (MB): peak = 955.480 ; gain = 687.496
+Finished Technology Mapping : Time (s): cpu = 00:04:53 ; elapsed = 00:04:59 . Memory (MB): peak = 1098.840 ; gain = 840.094
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -612,7 +609,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:59 ; elapsed = 00:03:08 . Memory (MB): peak = 955.480 ; gain = 687.496
+Finished IO Insertion : Time (s): cpu = 00:04:56 ; elapsed = 00:05:01 . Memory (MB): peak = 1098.840 ; gain = 840.094
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -625,7 +622,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:59 ; elapsed = 00:03:09 . Memory (MB): peak = 955.480 ; gain = 687.496
+Finished Renaming Generated Instances : Time (s): cpu = 00:04:56 ; elapsed = 00:05:02 . Memory (MB): peak = 1098.840 ; gain = 840.094
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -637,25 +634,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:00 ; elapsed = 00:03:09 . Memory (MB): peak = 955.480 ; gain = 687.496
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:04:57 ; elapsed = 00:05:02 . Memory (MB): peak = 1098.840 ; gain = 840.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:00 ; elapsed = 00:03:09 . Memory (MB): peak = 955.480 ; gain = 687.496
+Finished Renaming Generated Ports : Time (s): cpu = 00:04:57 ; elapsed = 00:05:03 . Memory (MB): peak = 1098.840 ; gain = 840.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:01 ; elapsed = 00:03:10 . Memory (MB): peak = 955.480 ; gain = 687.496
+Finished Handling Custom Attributes : Time (s): cpu = 00:04:57 ; elapsed = 00:05:03 . Memory (MB): peak = 1098.840 ; gain = 840.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:01 ; elapsed = 00:03:10 . Memory (MB): peak = 955.480 ; gain = 687.496
+Finished Renaming Generated Nets : Time (s): cpu = 00:04:57 ; elapsed = 00:05:03 . Memory (MB): peak = 1098.840 ; gain = 840.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -686,70 +683,68 @@ Report Cell Usage:
 +------+-----------+------+
 |      |Cell       |Count |
 +------+-----------+------+
-|1     |BUFG       |     2|
+|1     |BUFG       |     1|
 |2     |BUFGCE     |     3|
 |3     |BUFH       |     3|
 |4     |CARRY4     |    29|
 |5     |LUT1       |     6|
-|6     |LUT2       |    83|
-|7     |LUT3       |   224|
-|8     |LUT4       |   851|
-|9     |LUT5       |  1577|
-|10    |LUT6       |  2421|
+|6     |LUT2       |    91|
+|7     |LUT3       |   135|
+|8     |LUT4       |   195|
+|9     |LUT5       |   696|
+|10    |LUT6       |  5166|
 |11    |MMCME2_ADV |     1|
-|12    |MUXF7      |   539|
-|13    |MUXF8      |   260|
+|12    |MUXF7      |   594|
+|13    |MUXF8      |   269|
 |14    |SRL16E     |     2|
 |15    |FDCE       |    24|
-|16    |FDRE       |   970|
-|17    |FDSE       |   109|
-|18    |LD         |   768|
-|19    |IBUF       |     4|
-|20    |OBUF       |    15|
+|16    |FDRE       |   969|
+|17    |FDSE       |   123|
+|18    |IBUF       |     4|
+|19    |OBUF       |    15|
 +------+-----------+------+
 
 Report Instance Areas: 
 +------+-----------------------+-----------------------+------+
 |      |Instance               |Module                 |Cells |
 +------+-----------------------+-----------------------+------+
-|1     |top                    |                       |  7891|
+|1     |top                    |                       |  8326|
 |2     |  CLK_GENERATOR        |IP_CLK_DIVIDER         |    33|
 |3     |    inst               |IP_CLK_DIVIDER_clk_wiz |    33|
 |4     |  FRAME_VIDEO_CONTROLL |GAME_FRAME             |    20|
-|5     |  Keyboard_Receiver    |PS2Receiver            |   117|
+|5     |  Keyboard_Receiver    |PS2Receiver            |   105|
 |6     |    db_clk             |debouncer              |    16|
 |7     |    db_data            |debouncer_1            |    24|
 |8     |  clk1HZ_generator     |clk1Hz                 |    70|
-|9     |  random_blocks        |falserandom_generator  |     8|
-|10    |  tetris_logic         |game_logic_unit        |  7513|
-|11    |    clear_row          |clear_row              |    57|
-|12    |    current_piece      |generate_piece         |  2839|
-|13    |    ingame_graphics    |ingame_graphic         |   369|
-|14    |    show_me_your_moves |test_move              |   253|
-|15    |    test_piece         |generate_piece_0       |  1500|
-|16    |  vga_timing_source    |vga_timing             |    97|
+|9     |  random_blocks        |falserandom_generator  |     7|
+|10    |  tetris_logic         |game_logic_unit        |  7944|
+|11    |    clear_row          |clear_row              |    62|
+|12    |    current_piece      |generate_piece         |  4471|
+|13    |    ingame_graphics    |ingame_graphic         |   374|
+|14    |    show_me_your_moves |test_move              |   261|
+|15    |    test_piece         |generate_piece_0       |  1496|
+|16    |  vga_timing_source    |vga_timing             |   115|
 +------+-----------------------+-----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:01 ; elapsed = 00:03:10 . Memory (MB): peak = 955.480 ; gain = 687.496
+Finished Writing Synthesis Report : Time (s): cpu = 00:04:57 ; elapsed = 00:05:03 . Memory (MB): peak = 1098.840 ; gain = 840.094
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 3 critical warnings and 26 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:41 ; elapsed = 00:03:00 . Memory (MB): peak = 955.480 ; gain = 354.340
-Synthesis Optimization Complete : Time (s): cpu = 00:03:01 ; elapsed = 00:03:11 . Memory (MB): peak = 955.480 ; gain = 687.496
+Synthesis finished with 0 errors, 0 critical warnings and 25 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:04:38 ; elapsed = 00:04:52 . Memory (MB): peak = 1098.840 ; gain = 505.844
+Synthesis Optimization Complete : Time (s): cpu = 00:04:58 ; elapsed = 00:05:03 . Memory (MB): peak = 1098.840 ; gain = 840.094
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 1604 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 900 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 771 instances were transformed.
+  A total of 3 instances were transformed.
   BUFGCE => BUFGCTRL: 3 instances
-  LD => LDCE: 768 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-99 Infos, 26 Warnings, 3 Critical Warnings and 0 Errors encountered.
+99 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:04 ; elapsed = 00:03:14 . Memory (MB): peak = 955.480 ; gain = 696.160
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Filip/Desktop/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/TETRIS_Main.dcp' has been generated.
+synth_design: Time (s): cpu = 00:05:02 ; elapsed = 00:05:07 . Memory (MB): peak = 1098.840 ; gain = 848.617
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/TETRIS_Main.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TETRIS_Main_utilization_synth.rpt -pb TETRIS_Main_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.090 . Memory (MB): peak = 955.480 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Sep  8 20:41:15 2020...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.110 . Memory (MB): peak = 1098.840 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Sep  9 13:05:23 2020...
