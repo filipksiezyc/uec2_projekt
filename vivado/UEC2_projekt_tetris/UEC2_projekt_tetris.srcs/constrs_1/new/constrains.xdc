@@ -55,5 +55,5 @@ set_property IOSTANDARD LVCMOS33 [get_ports PS2Data]
 set_property PULLUP true [get_ports PS2Data]
 
 #LED FOR DEBUGG 
-set_property PACKAGE_PIN U16 [get_ports {led}]					
-	set_property IOSTANDARD LVCMOS33 [get_ports {led}]
+#set_property PACKAGE_PIN U16 [get_ports {led}]					
+	#set_property IOSTANDARD LVCMOS33 [get_ports {led}]
