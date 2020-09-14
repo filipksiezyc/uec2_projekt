@@ -51,7 +51,7 @@ localparam A_BUTTON=16'h1C, W_BUTTON=16'h1D, S_BUTTON=16'h1B, D_BUTTON=16'h23, S
             trot_nxt=rotation;
         end
         else begin
-            case (keycode)
+            case (keycode[7:0])
             A_BUTTON: begin //move left
                 tx_nxt=xpos-1;
                 ty_nxt=ypos;

@@ -43,7 +43,7 @@ always @(posedge clk65MHz) begin
             end
         else begin
             counter <= counter+1;
-            clk_out<= 1;
+            clk_out<= 0;
             end
     end
 end
