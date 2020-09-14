@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="32" Path="C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr">
+<Project Version="7" Minor="32" Path="C:/Users/Filip/Desktop/uce2/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="889271c35f97487099a272a778fba3b0"/>
