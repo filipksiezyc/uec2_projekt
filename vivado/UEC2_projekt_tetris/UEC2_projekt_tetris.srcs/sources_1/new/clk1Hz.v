@@ -21,8 +21,9 @@
 
 
 module clk1Hz(
-    input wire clk50MHz,
+    input wire clk65MHz,
     input wire reset,
+    input wire game_reset,
     
     output wire clk1Hz
     );
@@ -30,18 +31,19 @@ module clk1Hz(
 reg [26:0] counter=0, counter05Hz=0;
 reg clk_out=0, clk05Hz_out=0;
 
-always @(posedge clk50MHz) begin
-    if(reset)begin
+always @(posedge clk65MHz) begin
+    if(reset||game_reset)begin
         clk_out<=0;
         counter<=0;
         end
     else begin
-        if(counter == 50000000)begin
+        if(counter == 65000000)begin
             counter <= 0;
-            clk_out<= (~(clk_out));
+            clk_out<= 1;
             end
         else begin
             counter <= counter+1;
+            clk_out<= 1;
             end
     end
 end
