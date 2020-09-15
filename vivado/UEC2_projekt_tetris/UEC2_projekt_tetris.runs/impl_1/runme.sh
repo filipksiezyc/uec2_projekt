@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Filip/Desktop/uce2/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1'
+HD_PWD='C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
