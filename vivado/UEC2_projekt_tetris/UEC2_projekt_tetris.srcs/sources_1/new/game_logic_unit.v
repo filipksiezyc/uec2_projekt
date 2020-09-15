@@ -43,8 +43,7 @@ module game_logic_unit(
     output reg [10:0] vcount_out
     );
  
-localparam TITLESCREEN=0, GAMEPLAY=1, MOV_LEFT=2, MOV_RIGHT=3, ROT_LEFT=4,
-ROT_RIGHT=5, FALL_SLOW=6, FALL_FAST=7, CLEAR_ROW=8,GAME_OVER=9,
+localparam TITLESCREEN=0, GAMEPLAY=1, TEST_COLLISION=2, CLEAR_ROW=3,GAME_OVER=4,
  
 A_BUTTON=16'h1C, W_BUTTON=16'h1D, S_BUTTON=16'h1B, D_BUTTON=16'h23,
 SPACE_BUTTON=16'h29, ENTER_BUTTON=16'h5A,
@@ -127,38 +126,40 @@ ingame_graphic ingame_graphics(
     .vblnk_out(vblnk_nxt) 
 );
  
-wire [5:0] test_x_pos, test_y_pos;
-wire [1:0] test_rotation;
+reg [5:0] test_x_pos=(LEFT_EDGE+(GAME_WIDTH/2)), test_y_pos=0;
+reg [1:0] test_rotation=0;
+reg [5:0] test_x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2)), test_y_pos_nxt=0;
+reg [1:0] test_rotation_nxt=0;
 wire [10:0] test_blk1, test_blk2, test_blk3, test_blk4;
 wire [3:0] test_width, test_height;
  
 //the next two modules generate test parameters to check if
 //user's movement is executable
-test_move show_me_your_moves(
-    .pclk(pclk),
-    .clk1Hz(clk1Hz),
-    .reset(reset),
-    .keycode(keycode),
-    .xpos(x_pos),
-    .ypos(y_pos),
-    .rotation(rotation),
+//test_move show_me_your_moves(
+//    .pclk(pclk),
+//    .clk1Hz(clk1Hz),
+//    .reset(reset),
+//    .keycode(keycode),
+//    .xpos(x_pos),
+//    .ypos(y_pos),
+//    .rotation(rotation),
  
-    .test_x(test_x_pos),
-    .test_y(test_y_pos),
-    .test_rot(test_rotation)
-);
+//    .test_x(test_x_pos),
+//    .test_y(test_y_pos),
+//    .test_rot(test_rotation)
+//);
  
-reg [3:0] blk_code_semi;
+//reg [3:0] blk_code_semi;
 
-always @(posedge pclk)begin
-    blk_code_semi<=blk_code;
-end
+//always @(posedge pclk)begin
+//    blk_code_semi<=blk_code;
+//end
  
  
 generate_piece test_piece(
     .pclk(pclk),
     .reset(reset),
-    .block_code(blk_code_semi),
+    .block_code(blk_code),
     .xpos(test_x_pos),
     .ypos(test_y_pos),
     .rotation(test_rotation),
@@ -173,12 +174,12 @@ generate_piece test_piece(
  
  //function to check if the test piece intersects with the fallen pieces
 function check_if_intersects;
-    input wire [10:0] blk1_t;
-    input wire [10:0] blk2_t;
-    input wire [10:0] blk3_t;
-    input wire [10:0] blk4_t;
+    input wire [10:0] block1;
+    input wire [10:0] block2;
+    input wire [10:0] block3;
+    input wire [10:0] block4;
     begin
-    check_if_intersects=(board[blk1_t]||board[blk2_t]||board[blk3_t]||board[blk4_t]);
+    check_if_intersects=(board[block1]||board[block2]||board[block3]||board[block4]);
     end    
 endfunction
  
@@ -195,18 +196,22 @@ clear_row clear_row(
     .ready(ready_to_remove)
 );
  
-reg [5:0] x_pos_nxt=0, y_pos_nxt=0;
+reg [5:0] x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2)), y_pos_nxt=0;
 reg [1:0] rotation_nxt=0;
 reg [2:0] blk_code_nxt=0;
  
-reg [5:0] row_to_clear;
+reg [5:0] row_to_clear=0;
 reg [5:0] row_to_clear_nxt=0;
+
+reg [15:0] keycode_used=0, keycode_nxt=0;
  
  
 //this wire turns to 1 when current position intersects with inactive blocks
 //and the moving piece is still at the top of the board
 wire intersects_now=check_if_intersects(blk1,blk2,blk3,blk4); 
+wire test_intersection=check_if_intersects(test_blk1,test_blk2,test_blk3,test_blk4);
 
+/*
 always @(*) begin
         if ((state==TITLESCREEN||state==GAME_OVER) && (keycode[7:0]==ENTER_BUTTON)) begin
             board_nxt=0;
@@ -462,12 +467,13 @@ always @(*) begin
                 rotation_nxt=rotation;
                 blk_code_nxt=blk_code;
                 game_reset_nxt=0;
-                for (l=0; l<=767; l=l+1) begin
-                    if (l>=LEFT_EDGE && l<(LEFT_EDGE+GAME_WIDTH)) begin
-                        board_nxt[l]=0;
+                for(k=0;k<=767;k=k+1) begin
+                    if (k>=((row_to_clear*SCREEN_WIDTH)+LEFT_EDGE) &&
+                    k<(((row_to_clear*SCREEN_WIDTH)+LEFT_EDGE)+GAME_WIDTH)) begin
+                        board_nxt[k]=board[k-SCREEN_WIDTH];
                     end
                     else begin
-                        board_nxt[l]=board[l];
+                        board_nxt[k]=board[k];
                     end
                 end
                 //board_nxt=board;
@@ -521,5 +527,638 @@ always @(posedge pclk)begin
         game_reset<=game_reset_nxt;
         end
 end
+ */
+always @(*) begin
+     if (reset) begin
+         y_pos_nxt=0;
+         x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+         board_nxt=0;
+         blk_code_nxt=0;
+         rotation_nxt=0;
+         row_to_clear_nxt=0;
+         game_reset_nxt=0;
+         state_nxt=TITLESCREEN;
+         test_y_pos_nxt=0;
+         test_x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+         test_rotation_nxt=0;
+         keycode_nxt=0;
+     end
+     else begin
+         case(state) 
+             TITLESCREEN:begin
+                 if(keycode_used[7:0]==ENTER_BUTTON)begin
+                     board_nxt=0;
+                     blk_code_nxt=(random+1);
+                     x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+                     y_pos_nxt=0;
+                     rotation_nxt=0;
+                     row_to_clear_nxt=0;
+                     state_nxt=GAMEPLAY;
+                     game_reset_nxt=1;
+                     test_y_pos_nxt=y_pos;
+                     test_x_pos_nxt=x_pos;
+                     test_rotation_nxt=rotation;
+                     keycode_nxt=0;
+                 end
+                 else if((y_pos==0) && intersects_now && pclk ) begin
+                     blk_code_nxt=0;
+                     rotation_nxt=rotation;
+                     row_to_clear_nxt=row_to_clear;
+                     game_reset_nxt=0;
+                     for (m=0; m<=767; m=m+1) begin
+                         if (m==blk1) begin
+                             board_nxt[blk1]=1;
+                         end
+                         else if (m==blk2) begin
+                             board_nxt[blk2]=1;
+                         end
+                         else if (m==blk3) begin
+                             board_nxt[blk3]=1;
+                         end
+                         else if (m==blk4) begin
+                             board_nxt[blk4]=1;
+                         end
+                         else begin
+                             board_nxt[m]=board[m];
+                         end
+                     end
+                     y_pos_nxt=y_pos;
+                     x_pos_nxt=x_pos;
+                     state_nxt=GAME_OVER;
+                     test_y_pos_nxt=y_pos;
+                     test_x_pos_nxt=x_pos;
+                     test_rotation_nxt=rotation;
+                     keycode_nxt=0;
+                 end
+                 else begin
+                     state_nxt=TITLESCREEN;
+                     row_to_clear_nxt=row_to_clear;
+                     x_pos_nxt=x_pos;
+                     y_pos_nxt=y_pos;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     board_nxt=board;
+                     game_reset_nxt=0;
+                     test_y_pos_nxt=y_pos;
+                     test_x_pos_nxt=x_pos;
+                     test_rotation_nxt=rotation;
+                     keycode_nxt=keycode;
+                 end
+             end
+             
+             GAMEPLAY:begin
+                 if (clk1Hz) begin
+                     y_pos_nxt=y_pos;
+                     x_pos_nxt=x_pos;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     board_nxt=board;
+                     state_nxt=TEST_COLLISION;
+                     row_to_clear_nxt=row_to_clear;
+                     game_reset_nxt=0;
+                     test_y_pos_nxt=y_pos+1;
+                     test_x_pos_nxt=x_pos;
+                     test_rotation_nxt=rotation;
+                     keycode_nxt=keycode_used;
+                 end
+                 else if (keycode_used[7:0]==A_BUTTON) begin
+                     y_pos_nxt=y_pos;
+                     x_pos_nxt=x_pos;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     board_nxt=board;
+                     state_nxt=TEST_COLLISION;
+                     row_to_clear_nxt=row_to_clear;
+                     game_reset_nxt=0;
+                     test_y_pos_nxt=y_pos;
+                     test_x_pos_nxt=x_pos-1;
+                     test_rotation_nxt=rotation;
+                     keycode_nxt=keycode_used;
+                 end
+                 else if (keycode_used[7:0]==D_BUTTON) begin
+                     y_pos_nxt=y_pos;
+                     x_pos_nxt=x_pos;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     board_nxt=board;
+                     state_nxt=TEST_COLLISION;
+                     row_to_clear_nxt=row_to_clear;
+                     game_reset_nxt=0;
+                     test_y_pos_nxt=y_pos;
+                     test_x_pos_nxt=x_pos+1;
+                     test_rotation_nxt=rotation;
+                     keycode_nxt=keycode_used;
+                 end
+                 else if (keycode_used[7:0]==W_BUTTON) begin
+                     y_pos_nxt=y_pos;
+                     x_pos_nxt=x_pos;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     board_nxt=board;
+                     state_nxt=TEST_COLLISION;
+                     row_to_clear_nxt=row_to_clear;
+                     game_reset_nxt=0;
+                     test_y_pos_nxt=y_pos;
+                     test_x_pos_nxt=x_pos;
+                     test_rotation_nxt=rotation-1;
+                     keycode_nxt=keycode_used;
+                 end
+                 else if (keycode_used[7:0]==S_BUTTON) begin
+                     y_pos_nxt=y_pos;
+                     x_pos_nxt=x_pos;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     board_nxt=board;
+                     state_nxt=TEST_COLLISION;
+                     row_to_clear_nxt=row_to_clear;
+                     game_reset_nxt=0;
+                     test_y_pos_nxt=y_pos;
+                     test_x_pos_nxt=x_pos;
+                     test_rotation_nxt=rotation+1;
+                     keycode_nxt=keycode_used;
+                 end
+                 else if (keycode_used[7:0]==SPACE_BUTTON) begin
+                     y_pos_nxt=y_pos;
+                     x_pos_nxt=x_pos;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     board_nxt=board;
+                     state_nxt=TEST_COLLISION;
+                     row_to_clear_nxt=row_to_clear;
+                     game_reset_nxt=0;
+                     test_y_pos_nxt=y_pos+2;
+                     test_x_pos_nxt=x_pos;
+                     test_rotation_nxt=rotation;
+                     keycode_nxt=keycode_used;
+                 end
+                 else if (ready_to_remove) begin
+                     row_to_clear_nxt=row_to_check;
+                     state_nxt=CLEAR_ROW;
+                     y_pos_nxt=y_pos;
+                     x_pos_nxt=x_pos;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     board_nxt=board;
+                     game_reset_nxt=0;
+                     test_y_pos_nxt=test_y_pos;
+                     test_x_pos_nxt=test_x_pos;
+                     test_rotation_nxt=test_rotation;
+                     keycode_nxt=0;
+                 end
+                 else if((y_pos==0) && intersects_now && pclk ) begin
+                     blk_code_nxt=0;
+                     rotation_nxt=rotation;
+                     row_to_clear_nxt=row_to_clear;
+                     game_reset_nxt=0;
+                     for (m=0; m<=767; m=m+1) begin
+                         if (m==blk1) begin
+                             board_nxt[blk1]=1;
+                         end
+                         else if (m==blk2) begin
+                             board_nxt[blk2]=1;
+                         end
+                         else if (m==blk3) begin
+                             board_nxt[blk3]=1;
+                         end
+                         else if (m==blk4) begin
+                             board_nxt[blk4]=1;
+                         end
+                         else begin
+                             board_nxt[m]=board[m];
+                         end
+                     end
+                     y_pos_nxt=y_pos;
+                     x_pos_nxt=x_pos;
+                     state_nxt=GAME_OVER;
+                     test_y_pos_nxt=test_y_pos;
+                     test_x_pos_nxt=test_x_pos;
+                     test_rotation_nxt=test_rotation;
+                     keycode_nxt=0;
+                 end
+                 else begin
+                     row_to_clear_nxt=row_to_clear;
+                     x_pos_nxt=x_pos;
+                     y_pos_nxt=y_pos;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     board_nxt=board;
+                     state_nxt=GAMEPLAY;
+                     game_reset_nxt=0;
+                     test_y_pos_nxt=test_y_pos;
+                     test_x_pos_nxt=test_x_pos;
+                     test_rotation_nxt=test_rotation;
+                     keycode_nxt=keycode;
+                 end
+             end
+     
+             TEST_COLLISION: begin
+                 if (clk1Hz)begin
+                     if(((height+y_pos)<(GAME_HEIGHT)) && (!test_intersection) ) begin
+                         y_pos_nxt=y_pos+1;
+                         x_pos_nxt=x_pos;
+                         rotation_nxt=rotation;
+                         blk_code_nxt=blk_code;
+                         board_nxt=board;
+                         state_nxt=GAMEPLAY;
+                         row_to_clear_nxt=row_to_clear;
+                         game_reset_nxt=0;
+                         test_y_pos_nxt=y_pos+1;
+                         test_x_pos_nxt=x_pos;
+                         test_rotation_nxt=rotation;
+                         keycode_nxt=0;
+                     end
+                     else begin
+                         for (j=0; j<=767; j=j+1) begin
+                             if (j==blk1) begin
+                                 board_nxt[blk1]=1;
+                             end
+                             else if (j==blk2) begin
+                             board_nxt[blk2]=1;
+                             end
+                             else if (j==blk3) begin
+                                 board_nxt[blk3]=1;
+                             end
+                             else if (j==blk4) begin
+                                 board_nxt[blk4]=1;
+                             end
+                             else begin
+                                 board_nxt[j]=board[j];
+                             end
+                         end  
+                         blk_code_nxt=(random+1);
+                         x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+                         y_pos_nxt=0;
+                         rotation_nxt=0;
+                         game_reset_nxt=1;
+                         row_to_clear_nxt=row_to_clear;                
+                         state_nxt=GAMEPLAY;
+                         test_y_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+                         test_x_pos_nxt=0;
+                         test_rotation_nxt=0;
+                         keycode_nxt=0;
+                     end
+                 end
+                 else if (keycode_used[7:0]==A_BUTTON) begin
+                     if((x_pos>LEFT_EDGE) && (!test_intersection))begin
+                         x_pos_nxt=x_pos-1;
+                         blk_code_nxt=blk_code;
+                         y_pos_nxt=y_pos;
+                         board_nxt=board;
+                         rotation_nxt=rotation;
+                         row_to_clear_nxt=row_to_clear;
+                         state_nxt=GAMEPLAY;
+                         game_reset_nxt=0;
+                         test_y_pos_nxt=y_pos;
+                         test_x_pos_nxt=x_pos-1;
+                         test_rotation_nxt=rotation;
+                         keycode_nxt=0;
+                     end
+                     else begin
+                         x_pos_nxt=x_pos;
+                         blk_code_nxt=blk_code;
+                         y_pos_nxt=y_pos;
+                         board_nxt=board;
+                         rotation_nxt=rotation;
+                         row_to_clear_nxt=row_to_clear;
+                         state_nxt=GAMEPLAY;
+                         game_reset_nxt=0;
+                         test_y_pos_nxt=y_pos;
+                         test_x_pos_nxt=x_pos;
+                         test_rotation_nxt=rotation;
+                         keycode_nxt=0;
+                     end
+                 end
+                 else if (keycode_used[7:0]==D_BUTTON) begin
+                     if(((x_pos+width)<(GAME_WIDTH+LEFT_EDGE)) && (!test_intersection))begin
+                         x_pos_nxt=x_pos+1;
+                         blk_code_nxt=blk_code;
+                         y_pos_nxt=y_pos;
+                         board_nxt=board;
+                         rotation_nxt=rotation;
+                         row_to_clear_nxt=row_to_clear;
+                         state_nxt=GAMEPLAY;
+                         game_reset_nxt=0;
+                         test_y_pos_nxt=y_pos;
+                         test_x_pos_nxt=x_pos+1;
+                         test_rotation_nxt=rotation;
+                         keycode_nxt=0;
+                     end
+                     else begin
+                         x_pos_nxt=x_pos;
+                         blk_code_nxt=blk_code;
+                         y_pos_nxt=y_pos;
+                         board_nxt=board;
+                         rotation_nxt=rotation;
+                         row_to_clear_nxt=row_to_clear;
+                         state_nxt=GAMEPLAY;
+                         game_reset_nxt=0;
+                         test_y_pos_nxt=y_pos;
+                         test_x_pos_nxt=x_pos;
+                         test_rotation_nxt=rotation;
+                         keycode_nxt=0;
+                     end
+                 end
+                 else if (keycode_used[7:0]==W_BUTTON) begin
+                     if((LEFT_EDGE<=(x_pos+test_width)<(LEFT_EDGE+GAME_WIDTH)) &&
+                     ((y_pos+test_height)<GAME_HEIGHT) && (!test_intersection)) begin
+                         rotation_nxt=rotation-1;
+                         blk_code_nxt=blk_code;
+                         y_pos_nxt=y_pos;
+                         board_nxt=board;
+                         x_pos_nxt=x_pos;
+                         row_to_clear_nxt=row_to_clear;
+                         state_nxt=GAMEPLAY;
+                         game_reset_nxt=0;
+                         test_y_pos_nxt=y_pos;
+                         test_x_pos_nxt=x_pos;
+                         test_rotation_nxt=rotation-1;
+                         keycode_nxt=0;
+                     end
+                     else begin
+                         rotation_nxt=rotation;
+                         blk_code_nxt=blk_code;
+                         y_pos_nxt=y_pos;
+                         board_nxt=board;
+                         x_pos_nxt=x_pos;
+                         row_to_clear_nxt=row_to_clear;
+                         state_nxt=GAMEPLAY;
+                         game_reset_nxt=0;
+                         test_y_pos_nxt=y_pos;
+                         test_x_pos_nxt=x_pos;
+                         test_rotation_nxt=rotation;
+                         keycode_nxt=0;
+                     end 
+                 end
+                 else if (keycode_used[7:0]==S_BUTTON) begin
+                     if((LEFT_EDGE<=(x_pos+test_width)<(LEFT_EDGE+GAME_WIDTH)) &&
+                     ((y_pos+test_height)<GAME_HEIGHT) && (!test_intersection)) begin
+                         rotation_nxt=rotation+1;
+                         blk_code_nxt=blk_code;
+                         y_pos_nxt=y_pos;
+                         board_nxt=board;
+                         x_pos_nxt=x_pos;
+                         row_to_clear_nxt=row_to_clear;
+                         state_nxt=GAMEPLAY;
+                         game_reset_nxt=0;
+                         test_y_pos_nxt=y_pos;
+                         test_x_pos_nxt=x_pos;
+                         test_rotation_nxt=rotation+1;
+                         keycode_nxt=0;
+                     end
+                     else begin
+                         rotation_nxt=rotation;
+                         blk_code_nxt=blk_code;
+                         y_pos_nxt=y_pos;
+                         board_nxt=board;
+                         x_pos_nxt=x_pos;
+                         row_to_clear_nxt=row_to_clear;
+                         state_nxt=GAMEPLAY;
+                         game_reset_nxt=0;
+                         test_y_pos_nxt=y_pos;
+                         test_x_pos_nxt=x_pos;
+                         test_rotation_nxt=rotation;
+                         keycode_nxt=0;
+                     end
+                 end
+                 else if (keycode_used[7:0]==SPACE_BUTTON) begin
+                     if(((height+y_pos)<(GAME_HEIGHT-1)) && (!test_intersection)) begin
+                         y_pos_nxt=y_pos+2;
+                         x_pos_nxt=x_pos;
+                         rotation_nxt=rotation;
+                         blk_code_nxt=blk_code;
+                         board_nxt=board;
+                         state_nxt=GAMEPLAY;
+                         row_to_clear_nxt=row_to_clear;
+                         game_reset_nxt=0;
+                         test_y_pos_nxt=y_pos+2;
+                         test_x_pos_nxt=x_pos;
+                         test_rotation_nxt=rotation;
+                         keycode_nxt=0;
+                     end
+                     else if((height+y_pos)==(GAME_HEIGHT-1)&& (!test_intersection)) begin
+                         board_nxt=board;
+                         y_pos_nxt=y_pos+1;
+                         x_pos_nxt=x_pos;
+                         rotation_nxt=rotation;
+                         blk_code_nxt=blk_code;
+                         game_reset_nxt=0;
+                         row_to_clear_nxt=row_to_clear;
+                         state_nxt=GAMEPLAY;
+                         test_y_pos_nxt=y_pos+1;
+                         test_x_pos_nxt=x_pos;
+                         test_rotation_nxt=rotation;
+                         keycode_nxt=0;
+                     end
+                     else begin
+                         blk_code_nxt=(random+1);
+                         rotation_nxt=0;
+                         game_reset_nxt=1;
+                         row_to_clear_nxt=row_to_clear;
+                         for (j=0; j<=767; j=j+1) begin
+                             if (j==blk1) begin
+                                 board_nxt[blk1]=1;
+                             end
+                             else if (j==blk2) begin
+                                 board_nxt[blk2]=1;
+                             end
+                             else if (j==blk3) begin
+                                 board_nxt[blk3]=1;
+                             end
+                             else if (j==blk4) begin
+                                 board_nxt[blk4]=1;
+                             end
+                             else begin
+                                 board_nxt[j]=board[j];
+                             end
+                         end
+                         state_nxt=GAMEPLAY;
+                         x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+                         y_pos_nxt=0;
+                         test_y_pos_nxt=0;
+                         test_x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+                         test_rotation_nxt=0;
+                         keycode_nxt=0;
+                     end
+                 end
+     //            else if (ready_to_remove) begin
+     //                row_to_clear_nxt=row_to_check;
+     //                state_nxt=CLEAR_ROW;
+     //                y_pos_nxt=y_pos;
+     //                x_pos_nxt=x_pos;
+     //                rotation_nxt=rotation;
+     //                blk_code_nxt=blk_code;
+     //                board_nxt=board;
+     //                game_reset_nxt=0;
+     //                test_y_pos_nxt=y_pos;
+     //                test_x_pos_nxt=x_pos;
+     //                test_rotation_nxt=rotation;
+     //            end
+                 else if((y_pos==0) && intersects_now && pclk ) begin
+                     blk_code_nxt=0;
+                     rotation_nxt=rotation;
+                     row_to_clear_nxt=row_to_clear;
+                     game_reset_nxt=0;
+                     for (m=0; m<=767; m=m+1) begin
+                         if (m==blk1) begin
+                             board_nxt[blk1]=1;
+                         end
+                         else if (m==blk2) begin
+                             board_nxt[blk2]=1;
+                         end
+                         else if (m==blk3) begin
+                             board_nxt[blk3]=1;
+                         end
+                         else if (m==blk4) begin
+                             board_nxt[blk4]=1;
+                         end
+                         else begin
+                             board_nxt[m]=board[m];
+                         end
+                     end
+                     y_pos_nxt=y_pos;
+                     x_pos_nxt=x_pos;
+                     state_nxt=GAME_OVER;
+                     test_y_pos_nxt=y_pos;
+                     test_x_pos_nxt=x_pos;
+                     test_rotation_nxt=rotation;
+                     keycode_nxt=0;
+                 end
+                 else begin
+                     row_to_clear_nxt=row_to_clear;
+                     x_pos_nxt=x_pos;
+                     y_pos_nxt=y_pos;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     board_nxt=board;
+                     state_nxt=TEST_COLLISION;
+                     game_reset_nxt=0;
+                     test_y_pos_nxt=test_y_pos;
+                     test_x_pos_nxt=test_x_pos;
+                     test_rotation_nxt=test_rotation;
+                     keycode_nxt=keycode_used;
+                 end
+             end
+             CLEAR_ROW: begin
+                 if (row_to_clear==0) begin
+                     row_to_clear_nxt=row_to_clear;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     game_reset_nxt=0;
+                     for (l=0; l<=767; l=l+1) begin
+                         if (l>=LEFT_EDGE && l<(LEFT_EDGE+GAME_WIDTH)) begin
+                             board_nxt[l]=0;
+                         end
+                         else begin
+                             board_nxt[l]=board[l];
+                         end
+                     end
+                     //board_nxt=board;
+                     //board_nxt[LEFT_EDGE +:GAME_WIDTH]=0;
+                     x_pos_nxt=x_pos;
+                     y_pos_nxt=y_pos;
+                     state_nxt=GAMEPLAY;
+                     test_y_pos_nxt=y_pos;
+                     test_x_pos_nxt=x_pos;
+                     test_rotation_nxt=rotation;
+                     keycode_nxt=0;
+                 end
+                 else begin
+                     row_to_clear_nxt=row_to_clear-1;
+                     rotation_nxt=rotation;
+                     blk_code_nxt=blk_code;
+                     game_reset_nxt=0;
+                     for(k=0;k<=767;k=k+1) begin
+                         if (k>=((row_to_clear*SCREEN_WIDTH)+LEFT_EDGE) &&
+                         k<(((row_to_clear*SCREEN_WIDTH)+LEFT_EDGE)+GAME_WIDTH)) begin
+                             board_nxt[k]=board[k-SCREEN_WIDTH];
+                         end
+                         else begin
+                             board_nxt[k]=board[k];
+                         end
+                     end
+                     //board_nxt=board;
+                     //board_nxt[((row_to_clear*SCREEN_WIDTH)+LEFT_EDGE) +:GAME_WIDTH]=board[(((row_to_clear-1)*SCREEN_WIDTH)+LEFT_EDGE) +:GAME_WIDTH];
+                     state_nxt=CLEAR_ROW;
+                     x_pos_nxt=x_pos;
+                     y_pos_nxt=y_pos;
+                     test_y_pos_nxt=y_pos;
+                     test_x_pos_nxt=x_pos;
+                     test_rotation_nxt=rotation;
+                     keycode_nxt=0;
+                 end
+            end
+              
+            GAME_OVER: begin
+                 if(keycode_used[7:0]==ENTER_BUTTON)begin
+                     board_nxt=0;
+                     blk_code_nxt=(random+1);
+                     x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+                     y_pos_nxt=0;
+                     rotation_nxt=0;
+                     row_to_clear_nxt=0;
+                     state_nxt=GAMEPLAY;
+                     game_reset_nxt=1;
+                     test_y_pos_nxt=y_pos;
+                     test_x_pos_nxt=x_pos;
+                     test_rotation_nxt=rotation;
+                     keycode_nxt=0;
+                 end
+                 else begin
+                     state_nxt=GAME_OVER;
+                     row_to_clear_nxt=row_to_clear;
+                     x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+                     y_pos_nxt=0;
+                     rotation_nxt=0;
+                     blk_code_nxt=0;
+                     board_nxt=board;
+                     game_reset_nxt=0;
+                     test_y_pos_nxt=0;
+                     test_x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+                     test_rotation_nxt=0;
+                     keycode_nxt=keycode;
+                 end
+            end
+            default: begin
+                state_nxt=state;
+                row_to_clear_nxt=row_to_clear;
+                x_pos_nxt=x_pos;
+                y_pos_nxt=y_pos;
+                rotation_nxt=rotation;
+                blk_code_nxt=blk_code;
+                board_nxt=board;
+                game_reset_nxt=0;
+                test_y_pos_nxt=y_pos;
+                test_x_pos_nxt=x_pos;
+                test_rotation_nxt=rotation;
+                keycode_nxt=keycode;
+             end
+         endcase
+     end
+ end
  
+ always @(posedge pclk)begin
+         VGARed_out<=VGARed;
+         VGAGreen_out<=VGAGreen;
+         VGABlue_out<=VGABlue;
+         hsync_out<=hsync_nxt;
+         vsync_out<=vsync_nxt;
+         hblnk_out<=hblnk_nxt;
+         vblnk_out<=vblnk_nxt;
+         hcount_out<=hcount;
+         vcount_out<=vcount;
+         state<=state_nxt;
+         game_reset<=game_reset_nxt;
+  
+         y_pos<=y_pos_nxt;
+         x_pos<=x_pos_nxt;
+         board<=board_nxt;
+         row_to_clear<=row_to_clear_nxt;
+         blk_code<=blk_code_nxt;
+         rotation<=rotation_nxt;
+         test_x_pos<=test_x_pos_nxt;
+         test_y_pos<=test_y_pos_nxt;
+         test_rotation<=test_rotation_nxt;
+         keycode_used<=keycode_nxt;
+ end
+   
 endmodule
