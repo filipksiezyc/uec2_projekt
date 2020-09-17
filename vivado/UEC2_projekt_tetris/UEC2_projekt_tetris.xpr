@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="32" Path="C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr">
+<Project Version="7" Minor="32" Path="C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="889271c35f97487099a272a778fba3b0"/>
@@ -117,35 +117,35 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_11_mod_m_counter.v">
+      <File Path="$PSRCDIR/sources_1/imports/list_ch04_11_mod_m_counter.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_20_fifo.v">
+      <File Path="$PSRCDIR/sources_1/imports/list_ch04_20_fifo.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_01_uart_rx.v">
+      <File Path="$PSRCDIR/sources_1/imports/list_ch08_01_uart_rx.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_03_uart_tx.v">
+      <File Path="$PSRCDIR/sources_1/imports/list_ch08_03_uart_tx.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../../../Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_04_uart.v">
+      <File Path="$PSRCDIR/sources_1/imports/list_ch08_04_uart.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -175,30 +175,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/TETRIS_Main.v">
         <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/PS2Receiver.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/debouncer.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/test_move.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

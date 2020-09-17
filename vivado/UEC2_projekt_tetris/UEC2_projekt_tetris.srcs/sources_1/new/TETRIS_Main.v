@@ -80,7 +80,7 @@ wire [10:0] vcount_frame;
 wire [10:0] hcount_frame;
 wire vsync_frame, hsync_frame;
 wire vblnk_frame, hblnk_frame;
-
+wire [3:0] state_fr;
 
 GAME_FRAME FRAME_VIDEO_CONTROLL(
    .clk(clk65MHz),
@@ -94,6 +94,7 @@ GAME_FRAME FRAME_VIDEO_CONTROLL(
    .VGARed(Red_to_main),
    .VGAGreen(Green_to_main),
    .VGABlue(Blue_to_main),
+   .state(state_fr),
    
    .VGARed_out(Red_Out),
    .VGAGreen_out(Green_Out),
@@ -160,6 +161,7 @@ game_logic_unit tetris_logic(
     .vcount(vcount),
     .keycode(keycode),
 
+    .state_ctr(state_fr),
     .VGARed_out(Red_to_main),
     .VGAGreen_out(Green_to_main),
     .VGABlue_out(Blue_to_main),

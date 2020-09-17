@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Fri Sep 18 00:05:09 2020
-| Host         : LAPTOP-F1511I4M running 64-bit major release  (build 9200)
+| Date         : Fri Sep 18 00:51:52 2020
+| Host         : FilipPC running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -file TETRIS_Main_timing_summary_routed.rpt -warn_on_violation -rpx TETRIS_Main_timing_summary_routed.rpx
 | Design       : TETRIS_Main
 | Device       : 7a35t-cpg236
@@ -52,7 +52,7 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 13 register/latch pins with no clock driven by root clock pin: nolabel_line178/sseg_clk_reg/Q (HIGH)
+ There are 13 register/latch pins with no clock driven by root clock pin: nolabel_line180/sseg_clk_reg/Q (HIGH)
 
 
 2. checking constant_clock
@@ -126,7 +126,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      1.242        0.000                      0                 2234        0.037        0.000                      0                 2234        3.000        0.000                       0                  1262  
+      0.066        0.000                      0                 2237        0.029        0.000                      0                 2237        3.000        0.000                       0                  1283  
 
 
 All user specified timing constraints are met.
@@ -153,8 +153,8 @@ clk                        {0.000 5.000}      10.000          100.000
 Clock                          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----                          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
 clk                                                                                                                                                                          3.000        0.000                       0                     1  
-  clk65MHz_IP_CLK_DIVIDER        1.242        0.000                      0                 2223        0.037        0.000                      0                 2223        6.442        0.000                       0                  1244  
-  clk_rand_IP_CLK_DIVIDER       28.802        0.000                      0                   11        0.122        0.000                      0                   11       14.885        0.000                       0                    14  
+  clk65MHz_IP_CLK_DIVIDER        0.066        0.000                      0                 2226        0.029        0.000                      0                 2226        6.442        0.000                       0                  1265  
+  clk_rand_IP_CLK_DIVIDER       28.437        0.000                      0                   11        0.122        0.000                      0                   11       14.885        0.000                       0                    14  
   clkfbout_IP_CLK_DIVIDER                                                                                                                                                   47.845        0.000                       0                     3  
 
 
@@ -165,7 +165,7 @@ clk                                                                             
 
 From Clock               To Clock                     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
 ----------               --------                     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
-clk_rand_IP_CLK_DIVIDER  clk65MHz_IP_CLK_DIVIDER       11.384        0.000                      0                    3        0.582        0.000                      0                    3  
+clk_rand_IP_CLK_DIVIDER  clk65MHz_IP_CLK_DIVIDER       11.425        0.000                      0                    3        0.162        0.000                      0                    3  
 
 
 ------------------------------------------------------------------------------------------------
@@ -212,28 +212,28 @@ High Pulse Width  Slow    MMCME2_ADV/CLKIN1  n/a            2.000         5.000 
 From Clock:  clk65MHz_IP_CLK_DIVIDER
   To Clock:  clk65MHz_IP_CLK_DIVIDER
 
-Setup :            0  Failing Endpoints,  Worst Slack        1.242ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.037ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        0.066ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.029ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        6.442ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             1.242ns  (required time - arrival time)
-  Source:                 CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0
-                            (clock source 'clk65MHz_IP_CLK_DIVIDER'  {rise@0.000ns fall@7.692ns period=15.385ns})
-  Destination:            tetris_logic/board_reg[442]/CE
+Slack (MET) :             0.066ns  (required time - arrival time)
+  Source:                 tetris_logic/hcount_out_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Destination:            FRAME_VIDEO_CONTROLL/VGARed_out_reg[2]/D
                             (rising edge-triggered cell FDRE clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
   Path Group:             clk65MHz_IP_CLK_DIVIDER
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            7.692ns  (clk65MHz_IP_CLK_DIVIDER rise@15.385ns - clk65MHz_IP_CLK_DIVIDER fall@7.692ns)
-  Data Path Delay:        9.232ns  (logic 0.592ns (6.412%)  route 8.640ns (93.588%))
-  Logic Levels:           5  (BUFGCTRL=1 LUT5=1 LUT6=3)
-  Clock Path Skew:        3.119ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.548ns = ( 13.837 - 15.385 ) 
-    Source Clock Delay      (SCD):    -4.269ns = ( 3.423 - 7.692 ) 
-    Clock Pessimism Removal (CPR):    0.398ns
+  Requirement:            15.385ns  (clk65MHz_IP_CLK_DIVIDER rise@15.385ns - clk65MHz_IP_CLK_DIVIDER rise@0.000ns)
+  Data Path Delay:        15.200ns  (logic 8.280ns (54.475%)  route 6.920ns (45.525%))
+  Logic Levels:           27  (CARRY4=15 LUT2=1 LUT3=2 LUT4=5 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.019ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.552ns = ( 13.833 - 15.385 ) 
+    Source Clock Delay      (SCD):    -0.955ns
+    Clock Pessimism Removal (CPR):    0.579ns
   Clock Uncertainty:      0.132ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Discrete Jitter          (DJ):    0.255ns
@@ -241,28 +241,92 @@ Slack (MET) :             1.242ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk65MHz_IP_CLK_DIVIDER fall edge)
-                                                      7.692     7.692 f  
-    W5                                                0.000     7.692 f  clk (IN)
-                         net (fo=0)                   0.000     7.692    CLK_GENERATOR/inst/pclk
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     9.151 f  CLK_GENERATOR/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.233    10.384    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
-  -------------------------------------------------------------------    -------------------
+                         (clock clk65MHz_IP_CLK_DIVIDER rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    CLK_GENERATOR/inst/pclk
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_GENERATOR/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233     2.691    CLK_GENERATOR/inst/pclk_IP_CLK_DIVIDER
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -6.961     3.423 f  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=2, routed)           1.661     5.084    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
+                                                     -6.961    -4.269 r  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=2, routed)           1.661    -2.608    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
     BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
-                                                      0.096     5.180 f  CLK_GENERATOR/inst/clkout1_buf/O
-                         net (fo=1234, routed)        2.084     7.265    tetris_logic/clk65MHz
-    SLICE_X50Y41         LUT6 (Prop_lut6_I2_O)        0.124     7.389 r  tetris_logic/y_pos[4]_i_16/O
-                         net (fo=8, routed)           0.679     8.068    tetris_logic/current_piece/y_pos_reg[2]_0
-    SLICE_X51Y41         LUT5 (Prop_lut5_I4_O)        0.124     8.192 r  tetris_logic/current_piece/y_pos[4]_i_8/O
-                         net (fo=49, routed)          1.115     9.307    tetris_logic/test_piece/blk2_reg[8]_0
-    SLICE_X56Y37         LUT6 (Prop_lut6_I0_O)        0.124     9.431 r  tetris_logic/test_piece/board[766]_i_3/O
-                         net (fo=27, routed)          0.681    10.113    tetris_logic/current_piece/state_reg[0]_5
-    SLICE_X53Y36         LUT6 (Prop_lut6_I1_O)        0.124    10.237 f  tetris_logic/current_piece/board[766]_i_1/O
-                         net (fo=362, routed)         2.418    12.655    tetris_logic/current_piece_n_840
-    SLICE_X29Y3          FDRE                                         f  tetris_logic/board_reg[442]/CE
+                                                      0.096    -2.512 r  CLK_GENERATOR/inst/clkout1_buf/O
+                         net (fo=1255, routed)        1.557    -0.955    tetris_logic/clk65MHz
+    SLICE_X36Y33         FDRE                                         r  tetris_logic/hcount_out_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y33         FDRE (Prop_fdre_C_Q)         0.419    -0.536 r  tetris_logic/hcount_out_reg[4]/Q
+                         net (fo=83, routed)          0.878     0.342    tetris_logic/VGABlue_out_reg[3]_1[4]
+    SLICE_X37Y31         LUT3 (Prop_lut3_I0_O)        0.327     0.669 r  tetris_logic/VGARed_nxt7_carry__0_i_2/O
+                         net (fo=4, routed)           0.455     1.124    tetris_logic/VGARed_out_reg[3]_52[2]
+    SLICE_X36Y30         LUT4 (Prop_lut4_I0_O)        0.332     1.456 r  tetris_logic/VGARed_nxt7_carry__0_i_6/O
+                         net (fo=1, routed)           0.000     1.456    FRAME_VIDEO_CONTROLL/hcount_out_reg[4][2]
+    SLICE_X36Y30         CARRY4 (Prop_carry4_S[2]_CO[3])
+                                                      0.398     1.854 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     1.854    FRAME_VIDEO_CONTROLL/VGARed_nxt7_carry__0_n_0
+    SLICE_X36Y31         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     1.968 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     1.968    FRAME_VIDEO_CONTROLL/VGARed_nxt7_carry__1_n_0
+    SLICE_X36Y32         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     2.302 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7_carry__2/O[1]
+                         net (fo=2, routed)           0.594     2.896    FRAME_VIDEO_CONTROLL/VGARed_nxt7_carry__2_n_6
+    SLICE_X41Y30         LUT3 (Prop_lut3_I1_O)        0.303     3.199 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7__65_carry__1_i_3/O
+                         net (fo=2, routed)           0.322     3.521    FRAME_VIDEO_CONTROLL/VGARed_nxt7__65_carry__1_i_3_n_0
+    SLICE_X38Y30         LUT4 (Prop_lut4_I0_O)        0.124     3.645 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7__65_carry__1_i_7/O
+                         net (fo=1, routed)           0.000     3.645    FRAME_VIDEO_CONTROLL/VGARed_nxt7__65_carry__1_i_7_n_0
+    SLICE_X38Y30         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     4.178 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7__65_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     4.178    FRAME_VIDEO_CONTROLL/VGARed_nxt7__65_carry__1_n_0
+    SLICE_X38Y31         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323     4.501 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7__65_carry__2/O[1]
+                         net (fo=8, routed)           0.473     4.974    FRAME_VIDEO_CONTROLL/VGARed_nxt7__65_carry__2_n_6
+    SLICE_X39Y30         LUT2 (Prop_lut2_I1_O)        0.306     5.280 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7__110_carry__0_i_1/O
+                         net (fo=1, routed)           0.000     5.280    FRAME_VIDEO_CONTROLL/VGARed_nxt7__110_carry__0_i_1_n_0
+    SLICE_X39Y30         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     5.681 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7__110_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     5.681    FRAME_VIDEO_CONTROLL/VGARed_nxt7__110_carry__0_n_0
+    SLICE_X39Y31         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     6.015 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7__110_carry__1/O[1]
+                         net (fo=3, routed)           0.663     6.678    tetris_logic/hcount_out_reg[8]_2[1]
+    SLICE_X40Y32         LUT4 (Prop_lut4_I1_O)        0.303     6.981 r  tetris_logic/VGARed_nxt7__147_carry__1_i_7/O
+                         net (fo=1, routed)           0.000     6.981    FRAME_VIDEO_CONTROLL/hcount_out_reg[9]_5[1]
+    SLICE_X40Y32         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550     7.531 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7__147_carry__1/CO[3]
+                         net (fo=1, routed)           0.000     7.531    FRAME_VIDEO_CONTROLL/VGARed_nxt7__147_carry__1_n_0
+    SLICE_X40Y33         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271     7.802 r  FRAME_VIDEO_CONTROLL/VGARed_nxt7__147_carry__2/CO[0]
+                         net (fo=68, routed)          0.852     8.654    FRAME_VIDEO_CONTROLL/VGARed_nxt7__147_carry__2_n_3
+    SLICE_X42Y33         LUT4 (Prop_lut4_I2_O)        0.373     9.027 r  FRAME_VIDEO_CONTROLL/VGARed_nxt4__28_carry_i_6/O
+                         net (fo=1, routed)           0.000     9.027    FRAME_VIDEO_CONTROLL/VGARed_nxt4__28_carry_i_6_n_0
+    SLICE_X42Y33         CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.533     9.560 r  FRAME_VIDEO_CONTROLL/VGARed_nxt4__28_carry/CO[3]
+                         net (fo=1, routed)           0.000     9.560    FRAME_VIDEO_CONTROLL/VGARed_nxt4__28_carry_n_0
+    SLICE_X42Y34         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.677 r  FRAME_VIDEO_CONTROLL/VGARed_nxt4__28_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     9.677    FRAME_VIDEO_CONTROLL/VGARed_nxt4__28_carry__0_n_0
+    SLICE_X42Y35         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    10.000 r  FRAME_VIDEO_CONTROLL/VGARed_nxt4__28_carry__1/O[1]
+                         net (fo=2, routed)           0.767    10.767    FRAME_VIDEO_CONTROLL/VGARed_out_reg[3]_13[1]
+    SLICE_X43Y36         LUT4 (Prop_lut4_I0_O)        0.306    11.073 r  FRAME_VIDEO_CONTROLL/VGARed_nxt3__15_carry__0_i_7/O
+                         net (fo=1, routed)           0.000    11.073    FRAME_VIDEO_CONTROLL/VGARed_nxt3__15_carry__0_i_7_n_0
+    SLICE_X43Y36         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532    11.605 r  FRAME_VIDEO_CONTROLL/VGARed_nxt3__15_carry__0/CO[3]
+                         net (fo=1, routed)           0.000    11.605    FRAME_VIDEO_CONTROLL/VGARed_nxt3__15_carry__0_n_0
+    SLICE_X43Y37         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.719 r  FRAME_VIDEO_CONTROLL/VGARed_nxt3__15_carry__1/CO[3]
+                         net (fo=1, routed)           0.000    11.719    FRAME_VIDEO_CONTROLL/VGARed_nxt3__15_carry__1_n_0
+    SLICE_X43Y38         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    11.833 f  FRAME_VIDEO_CONTROLL/VGARed_nxt3__15_carry__2/CO[3]
+                         net (fo=2, routed)           0.784    12.617    tetris_logic/vcount_out_reg[10]_3[0]
+    SLICE_X38Y40         LUT6 (Prop_lut6_I2_O)        0.124    12.741 r  tetris_logic/VGARed_out[3]_i_9/O
+                         net (fo=1, routed)           0.451    13.192    tetris_logic/VGARed_out[3]_i_9_n_0
+    SLICE_X39Y40         LUT6 (Prop_lut6_I0_O)        0.124    13.316 f  tetris_logic/VGARed_out[3]_i_4__0/O
+                         net (fo=1, routed)           0.263    13.579    tetris_logic/VGARed_out[3]_i_4__0_n_0
+    SLICE_X39Y40         LUT6 (Prop_lut6_I1_O)        0.124    13.703 f  tetris_logic/VGARed_out[3]_i_2/O
+                         net (fo=4, routed)           0.418    14.121    tetris_logic/VGARed_out[3]_i_2_n_0
+    SLICE_X37Y40         LUT5 (Prop_lut5_I4_O)        0.124    14.245 r  tetris_logic/VGARed_out[2]_i_1/O
+                         net (fo=1, routed)           0.000    14.245    FRAME_VIDEO_CONTROLL/VGARed_out_reg[3]_28[2]
+    SLICE_X37Y40         FDRE                                         r  FRAME_VIDEO_CONTROLL/VGARed_out_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk65MHz_IP_CLK_DIVIDER rise edge)
@@ -276,16 +340,16 @@ Slack (MET) :             1.242ns  (required time - arrival time)
                          net (fo=2, routed)           1.581    12.298    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
     BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
                                                       0.091    12.389 r  CLK_GENERATOR/inst/clkout1_buf/O
-                         net (fo=1234, routed)        1.447    13.837    tetris_logic/clk65MHz
-    SLICE_X29Y3          FDRE                                         r  tetris_logic/board_reg[442]/C
-                         clock pessimism              0.398    14.235    
-                         clock uncertainty           -0.132    14.103    
-    SLICE_X29Y3          FDRE (Setup_fdre_C_CE)      -0.205    13.898    tetris_logic/board_reg[442]
+                         net (fo=1255, routed)        1.443    13.833    FRAME_VIDEO_CONTROLL/clk65MHz
+    SLICE_X37Y40         FDRE                                         r  FRAME_VIDEO_CONTROLL/VGARed_out_reg[2]/C
+                         clock pessimism              0.579    14.411    
+                         clock uncertainty           -0.132    14.279    
+    SLICE_X37Y40         FDRE (Setup_fdre_C_D)        0.032    14.311    FRAME_VIDEO_CONTROLL/VGARed_out_reg[2]
   -------------------------------------------------------------------
-                         required time                         13.898    
-                         arrival time                         -12.655    
+                         required time                         14.311    
+                         arrival time                         -14.245    
   -------------------------------------------------------------------
-                         slack                                  1.242    
+                         slack                                  0.066    
 
 
 
@@ -293,20 +357,20 @@ Slack (MET) :             1.242ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.037ns  (arrival time - required time)
-  Source:                 uart/uart_rx_unit/b_reg_reg[0]/C
-                            (rising edge-triggered cell FDCE clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
-  Destination:            uart/fifo_rx_unit/array_reg_reg_0_1_0_5/RAMA/I
-                            (rising edge-triggered cell RAMD32 clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
+Slack (MET) :             0.029ns  (arrival time - required time)
+  Source:                 FRAME_VIDEO_CONTROLL/VGAGreen_out_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
+  Destination:            vgaGreen_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
   Path Group:             clk65MHz_IP_CLK_DIVIDER
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk65MHz_IP_CLK_DIVIDER rise@0.000ns - clk65MHz_IP_CLK_DIVIDER rise@0.000ns)
-  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Data Path Delay:        0.363ns  (logic 0.141ns (38.796%)  route 0.222ns (61.204%))
   Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.857ns
-    Source Clock Delay      (SCD):    -0.618ns
-    Clock Pessimism Removal (CPR):    -0.251ns
+  Clock Path Skew:        0.264ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.860ns
+    Source Clock Delay      (SCD):    -0.620ns
+    Clock Pessimism Removal (CPR):    -0.503ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -321,12 +385,12 @@ Slack (MET) :             0.037ns  (arrival time - required time)
                          net (fo=2, routed)           0.486    -1.207    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
     BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
                                                       0.026    -1.181 r  CLK_GENERATOR/inst/clkout1_buf/O
-                         net (fo=1234, routed)        0.563    -0.618    uart/uart_rx_unit/clk65MHz
-    SLICE_X43Y46         FDCE                                         r  uart/uart_rx_unit/b_reg_reg[0]/C
+                         net (fo=1255, routed)        0.561    -0.620    FRAME_VIDEO_CONTROLL/clk65MHz
+    SLICE_X37Y39         FDRE                                         r  FRAME_VIDEO_CONTROLL/VGAGreen_out_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X43Y46         FDCE (Prop_fdce_C_Q)         0.141    -0.477 r  uart/uart_rx_unit/b_reg_reg[0]/Q
-                         net (fo=1, routed)           0.056    -0.421    uart/fifo_rx_unit/array_reg_reg_0_1_0_5/DIA0
-    SLICE_X42Y46         RAMD32                                       r  uart/fifo_rx_unit/array_reg_reg_0_1_0_5/RAMA/I
+    SLICE_X37Y39         FDRE (Prop_fdre_C_Q)         0.141    -0.479 r  FRAME_VIDEO_CONTROLL/VGAGreen_out_reg[1]/Q
+                         net (fo=1, routed)           0.222    -0.257    Green_Out[1]
+    SLICE_X31Y39         FDRE                                         r  vgaGreen_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk65MHz_IP_CLK_DIVIDER rise edge)
@@ -340,16 +404,15 @@ Slack (MET) :             0.037ns  (arrival time - required time)
                          net (fo=2, routed)           0.530    -1.718    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
     BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
                                                       0.029    -1.689 r  CLK_GENERATOR/inst/clkout1_buf/O
-                         net (fo=1234, routed)        0.833    -0.857    uart/fifo_rx_unit/array_reg_reg_0_1_0_5/WCLK
-    SLICE_X42Y46         RAMD32                                       r  uart/fifo_rx_unit/array_reg_reg_0_1_0_5/RAMA/CLK
-                         clock pessimism              0.251    -0.605    
-    SLICE_X42Y46         RAMD32 (Hold_ramd32_CLK_I)
-                                                      0.147    -0.458    uart/fifo_rx_unit/array_reg_reg_0_1_0_5/RAMA
+                         net (fo=1255, routed)        0.830    -0.860    clk65MHz
+    SLICE_X31Y39         FDRE                                         r  vgaGreen_reg[1]/C
+                         clock pessimism              0.503    -0.356    
+    SLICE_X31Y39         FDRE (Hold_fdre_C_D)         0.070    -0.286    vgaGreen_reg[1]
   -------------------------------------------------------------------
-                         required time                          0.458    
-                         arrival time                          -0.421    
+                         required time                          0.286    
+                         arrival time                          -0.257    
   -------------------------------------------------------------------
-                         slack                                  0.037    
+                         slack                                  0.029    
 
 
 
@@ -365,8 +428,8 @@ Sources:            { CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0 }
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
 Min Period        n/a     BUFGCTRL/I0         n/a            2.155         15.385      13.229     BUFGCTRL_X0Y0    CLK_GENERATOR/inst/clkout1_buf/I0
 Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       15.385      197.975    MMCME2_ADV_X1Y0  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT0
-Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         7.692       6.442      SLICE_X42Y46     uart/fifo_rx_unit/array_reg_reg_0_1_0_5/RAMA/CLK
-High Pulse Width  Slow    RAMD32/CLK          n/a            1.250         7.692       6.442      SLICE_X42Y46     uart/fifo_rx_unit/array_reg_reg_0_1_0_5/RAMA/CLK
+Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         7.692       6.442      SLICE_X60Y42     uart/fifo_rx_unit/array_reg_reg_0_1_0_5/RAMA/CLK
+High Pulse Width  Slow    RAMD32/CLK          n/a            1.250         7.692       6.442      SLICE_X60Y42     uart/fifo_rx_unit/array_reg_reg_0_1_0_5/RAMA/CLK
 
 
 
@@ -374,7 +437,7 @@ High Pulse Width  Slow    RAMD32/CLK          n/a            1.250         7.692
 From Clock:  clk_rand_IP_CLK_DIVIDER
   To Clock:  clk_rand_IP_CLK_DIVIDER
 
-Setup :            0  Failing Endpoints,  Worst Slack       28.802ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack       28.437ns,  Total Violation        0.000ns
 Hold  :            0  Failing Endpoints,  Worst Slack        0.122ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack       14.885ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
@@ -382,19 +445,19 @@ PW    :            0  Failing Endpoints,  Worst Slack       14.885ns,  Total Vio
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             28.802ns  (required time - arrival time)
-  Source:                 random_blocks/rand_count_reg[0]/C
+Slack (MET) :             28.437ns  (required time - arrival time)
+  Source:                 random_blocks/rand_count_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by clk_rand_IP_CLK_DIVIDER  {rise@0.000ns fall@15.385ns period=30.769ns})
-  Destination:            random_blocks/rand_count_reg[0]/D
+  Destination:            random_blocks/rand_count_reg[1]/D
                             (rising edge-triggered cell FDRE clocked by clk_rand_IP_CLK_DIVIDER  {rise@0.000ns fall@15.385ns period=30.769ns})
   Path Group:             clk_rand_IP_CLK_DIVIDER
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            30.769ns  (clk_rand_IP_CLK_DIVIDER rise@30.769ns - clk_rand_IP_CLK_DIVIDER rise@0.000ns)
-  Data Path Delay:        1.849ns  (logic 0.580ns (31.368%)  route 1.269ns (68.632%))
+  Data Path Delay:        2.262ns  (logic 0.642ns (28.382%)  route 1.620ns (71.618%))
   Logic Levels:           1  (LUT4=1)
   Clock Path Skew:        0.000ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.477ns = ( 29.292 - 30.769 ) 
-    Source Clock Delay      (SCD):    -0.875ns
+    Destination Clock Delay (DCD):    -1.547ns = ( 29.222 - 30.769 ) 
+    Source Clock Delay      (SCD):    -0.945ns
     Clock Pessimism Removal (CPR):    0.603ns
   Clock Uncertainty:      0.148ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -414,14 +477,14 @@ Slack (MET) :             28.802ns  (required time - arrival time)
                          net (fo=2, routed)           1.661    -2.608    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER
     BUFGCTRL_X0Y1        BUFGCTRL (Prop_bufgctrl_I0_O)
                                                       0.096    -2.512 r  CLK_GENERATOR/inst/clkout2_buf/O
-                         net (fo=3, routed)           1.637    -0.875    random_blocks/clk_rand
-    SLICE_X59Y43         FDRE                                         r  random_blocks/rand_count_reg[0]/C
+                         net (fo=3, routed)           1.567    -0.945    random_blocks/clk_rand
+    SLICE_X52Y37         FDRE                                         r  random_blocks/rand_count_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X59Y43         FDRE (Prop_fdre_C_Q)         0.456    -0.419 f  random_blocks/rand_count_reg[0]/Q
-                         net (fo=6, routed)           1.269     0.850    random_blocks/rand_count_reg[1]_0[0]
-    SLICE_X59Y43         LUT4 (Prop_lut4_I0_O)        0.124     0.974 r  random_blocks/rand_count[0]_i_1/O
-                         net (fo=1, routed)           0.000     0.974    random_blocks/rand_count[0]_i_1_n_0
-    SLICE_X59Y43         FDRE                                         r  random_blocks/rand_count_reg[0]/D
+    SLICE_X52Y37         FDRE (Prop_fdre_C_Q)         0.518    -0.427 r  random_blocks/rand_count_reg[1]/Q
+                         net (fo=5, routed)           1.620     1.193    random_blocks/rand_count_reg[1]_0[1]
+    SLICE_X52Y37         LUT4 (Prop_lut4_I2_O)        0.124     1.317 r  random_blocks/rand_count[1]_i_1/O
+                         net (fo=1, routed)           0.000     1.317    random_blocks/rand_count[1]_i_1_n_0
+    SLICE_X52Y37         FDRE                                         r  random_blocks/rand_count_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_rand_IP_CLK_DIVIDER rise edge)
@@ -435,16 +498,16 @@ Slack (MET) :             28.802ns  (required time - arrival time)
                          net (fo=2, routed)           1.581    27.683    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER
     BUFGCTRL_X0Y1        BUFGCTRL (Prop_bufgctrl_I0_O)
                                                       0.091    27.774 r  CLK_GENERATOR/inst/clkout2_buf/O
-                         net (fo=3, routed)           1.518    29.292    random_blocks/clk_rand
-    SLICE_X59Y43         FDRE                                         r  random_blocks/rand_count_reg[0]/C
-                         clock pessimism              0.603    29.895    
-                         clock uncertainty           -0.148    29.747    
-    SLICE_X59Y43         FDRE (Setup_fdre_C_D)        0.029    29.776    random_blocks/rand_count_reg[0]
+                         net (fo=3, routed)           1.448    29.222    random_blocks/clk_rand
+    SLICE_X52Y37         FDRE                                         r  random_blocks/rand_count_reg[1]/C
+                         clock pessimism              0.603    29.825    
+                         clock uncertainty           -0.148    29.677    
+    SLICE_X52Y37         FDRE (Setup_fdre_C_D)        0.077    29.754    random_blocks/rand_count_reg[1]
   -------------------------------------------------------------------
-                         required time                         29.776    
-                         arrival time                          -0.974    
+                         required time                         29.754    
+                         arrival time                          -1.317    
   -------------------------------------------------------------------
-                         slack                                 28.802    
+                         slack                                 28.437    
 
 
 
@@ -521,7 +584,7 @@ Sources:            { CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1 }
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
 Min Period        n/a     BUFGCTRL/I0         n/a            2.155         30.769      28.614     BUFGCTRL_X0Y1    CLK_GENERATOR/inst/clkout2_buf/I0
 Max Period        n/a     MMCME2_ADV/CLKOUT1  n/a            213.360       30.769      182.591    MMCME2_ADV_X1Y0  CLK_GENERATOR/inst/mmcm_adv_inst/CLKOUT1
-Low Pulse Width   Slow    FDCE/C              n/a            0.500         15.385      14.885     SLICE_X35Y46     CLK_GENERATOR/inst/seq_reg2_reg[0]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         15.385      14.885     SLICE_X52Y37     random_blocks/rand_count_reg[0]/C
 High Pulse Width  Slow    FDCE/C              n/a            0.500         15.385      14.885     SLICE_X35Y46     CLK_GENERATOR/inst/seq_reg2_reg[0]/C
 
 
@@ -553,26 +616,26 @@ Max Period  n/a     MMCME2_ADV/CLKFBIN  n/a            100.000       50.000     
 From Clock:  clk_rand_IP_CLK_DIVIDER
   To Clock:  clk65MHz_IP_CLK_DIVIDER
 
-Setup :            0  Failing Endpoints,  Worst Slack       11.384ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.582ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack       11.425ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.162ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             11.384ns  (required time - arrival time)
-  Source:                 random_blocks/rand_count_reg[0]/C
+Slack (MET) :             11.425ns  (required time - arrival time)
+  Source:                 random_blocks/rand_count_reg[1]/C
                             (rising edge-triggered cell FDRE clocked by clk_rand_IP_CLK_DIVIDER  {rise@0.000ns fall@15.385ns period=30.769ns})
   Destination:            tetris_logic/blk_code_reg[2]/D
                             (rising edge-triggered cell FDRE clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
   Path Group:             clk65MHz_IP_CLK_DIVIDER
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            15.385ns  (clk65MHz_IP_CLK_DIVIDER rise@15.385ns - clk_rand_IP_CLK_DIVIDER rise@0.000ns)
-  Data Path Delay:        3.555ns  (logic 0.704ns (19.804%)  route 2.851ns (80.196%))
-  Logic Levels:           2  (LUT4=1 LUT6=1)
-  Clock Path Skew:        -0.209ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.482ns = ( 13.903 - 15.385 ) 
-    Source Clock Delay      (SCD):    -0.875ns
+  Data Path Delay:        3.565ns  (logic 0.766ns (21.484%)  route 2.799ns (78.516%))
+  Logic Levels:           2  (LUT3=1 LUT5=1)
+  Clock Path Skew:        -0.205ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.548ns = ( 13.837 - 15.385 ) 
+    Source Clock Delay      (SCD):    -0.945ns
     Clock Pessimism Removal (CPR):    0.398ns
   Clock Uncertainty:      0.268ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -592,16 +655,16 @@ Slack (MET) :             11.384ns  (required time - arrival time)
                          net (fo=2, routed)           1.661    -2.608    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER
     BUFGCTRL_X0Y1        BUFGCTRL (Prop_bufgctrl_I0_O)
                                                       0.096    -2.512 r  CLK_GENERATOR/inst/clkout2_buf/O
-                         net (fo=3, routed)           1.637    -0.875    random_blocks/clk_rand
-    SLICE_X59Y43         FDRE                                         r  random_blocks/rand_count_reg[0]/C
+                         net (fo=3, routed)           1.567    -0.945    random_blocks/clk_rand
+    SLICE_X52Y37         FDRE                                         r  random_blocks/rand_count_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X59Y43         FDRE (Prop_fdre_C_Q)         0.456    -0.419 r  random_blocks/rand_count_reg[0]/Q
-                         net (fo=6, routed)           1.271     0.852    random_blocks/rand_count_reg[1]_0[0]
-    SLICE_X59Y43         LUT4 (Prop_lut4_I2_O)        0.124     0.976 r  random_blocks/blk_code[2]_i_2/O
-                         net (fo=1, routed)           1.580     2.556    tetris_logic/current_piece/rand_count_reg[1][1]
-    SLICE_X58Y36         LUT6 (Prop_lut6_I0_O)        0.124     2.680 r  tetris_logic/current_piece/blk_code[2]_i_1/O
-                         net (fo=1, routed)           0.000     2.680    tetris_logic/current_piece_n_874
-    SLICE_X58Y36         FDRE                                         r  tetris_logic/blk_code_reg[2]/D
+    SLICE_X52Y37         FDRE (Prop_fdre_C_Q)         0.518    -0.427 r  random_blocks/rand_count_reg[1]/Q
+                         net (fo=5, routed)           1.596     1.170    random_blocks/rand_count_reg[1]_0[1]
+    SLICE_X52Y37         LUT3 (Prop_lut3_I1_O)        0.124     1.294 f  random_blocks/blk_code[2]_i_3/O
+                         net (fo=1, routed)           1.203     2.497    tetris_logic/test_piece/rand_count_reg[2]
+    SLICE_X52Y35         LUT5 (Prop_lut5_I2_O)        0.124     2.621 r  tetris_logic/test_piece/blk_code[2]_i_1/O
+                         net (fo=1, routed)           0.000     2.621    tetris_logic/test_piece_n_75
+    SLICE_X52Y35         FDRE                                         r  tetris_logic/blk_code_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk65MHz_IP_CLK_DIVIDER rise edge)
@@ -615,16 +678,16 @@ Slack (MET) :             11.384ns  (required time - arrival time)
                          net (fo=2, routed)           1.581    12.298    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
     BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
                                                       0.091    12.389 r  CLK_GENERATOR/inst/clkout1_buf/O
-                         net (fo=1234, routed)        1.513    13.903    tetris_logic/clk65MHz
-    SLICE_X58Y36         FDRE                                         r  tetris_logic/blk_code_reg[2]/C
-                         clock pessimism              0.398    14.301    
-                         clock uncertainty           -0.268    14.033    
-    SLICE_X58Y36         FDRE (Setup_fdre_C_D)        0.031    14.064    tetris_logic/blk_code_reg[2]
+                         net (fo=1255, routed)        1.447    13.837    tetris_logic/clk65MHz
+    SLICE_X52Y35         FDRE                                         r  tetris_logic/blk_code_reg[2]/C
+                         clock pessimism              0.398    14.235    
+                         clock uncertainty           -0.268    13.967    
+    SLICE_X52Y35         FDRE (Setup_fdre_C_D)        0.079    14.046    tetris_logic/blk_code_reg[2]
   -------------------------------------------------------------------
-                         required time                         14.064    
-                         arrival time                          -2.680    
+                         required time                         14.046    
+                         arrival time                          -2.621    
   -------------------------------------------------------------------
-                         slack                                 11.384    
+                         slack                                 11.425    
 
 
 
@@ -632,19 +695,19 @@ Slack (MET) :             11.384ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.582ns  (arrival time - required time)
+Slack (MET) :             0.162ns  (arrival time - required time)
   Source:                 random_blocks/rand_count_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by clk_rand_IP_CLK_DIVIDER  {rise@0.000ns fall@15.385ns period=30.769ns})
-  Destination:            tetris_logic/blk_code_reg[1]/D
+  Destination:            tetris_logic/blk_code_reg[0]/D
                             (rising edge-triggered cell FDRE clocked by clk65MHz_IP_CLK_DIVIDER  {rise@0.000ns fall@7.692ns period=15.385ns})
   Path Group:             clk65MHz_IP_CLK_DIVIDER
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk65MHz_IP_CLK_DIVIDER rise@0.000ns - clk_rand_IP_CLK_DIVIDER rise@0.000ns)
-  Data Path Delay:        1.253ns  (logic 0.231ns (18.430%)  route 1.022ns (81.570%))
-  Logic Levels:           2  (LUT3=1 LUT6=1)
-  Clock Path Skew:        0.312ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.831ns
-    Source Clock Delay      (SCD):    -0.587ns
+  Data Path Delay:        0.865ns  (logic 0.209ns (24.155%)  route 0.656ns (75.845%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.316ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.858ns
+    Source Clock Delay      (SCD):    -0.618ns
     Clock Pessimism Removal (CPR):    -0.555ns
   Clock Uncertainty:      0.268ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -664,16 +727,14 @@ Slack (MET) :             0.582ns  (arrival time - required time)
                          net (fo=2, routed)           0.486    -1.207    CLK_GENERATOR/inst/clk_rand_IP_CLK_DIVIDER
     BUFGCTRL_X0Y1        BUFGCTRL (Prop_bufgctrl_I0_O)
                                                       0.026    -1.181 r  CLK_GENERATOR/inst/clkout2_buf/O
-                         net (fo=3, routed)           0.594    -0.587    random_blocks/clk_rand
-    SLICE_X59Y43         FDRE                                         r  random_blocks/rand_count_reg[0]/C
+                         net (fo=3, routed)           0.563    -0.618    random_blocks/clk_rand
+    SLICE_X52Y37         FDRE                                         r  random_blocks/rand_count_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X59Y43         FDRE (Prop_fdre_C_Q)         0.141    -0.446 r  random_blocks/rand_count_reg[0]/Q
-                         net (fo=6, routed)           0.385    -0.061    random_blocks/rand_count_reg[1]_0[0]
-    SLICE_X59Y43         LUT3 (Prop_lut3_I1_O)        0.045    -0.016 r  random_blocks/blk_code[1]_i_2/O
-                         net (fo=1, routed)           0.637     0.621    tetris_logic/current_piece/rand_count_reg[1][0]
-    SLICE_X58Y36         LUT6 (Prop_lut6_I0_O)        0.045     0.666 r  tetris_logic/current_piece/blk_code[1]_i_1/O
-                         net (fo=1, routed)           0.000     0.666    tetris_logic/current_piece_n_873
-    SLICE_X58Y36         FDRE                                         r  tetris_logic/blk_code_reg[1]/D
+    SLICE_X52Y37         FDRE (Prop_fdre_C_Q)         0.164    -0.454 f  random_blocks/rand_count_reg[0]/Q
+                         net (fo=6, routed)           0.656     0.202    tetris_logic/test_piece/rand_count_reg[1][0]
+    SLICE_X52Y35         LUT5 (Prop_lut5_I2_O)        0.045     0.247 r  tetris_logic/test_piece/blk_code[0]_i_1/O
+                         net (fo=1, routed)           0.000     0.247    tetris_logic/test_piece_n_73
+    SLICE_X52Y35         FDRE                                         r  tetris_logic/blk_code_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk65MHz_IP_CLK_DIVIDER rise edge)
@@ -687,16 +748,16 @@ Slack (MET) :             0.582ns  (arrival time - required time)
                          net (fo=2, routed)           0.530    -1.718    CLK_GENERATOR/inst/clk65MHz_IP_CLK_DIVIDER
     BUFGCTRL_X0Y0        BUFGCTRL (Prop_bufgctrl_I0_O)
                                                       0.029    -1.689 r  CLK_GENERATOR/inst/clkout1_buf/O
-                         net (fo=1234, routed)        0.859    -0.831    tetris_logic/clk65MHz
-    SLICE_X58Y36         FDRE                                         r  tetris_logic/blk_code_reg[1]/C
-                         clock pessimism              0.555    -0.276    
-                         clock uncertainty            0.268    -0.008    
-    SLICE_X58Y36         FDRE (Hold_fdre_C_D)         0.092     0.084    tetris_logic/blk_code_reg[1]
+                         net (fo=1255, routed)        0.832    -0.858    tetris_logic/clk65MHz
+    SLICE_X52Y35         FDRE                                         r  tetris_logic/blk_code_reg[0]/C
+                         clock pessimism              0.555    -0.303    
+                         clock uncertainty            0.268    -0.035    
+    SLICE_X52Y35         FDRE (Hold_fdre_C_D)         0.120     0.085    tetris_logic/blk_code_reg[0]
   -------------------------------------------------------------------
-                         required time                         -0.084    
-                         arrival time                           0.666    
+                         required time                         -0.085    
+                         arrival time                           0.247    
   -------------------------------------------------------------------
-                         slack                                  0.582    
+                         slack                                  0.162    
 
 
 
