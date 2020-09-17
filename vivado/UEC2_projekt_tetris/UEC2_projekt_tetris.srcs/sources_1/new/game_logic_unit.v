@@ -47,7 +47,7 @@ module game_logic_unit(
     output reg [4:0] score4
     );
  
-localparam TITLESCREEN=0, GAMEPLAY=1, TEST_COLLISION=2, CLEAR_ROW=3,GAME_OVER=4,
+localparam TITLESCREEN=0, GAMEPLAY=1, BUFFER=2, TEST_COLLISION=3, CLEAR_ROW=4,GAME_OVER=5,
  
 //A_BUTTON=16'h1C, W_BUTTON=16'h1D, S_BUTTON=16'h1B, D_BUTTON=16'h23,
 //SPACE_BUTTON=16'h29, ENTER_BUTTON=16'h5A,
@@ -655,7 +655,7 @@ always @(*) begin
                          rotation_nxt=rotation;
                          blk_code_nxt=blk_code;
                          board_nxt=board;
-                         state_nxt=TEST_COLLISION;
+                         state_nxt=BUFFER;
                          row_to_clear_nxt=row_to_clear;
                          game_reset_nxt=0;
                          test_y_pos_nxt=y_pos;
@@ -673,7 +673,7 @@ always @(*) begin
                          rotation_nxt=rotation;
                          blk_code_nxt=blk_code;
                          board_nxt=board;
-                         state_nxt=TEST_COLLISION;
+                         state_nxt=BUFFER;
                          row_to_clear_nxt=row_to_clear;
                          game_reset_nxt=0;
                          test_y_pos_nxt=y_pos;
@@ -691,7 +691,7 @@ always @(*) begin
                          rotation_nxt=rotation;
                          blk_code_nxt=blk_code;
                          board_nxt=board;
-                         state_nxt=TEST_COLLISION;
+                         state_nxt=BUFFER;
                          row_to_clear_nxt=row_to_clear;
                          game_reset_nxt=0;
                          test_y_pos_nxt=y_pos;
@@ -709,7 +709,7 @@ always @(*) begin
                          rotation_nxt=rotation;
                          blk_code_nxt=blk_code;
                          board_nxt=board;
-                         state_nxt=TEST_COLLISION;
+                         state_nxt=BUFFER;
                          row_to_clear_nxt=row_to_clear;
                          game_reset_nxt=0;
                          test_y_pos_nxt=y_pos;
@@ -727,7 +727,7 @@ always @(*) begin
                          rotation_nxt=rotation;
                          blk_code_nxt=blk_code;
                          board_nxt=board;
-                         state_nxt=TEST_COLLISION;
+                         state_nxt=BUFFER;
                          row_to_clear_nxt=row_to_clear;
                          game_reset_nxt=0;
                          test_y_pos_nxt=y_pos+2;
@@ -747,7 +747,7 @@ always @(*) begin
                              rotation_nxt=rotation;
                              blk_code_nxt=blk_code;
                              board_nxt=board;
-                             state_nxt=TEST_COLLISION;
+                             state_nxt=BUFFER;
                              row_to_clear_nxt=row_to_clear;
                              game_reset_nxt=0;
                              test_y_pos_nxt=y_pos+1;
@@ -863,6 +863,25 @@ always @(*) begin
                          end
                      end
                  endcase
+             end
+             
+             BUFFER: begin
+                row_to_clear_nxt=row_to_clear;   
+                 x_pos_nxt=x_pos;                 
+                 y_pos_nxt=y_pos;                 
+                 rotation_nxt=rotation;           
+                 blk_code_nxt=blk_code;           
+                 board_nxt=board;                 
+                 state_nxt=TEST_COLLISION;              
+                 game_reset_nxt=0;                
+                 test_y_pos_nxt=test_y_pos;       
+                 test_x_pos_nxt=test_x_pos;       
+                 test_rotation_nxt=test_rotation; 
+                 keycode_nxt=keycode_used;             
+                 score1_nxt=score1;               
+                 score2_nxt=score2;               
+                 score3_nxt=score3;               
+                 score4_nxt=score4;               
              end
      
              TEST_COLLISION: begin
