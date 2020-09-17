@@ -21,10 +21,13 @@
 
 
 module TETRIS_Main (
-  input wire PS2Data,
-  input wire PS2Clk,
+//  input wire PS2Data,
+//  input wire PS2Clk,
   input wire clk,
   input wire btnC,
+  
+  input wire rx,
+  output wire tx,
   
   output reg Vsync,
   output reg Hsync,
@@ -34,7 +37,7 @@ module TETRIS_Main (
   output reg [3:0] vgaBlue
   );
 
-wire clk50MHz, clk65MHz, clk_rand;
+wire clk65MHz, clk_rand;
 wire [10:0] vcount;
 wire [10:0] hcount;
 wire vsync, hsync;
@@ -47,7 +50,6 @@ IP_CLK_DIVIDER CLK_GENERATOR
     .reset(btnC),
  
     .locked(locked),
-    .clk50MHz(clk50MHz),
     .clk65MHz(clk65MHz),
     .clk_rand(clk_rand)
  );
@@ -76,7 +78,6 @@ wire [10:0] vcount_frame;
 wire [10:0] hcount_frame;
 wire vsync_frame, hsync_frame;
 wire vblnk_frame, hblnk_frame;
-wire [15:0] keycode;
 
 
 GAME_FRAME FRAME_VIDEO_CONTROLL(
@@ -102,7 +103,7 @@ GAME_FRAME FRAME_VIDEO_CONTROLL(
    .hblnk_out(hblnk_frame),
    .vblnk_out(vblnk_frame)
     );
-    
+ /*    
 PS2Receiver Keyboard_Receiver(
         .clk(clk50MHz),
         .kclk(PS2Clk),
@@ -111,6 +112,7 @@ PS2Receiver Keyboard_Receiver(
         .keycode(keycode)
         );
 
+ */
     
 wire [2:0] random_block;    
     
@@ -120,7 +122,25 @@ falserandom_generator random_blocks(
         
         .rand(random_block)
         );
-    
+
+wire [7:0] r_data, keycode;
+wire rx_empty;
+
+uart uart(
+    .clk(clk65MHz),
+    .reset(btnC),
+    .rx(rx),
+    .tx(tx),
+    .r_data(r_data),
+    .rx_empty(rx_empty)
+);
+
+uart_debouncer uart_debouncer(
+    .clk(clk65MHz),
+    .r_data(r_data),
+    .rx_empty(rx_empty),
+    .key_out(keycode)
+);
     
 game_logic_unit tetris_logic(
     .pclk(clk65MHz),

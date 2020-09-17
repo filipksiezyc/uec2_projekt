@@ -16,8 +16,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -33,14 +31,18 @@ set_property ip_output_repo c:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v
-  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v
   C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clear_row.v
   C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk1Hz.v
-  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v
   C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/falserandom_generator.v
   C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v
   C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/generate_piece.v
   C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/ingame_graphic.v
+  C:/Users/Juten/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_11_mod_m_counter.v
+  C:/Users/Juten/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_20_fifo.v
+  C:/Users/Juten/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_01_uart_rx.v
+  C:/Users/Juten/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_03_uart_tx.v
+  C:/Users/Juten/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_04_uart.v
+  C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/uart_debouncer.v
   C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/vga_timing.v
   C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/TETRIS_Main.v
 }
