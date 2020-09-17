@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Thu Sep 17 13:24:38 2020
+| Date         : Thu Sep 17 23:12:02 2020
 | Host         : LAPTOP-F1511I4M running 64-bit major release  (build 9200)
 | Command      : report_control_sets -file TETRIS_Main_control_sets_placed.rpt
 | Design       : TETRIS_Main
@@ -21,7 +21,7 @@ Table of Contents
 +-------------------------------+-------+
 |             Status            | Count |
 +-------------------------------+-------+
-| Number of unique control sets |    46 |
+| Number of unique control sets |    52 |
 +-------------------------------+-------+
 
 
@@ -31,12 +31,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              31 |           15 |
-| No           | No                    | Yes                    |              40 |           11 |
-| No           | Yes                   | No                     |             233 |          111 |
+| No           | No                    | No                     |              62 |           30 |
+| No           | No                    | Yes                    |              40 |           12 |
+| No           | Yes                   | No                     |             273 |          138 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |              24 |           10 |
-| Yes          | Yes                   | No                     |             815 |          618 |
+| Yes          | No                    | Yes                    |              24 |            8 |
+| Yes          | Yes                   | No                     |             835 |          605 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 

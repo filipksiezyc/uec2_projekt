@@ -1,65 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1600341607">
-  <File Type="PWROPT-DCP" Name="TETRIS_Main_pwropt.dcp"/>
+<GenRun Id="impl_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1600376507">
   <File Type="ROUTE-PWR" Name="TETRIS_Main_power_routed.rpt"/>
   <File Type="PA-TCL" Name="TETRIS_Main.tcl"/>
+  <File Type="PWROPT-DCP" Name="TETRIS_Main_pwropt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="TETRIS_Main_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="TETRIS_Main_reports.tcl"/>
   <File Type="BG-DRC" Name="TETRIS_Main.drc"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="TETRIS_Main_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="TETRIS_Main_timing_summary_init.rpt"/>
   <File Type="OPT-HWDEF" Name="TETRIS_Main.hwdef"/>
   <File Type="OPT-DCP" Name="TETRIS_Main_opt.dcp"/>
   <File Type="OPT-DRC" Name="TETRIS_Main_drc_opted.rpt"/>
-  <File Type="OPT-TIMING" Name="TETRIS_Main_timing_summary_opted.rpt"/>
-  <File Type="PWROPT-DRC" Name="TETRIS_Main_drc_pwropted.rpt"/>
-  <File Type="PWROPT-TIMING" Name="TETRIS_Main_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="TETRIS_Main_placed.dcp"/>
   <File Type="PLACE-IO" Name="TETRIS_Main_io_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="TETRIS_Main_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="TETRIS_Main_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="TETRIS_Main_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="TETRIS_Main_control_sets_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="TETRIS_Main_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="TETRIS_Main_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-TIMING" Name="TETRIS_Main_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="TETRIS_Main_postplace_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="TETRIS_Main_timing_summary_postplace_pwropted.rpt"/>
   <File Type="PHYSOPT-DCP" Name="TETRIS_Main_physopt.dcp"/>
-  <File Type="PHYSOPT-DRC" Name="TETRIS_Main_drc_physopted.rpt"/>
   <File Type="BG-BIT" Name="TETRIS_Main.bit"/>
-  <File Type="PHYSOPT-TIMING" Name="TETRIS_Main_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-ERROR-DCP" Name="TETRIS_Main_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="TETRIS_Main_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="TETRIS_Main_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="TETRIS_Main_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="TETRIS_Main_drc_routed.pb"/>
-  <File Type="BITSTR-MSK" Name="TETRIS_Main.msk"/>
   <File Type="ROUTE-DRC-RPX" Name="TETRIS_Main_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="TETRIS_Main.bgn"/>
+  <File Type="BITSTR-MSK" Name="TETRIS_Main.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="TETRIS_Main_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-RBT" Name="TETRIS_Main.rbt"/>
+  <File Type="BG-BGN" Name="TETRIS_Main.bgn"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="TETRIS_Main_methodology_drc_routed.rpx"/>
-  <File Type="BG-BIN" Name="TETRIS_Main.bin"/>
+  <File Type="BITSTR-RBT" Name="TETRIS_Main.rbt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="TETRIS_Main_methodology_drc_routed.pb"/>
+  <File Type="BG-BIN" Name="TETRIS_Main.bin"/>
   <File Type="ROUTE-PWR-RPX" Name="TETRIS_Main_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="TETRIS_Main_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="TETRIS_Main_route_status.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="TETRIS_Main_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="TETRIS_Main_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="TETRIS_Main_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-SIMILARITY" Name="TETRIS_Main_incremental_reuse_routed.rpt"/>
-  <File Type="RDI-RDI" Name="TETRIS_Main.vdi"/>
   <File Type="ROUTE-CLK" Name="TETRIS_Main_clock_utilization_routed.rpt"/>
+  <File Type="RDI-RDI" Name="TETRIS_Main.vdi"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="TETRIS_Main_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="TETRIS_Main_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="TETRIS_Main_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="TETRIS_Main_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="TETRIS_Main_timing_summary_postroute_physopted.rpx"/>
   <File Type="BITSTR-NKY" Name="TETRIS_Main.nky"/>
   <File Type="BITSTR-BMM" Name="TETRIS_Main_bd.bmm"/>
   <File Type="BITSTR-MMI" Name="TETRIS_Main.mmi"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="TETRIS_Main.ltx"/>
   <File Type="BITSTR-SYSDEF" Name="TETRIS_Main.sysdef"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
@@ -87,6 +71,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/clk1Hz.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clk2Hz.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -150,6 +141,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../../../../Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_04_uart.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sseg_score_disp.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

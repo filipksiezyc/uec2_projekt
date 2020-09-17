@@ -34,7 +34,9 @@ module TETRIS_Main (
   
   output reg [3:0] vgaRed,
   output reg [3:0] vgaGreen,
-  output reg [3:0] vgaBlue
+  output reg [3:0] vgaBlue,
+  output reg [6:0] seg,
+  output reg [3:0] an
   );
 
 wire clk65MHz, clk_rand;
@@ -141,7 +143,11 @@ uart_debouncer uart_debouncer(
     .rx_empty(rx_empty),
     .key_out(keycode)
 );
-    
+
+wire [4:0] score1_seg, score2_seg, score3_seg, score4_seg;
+wire [6:0] seg_wire;
+wire [3:0] an_wire;
+ 
 game_logic_unit tetris_logic(
     .pclk(clk65MHz),
     .reset(btnC),
@@ -162,7 +168,22 @@ game_logic_unit tetris_logic(
     .hblnk_out(hblnk_to_main),
     .vblnk_out(vblnk_to_main),
     .hcount_out(hcount_to_main),
-    .vcount_out(vcount_to_main)
+    .vcount_out(vcount_to_main),
+    .score1(score1_seg),
+    .score2(score2_seg),
+    .score3(score3_seg),
+    .score4(score4_seg)
+);
+
+sseg_score_disp(
+    .clk(clk65MHz),
+    .score1(score1_seg),//jednosci
+    .score2(score2_seg),//dziesiatki
+    .score3(score3_seg),//setki
+    .score4(score4_seg),//tysiace
+    
+    .seg(seg_wire),
+    .an(an_wire)
 );
 
 always @(posedge clk65MHz)begin
@@ -172,6 +193,8 @@ always @(posedge clk65MHz)begin
    vgaRed <= Red_Out;
    vgaGreen <= Green_Out;
    vgaBlue <= Blue_Out;
+   seg<=seg_wire;
+   an<=an_wire;
 end
 
 

@@ -40,7 +40,11 @@ module game_logic_unit(
     output reg hblnk_out,
     output reg vblnk_out,
     output reg [10:0] hcount_out,
-    output reg [10:0] vcount_out
+    output reg [10:0] vcount_out,
+    output reg [4:0] score1,
+    output reg [4:0] score2,
+    output reg [4:0] score3,
+    output reg [4:0] score4
     );
  
 localparam TITLESCREEN=0, GAMEPLAY=1, TEST_COLLISION=2, CLEAR_ROW=3,GAME_OVER=4,
@@ -49,7 +53,7 @@ localparam TITLESCREEN=0, GAMEPLAY=1, TEST_COLLISION=2, CLEAR_ROW=3,GAME_OVER=4,
 //SPACE_BUTTON=16'h29, ENTER_BUTTON=16'h5A,
 
 A_BUTTON=8'h61, W_BUTTON=8'h77, S_BUTTON=8'h73, D_BUTTON=8'h64,
-SPACE_BUTTON=8'h20, ENTER_BUTTON=8'h62,
+SPACE_BUTTON=8'h20, ENTER_BUTTON=8'h0A,
  
 LEFT_EDGE=2, GAME_WIDTH=16, SCREEN_WIDTH=32,GAME_HEIGHT=24, ERROR_BLOCK=11'b11111111111;
 
@@ -59,7 +63,7 @@ LEFT_EDGE=2, GAME_WIDTH=16, SCREEN_WIDTH=32,GAME_HEIGHT=24, ERROR_BLOCK=11'b1111
  integer l;
  integer m;
 
-wire clk1Hz;
+wire clk1Hz, clk2Hz;
 reg game_reset=0, game_reset_nxt=0;
 
 clk1Hz clk1HZ_generator(
@@ -69,6 +73,14 @@ clk1Hz clk1HZ_generator(
     
     .clk1Hz(clk1Hz)
     );
+    
+clk2Hz clk2HZ_generator(
+        .clk65MHz(pclk),
+        .reset(reset),
+        .game_reset(game_reset),
+        
+        .clk2Hz(clk2Hz)
+        );
  
 reg [3:0] state=TITLESCREEN; 
 reg [3:0] state_nxt=TITLESCREEN;
@@ -531,6 +543,12 @@ always @(posedge pclk)begin
         end
 end
  */
+ 
+ reg [4:0] score1_nxt=0;
+ reg [4:0] score2_nxt=0;
+ reg [4:0] score3_nxt=0;
+ reg [4:0] score4_nxt=0;
+ 
 always @(*) begin
      if (reset) begin
          y_pos_nxt=0;
@@ -545,6 +563,10 @@ always @(*) begin
          test_x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
          test_rotation_nxt=0;
          keycode_nxt=0;
+         score1_nxt=0;
+         score2_nxt=0;
+         score3_nxt=0;
+         score4_nxt=0;
      end
      else begin
          case(state) 
@@ -563,6 +585,10 @@ always @(*) begin
                          test_x_pos_nxt=x_pos;
                          test_rotation_nxt=rotation;
                          keycode_nxt=0;
+                         score1_nxt=0;
+                         score2_nxt=0;
+                         score3_nxt=0;
+                         score4_nxt=0;
                      end
                      default: begin
                          if((y_pos==0) && intersects_now && pclk ) begin
@@ -594,6 +620,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation;
                              keycode_nxt=0;
+                             score1_nxt=0;
+                             score2_nxt=0;
+                             score3_nxt=0;
+                             score4_nxt=0;
                          end
                          else begin
                              state_nxt=TITLESCREEN;
@@ -608,6 +638,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation;
                              keycode_nxt=0;
+                             score1_nxt=0;
+                             score2_nxt=0;
+                             score3_nxt=0;
+                             score4_nxt=0;
                          end
                      end
                  endcase
@@ -628,6 +662,10 @@ always @(*) begin
                          test_x_pos_nxt=x_pos-1;
                          test_rotation_nxt=rotation;
                          keycode_nxt=keycode;
+                         score1_nxt=score1;
+                         score2_nxt=score2;
+                         score3_nxt=score3;
+                         score4_nxt=score4;
                      end
                      D_BUTTON: begin
                          y_pos_nxt=y_pos;
@@ -642,6 +680,10 @@ always @(*) begin
                          test_x_pos_nxt=x_pos+1;
                          test_rotation_nxt=rotation;
                          keycode_nxt=keycode;
+                         score1_nxt=score1;
+                         score2_nxt=score2;
+                         score3_nxt=score3;
+                         score4_nxt=score4;
                      end
                      W_BUTTON: begin
                          y_pos_nxt=y_pos;
@@ -656,6 +698,10 @@ always @(*) begin
                          test_x_pos_nxt=x_pos;
                          test_rotation_nxt=rotation-1;
                          keycode_nxt=keycode;
+                         score1_nxt=score1;
+                         score2_nxt=score2;
+                         score3_nxt=score3;
+                         score4_nxt=score4;
                      end
                      S_BUTTON: begin
                          y_pos_nxt=y_pos;
@@ -670,6 +716,10 @@ always @(*) begin
                          test_x_pos_nxt=x_pos;
                          test_rotation_nxt=rotation+1;
                          keycode_nxt=keycode;
+                         score1_nxt=score1;
+                         score2_nxt=score2;
+                         score3_nxt=score3;
+                         score4_nxt=score4;
                      end
                      SPACE_BUTTON: begin
                          y_pos_nxt=y_pos;
@@ -684,9 +734,14 @@ always @(*) begin
                          test_x_pos_nxt=x_pos;
                          test_rotation_nxt=rotation;
                          keycode_nxt=keycode;
+                         score1_nxt=score1;
+                         score2_nxt=score2;
+                         score3_nxt=score3;
+                         score4_nxt=score4;
                      end
                      default: begin
-                         if (clk1Hz) begin
+                         if ((((score2==0) && (score3==0) && (score4==0))&&clk1Hz)||
+                         (((score2!=0) || (score3!=0) || (score4!=0))&&clk2Hz)) begin
                              y_pos_nxt=y_pos;
                              x_pos_nxt=x_pos;
                              rotation_nxt=rotation;
@@ -699,6 +754,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation;
                              keycode_nxt=keycode_used;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                          else if (ready_to_remove) begin
                              row_to_clear_nxt=row_to_check;
@@ -713,6 +772,42 @@ always @(*) begin
                              test_x_pos_nxt=test_x_pos;
                              test_rotation_nxt=test_rotation;
                              keycode_nxt=0;
+                             if(score1==9) begin
+                                if(score2==9)begin
+                                    if(score3==9)begin
+                                        if(score4!=9) begin
+                                            score4_nxt=score4+1;
+                                            score3_nxt=0;
+                                            score2_nxt=0;
+                                            score1_nxt=0;
+                                        end
+                                        else begin
+                                            score4_nxt=score4;
+                                            score3_nxt=score3;
+                                            score2_nxt=score2;
+                                            score1_nxt=score1;
+                                        end
+                                    end
+                                    else begin
+                                        score4_nxt=score4;
+                                        score3_nxt=score3+1;
+                                        score2_nxt=0;
+                                        score1_nxt=0;
+                                    end
+                                end
+                                else begin
+                                    score4_nxt=score4;
+                                    score3_nxt=score3;
+                                    score2_nxt=score2+1;
+                                    score1_nxt=0;
+                                end
+                             end
+                             else begin
+                                score4_nxt=score4;
+                                score3_nxt=score3;
+                                score2_nxt=score2;
+                                score1_nxt=score1+1;
+                             end
                          end
                          else if((y_pos==0) && intersects_now && pclk ) begin
                              blk_code_nxt=0;
@@ -743,6 +838,10 @@ always @(*) begin
                              test_x_pos_nxt=test_x_pos;
                              test_rotation_nxt=test_rotation;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                          else begin
                              row_to_clear_nxt=row_to_clear;
@@ -757,6 +856,10 @@ always @(*) begin
                              test_x_pos_nxt=test_x_pos;
                              test_rotation_nxt=test_rotation;
                              keycode_nxt=keycode;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                      end
                  endcase
@@ -778,6 +881,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                          else begin
                              x_pos_nxt=x_pos-1;
@@ -792,6 +899,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos-1;
                              test_rotation_nxt=rotation;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                      end
                      D_BUTTON: begin
@@ -808,6 +919,10 @@ always @(*) begin
                             test_x_pos_nxt=x_pos+1;
                             test_rotation_nxt=rotation;
                             keycode_nxt=0;
+                            score1_nxt=score1;
+                            score2_nxt=score2;
+                            score3_nxt=score3;
+                            score4_nxt=score4;
                          end
                          else begin
                              x_pos_nxt=x_pos;
@@ -822,6 +937,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                      end
                      W_BUTTON: begin
@@ -839,6 +958,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation-1;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                          else begin
                              rotation_nxt=rotation;
@@ -853,6 +976,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end 
                      end
                      S_BUTTON: begin
@@ -870,6 +997,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation+1;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                          else begin
                              rotation_nxt=rotation;
@@ -884,6 +1015,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                      end
                      SPACE_BUTTON: begin
@@ -900,6 +1035,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                          else if((height+y_pos)==(GAME_HEIGHT-1)&& (!test_intersection) ) begin
                              board_nxt=board;
@@ -914,6 +1053,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                          else begin
                              blk_code_nxt=(random+1);
@@ -944,6 +1087,10 @@ always @(*) begin
                              test_x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
                              test_rotation_nxt=0;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                      end
          //            else if (ready_to_remove) begin
@@ -960,7 +1107,61 @@ always @(*) begin
          //                test_rotation_nxt=rotation;
          //            end
                      default: begin
-                         if (clk1Hz)begin
+                         if (((score2!=0) || (score3!=0) || (score4!=0))&&clk2Hz) begin
+                            if(((height+y_pos)<(GAME_HEIGHT)) && (!test_intersection) ) begin
+                                y_pos_nxt=y_pos+1;
+                                x_pos_nxt=x_pos;
+                                rotation_nxt=rotation;
+                                blk_code_nxt=blk_code;
+                                board_nxt=board;
+                                state_nxt=GAMEPLAY;
+                                row_to_clear_nxt=row_to_clear;
+                                game_reset_nxt=0;
+                                test_y_pos_nxt=y_pos+1;
+                                test_x_pos_nxt=x_pos;
+                                test_rotation_nxt=rotation;
+                                keycode_nxt=0;
+                                score1_nxt=score1;
+                                score2_nxt=score2;
+                                score3_nxt=score3;
+                                score4_nxt=score4;
+                            end
+                            else begin
+                                for (j=0; j<=767; j=j+1) begin
+                                    if (j==blk1) begin
+                                        board_nxt[blk1]=1;
+                                    end
+                                    else if (j==blk2) begin
+                                    board_nxt[blk2]=1;
+                                    end
+                                    else if (j==blk3) begin
+                                        board_nxt[blk3]=1;
+                                    end
+                                    else if (j==blk4) begin
+                                        board_nxt[blk4]=1;
+                                    end
+                                    else begin
+                                        board_nxt[j]=board[j];
+                                    end
+                                end  
+                                blk_code_nxt=(random+1);
+                                x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+                                y_pos_nxt=0;
+                                rotation_nxt=0;
+                                game_reset_nxt=1;
+                                row_to_clear_nxt=row_to_clear;                
+                                state_nxt=GAMEPLAY;
+                                test_y_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
+                                test_x_pos_nxt=0;
+                                test_rotation_nxt=0;
+                                keycode_nxt=0;
+                                score1_nxt=score1;
+                                score2_nxt=score2;
+                                score3_nxt=score3;
+                                score4_nxt=score4;
+                            end
+                         end
+                         else if (((score2==0) && (score3==0) && (score4==0))&&clk1Hz)begin
                              if(((height+y_pos)<(GAME_HEIGHT)) && (!test_intersection) ) begin
                                  y_pos_nxt=y_pos+1;
                                  x_pos_nxt=x_pos;
@@ -974,6 +1175,10 @@ always @(*) begin
                                  test_x_pos_nxt=x_pos;
                                  test_rotation_nxt=rotation;
                                  keycode_nxt=0;
+                                 score1_nxt=score1;
+                                 score2_nxt=score2;
+                                 score3_nxt=score3;
+                                 score4_nxt=score4;
                              end
                              else begin
                                  for (j=0; j<=767; j=j+1) begin
@@ -1004,6 +1209,10 @@ always @(*) begin
                                  test_x_pos_nxt=0;
                                  test_rotation_nxt=0;
                                  keycode_nxt=0;
+                                 score1_nxt=score1;
+                                 score2_nxt=score2;
+                                 score3_nxt=score3;
+                                 score4_nxt=score4;
                              end
                          end
                          else if((y_pos==0) && intersects_now && pclk ) begin
@@ -1035,6 +1244,10 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation;
                              keycode_nxt=0;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                          else begin
                              row_to_clear_nxt=row_to_clear;
@@ -1049,6 +1262,10 @@ always @(*) begin
                              test_x_pos_nxt=test_x_pos;
                              test_rotation_nxt=test_rotation;
                              keycode_nxt=keycode_used;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
                          end
                      end
                  endcase
@@ -1077,6 +1294,10 @@ always @(*) begin
                      test_x_pos_nxt=x_pos;
                      test_rotation_nxt=rotation;
                      keycode_nxt=0;
+                     score1_nxt=score1;
+                     score2_nxt=score2;
+                     score3_nxt=score3;
+                     score4_nxt=score4;
                  end
                  else begin
                      row_to_clear_nxt=row_to_clear-1;
@@ -1101,6 +1322,10 @@ always @(*) begin
                      test_x_pos_nxt=x_pos;
                      test_rotation_nxt=rotation;
                      keycode_nxt=0;
+                     score1_nxt=score1;
+                     score2_nxt=score2;
+                     score3_nxt=score3;
+                     score4_nxt=score4;
                  end
             end
               
@@ -1119,6 +1344,10 @@ always @(*) begin
                          test_x_pos_nxt=x_pos;
                          test_rotation_nxt=rotation;
                          keycode_nxt=0;
+                         score1_nxt=0;
+                         score2_nxt=0;
+                         score3_nxt=0;
+                         score4_nxt=0;
                      end
                      default: begin
                          state_nxt=GAME_OVER;
@@ -1133,6 +1362,10 @@ always @(*) begin
                          test_x_pos_nxt=(LEFT_EDGE+(GAME_WIDTH/2));
                          test_rotation_nxt=0;
                          keycode_nxt=keycode;
+                         score1_nxt=score1;
+                         score2_nxt=score2;
+                         score3_nxt=score3;
+                         score4_nxt=score4;
                      end
                 endcase
             end
@@ -1149,6 +1382,10 @@ always @(*) begin
                 test_x_pos_nxt=x_pos;
                 test_rotation_nxt=rotation;
                 keycode_nxt=keycode;
+                score1_nxt=score1;
+                score2_nxt=score2;
+                score3_nxt=score3;
+                score4_nxt=score4;
              end
          endcase
      end
@@ -1177,6 +1414,10 @@ always @(*) begin
          test_y_pos<=test_y_pos_nxt;
          test_rotation<=test_rotation_nxt;
          keycode_used<=keycode_nxt;
+         score1<=score1_nxt;
+         score2<=score2_nxt;
+         score3<=score3_nxt;
+         score4<=score4_nxt;
  end
    
 endmodule

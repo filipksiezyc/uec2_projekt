@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1600341607">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1600376506">
   <File Type="PA-TCL" Name="TETRIS_Main.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="TETRIS_Main_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="TETRIS_Main_reports.tcl"/>
   <File Type="RDS-RDS" Name="TETRIS_Main.vds"/>
   <File Type="RDS-UTIL" Name="TETRIS_Main_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="TETRIS_Main_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="TETRIS_Main.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="TETRIS_Main_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="TETRIS_Main_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/IP_CLK_DIVIDER/IP_CLK_DIVIDER.xci">
@@ -33,6 +30,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/clk1Hz.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clk2Hz.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -96,6 +100,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../../../../../Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_04_uart.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sseg_score_disp.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
