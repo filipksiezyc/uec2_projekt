@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Fri Sep 18 18:22:28 2020
+| Date         : Fri Sep 18 20:52:32 2020
 | Host         : FilipPC running 64-bit major release  (build 9200)
 | Command      : report_control_sets -file TETRIS_Main_control_sets_placed.rpt
 | Design       : TETRIS_Main
@@ -21,7 +21,7 @@ Table of Contents
 +-------------------------------+-------+
 |             Status            | Count |
 +-------------------------------+-------+
-| Number of unique control sets |    53 |
+| Number of unique control sets |    55 |
 +-------------------------------+-------+
 
 
@@ -31,12 +31,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             144 |           59 |
-| No           | No                    | Yes                    |              40 |           12 |
-| No           | Yes                   | No                     |             274 |          134 |
-| Yes          | No                    | No                     |              11 |            3 |
+| No           | No                    | No                     |             185 |           75 |
+| No           | No                    | Yes                    |              24 |            8 |
+| No           | Yes                   | No                     |             286 |          137 |
+| Yes          | No                    | No                     |              11 |            4 |
 | Yes          | No                    | Yes                    |              24 |           10 |
-| Yes          | Yes                   | No                     |             825 |          628 |
+| Yes          | Yes                   | No                     |             825 |          619 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 

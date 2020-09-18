@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date         : Fri Sep 18 18:23:57 2020
+| Date         : Fri Sep 18 20:53:50 2020
 | Host         : FilipPC running 64-bit major release  (build 9200)
 | Command      : report_methodology -file TETRIS_Main_methodology_drc_routed.rpt -pb TETRIS_Main_methodology_drc_routed.pb -rpx TETRIS_Main_methodology_drc_routed.rpx
 | Design       : TETRIS_Main
@@ -23,11 +23,11 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 15
+             Violations found: 16
 +-----------+----------+--------------------------------------------+------------+
 | Rule      | Severity | Description                                | Violations |
 +-----------+----------+--------------------------------------------+------------+
-| SYNTH-6   | Warning  | Timing of a block RAM might be sub-optimal | 2          |
+| SYNTH-6   | Warning  | Timing of a block RAM might be sub-optimal | 3          |
 | TIMING-17 | Warning  | Non-clocked sequential cell                | 13         |
 +-----------+----------+--------------------------------------------+------------+
 
@@ -39,6 +39,11 @@ The timing for the instance char_gen/char_code_reg, implemented as a block RAM, 
 Related violations: <none>
 
 SYNTH-6#2 Warning
+Timing of a block RAM might be sub-optimal  
+The timing for the instance char_gen_move/char_code_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
+Related violations: <none>
+
+SYNTH-6#3 Warning
 Timing of a block RAM might be sub-optimal  
 The timing for the instance font_gen/char_line_pixels_reg, implemented as a block RAM, might be sub-optimal as no output register was merged into the block
 Related violations: <none>

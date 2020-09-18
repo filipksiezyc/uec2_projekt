@@ -17,9 +17,6 @@ proc create_report { reportName command } {
   }
 }
 set_param xicom.use_bs_reader 1
-set_param synth.incrementalSynthesisCache {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/.Xil/Vivado-5868-FilipPC/incrSyn}
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -36,6 +33,7 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v}
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/char_rom_16x16.v}
+  {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/char_rom_16x16_move.v}
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clear_row.v}
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk1Hz.v}
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk2Hz.v}

@@ -40,7 +40,9 @@ module draw_rect_char
     input wire clk,
     input wire rst,
     input wire [7:0] char_pixels,
-    
+
+    output wire hblnk_out,
+    output wire vblnk_out,
     output reg [10:0] hcount_out,
     output reg hsync_out,
     output reg [10:0] vcount_out,

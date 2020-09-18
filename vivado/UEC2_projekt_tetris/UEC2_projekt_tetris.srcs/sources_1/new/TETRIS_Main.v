@@ -47,7 +47,7 @@ wire locked;
 IP_CLK_DIVIDER CLK_GENERATOR 
  (
     .pclk(clk),
-    .reset(btnC),
+    .reset(1'b0),
  
     .locked(locked),
     .clk65MHz(clk65MHz),
@@ -182,16 +182,17 @@ wire [3:0] red_font, green_font, blue_font;
 wire [3:0] char_line;
 wire [6:0] char_code;
 wire [7:0] char_pixels,char_xy;
-wire hsync_char, vsync_char;
+wire hsync_char, vsync_char, vblnk_char, hblnk_char;
+wire [10:0] vcount_char, hcount_char;
 
 draw_rect_char 
 #(
     .X_POSITION(700),
-    .Y_POSITION(223),
+    .Y_POSITION(123),
     .X_WIDITH(128),
     .Y_WIDITH(256)
     )
-my_char(
+game_instruction(
     .hcount_in(hcount_frame),
     .vcount_in(vcount_frame),
     .vblnk_in(vblnk_frame),
@@ -205,6 +206,10 @@ my_char(
     .char_pixels(char_pixels),
     .rst(btnC),
     
+    .hcount_out(hcount_char),
+    .vcount_out(vcount_char),
+    .vblnk_out(vblnk_char),
+    .hblnk_out(hblnk_char),
     .red_out(red_font),
     .green_out(green_font),
     .blue_out(blue_font),
@@ -229,14 +234,70 @@ font_rom font_gen(
 ); 
 
 
+wire [3:0] red_out, green_out, blue_out;
+wire [3:0] char_line_2;
+wire [6:0] char_code_2;
+wire [7:0] char_pixels_2,char_xy_2;
+wire hsync_out, vsync_out, vblnk_out, hblnk_out;
+wire [10:0] vcount_out, hcount_out;
+
+
+draw_rect_char 
+#(
+    .X_POSITION(700),
+    .Y_POSITION(405),
+    .X_WIDITH(128),
+    .Y_WIDITH(256)
+    )
+game_movement(
+    .hcount_in(hcount_char),
+    .vcount_in(vcount_char),
+    .vblnk_in(vblnk_char),
+    .hblnk_in(hblnk_char),
+    .hsync_in(hsync_char),
+    .vsync_in(vsync_char),
+    .red_in(red_font),
+    .green_in(green_font),
+    .blue_in(blue_font),
+    .clk(clk65MHz),
+    .char_pixels(char_pixels_2),
+    .rst(btnC),
+    
+    .hcount_out(hcount_out),
+    .vcount_out(vcount_out),
+    .vblnk_out(vblnk_out),
+    .hblnk_out(hblnk_out),
+    .red_out(red_out),
+    .green_out(green_out),
+    .blue_out(blue_out),
+    .hsync_out(hsync_out),
+    .vsync_out(vsync_out),
+    .char_xy(char_xy_2),
+    .char_line(char_line_2)
+);
+
+char_rom_16x16_move char_gen_move(
+    .clk(clk65MHz),
+    .char_xy(char_xy_2),
+
+    .char_code(char_code_2)
+);
+
+font_rom font_gen_move(
+    .clk(clk65MHz),
+    .addr({char_code_2,char_line_2}),
+
+    .char_line_pixels(char_pixels_2)
+);
+
 
 always @(posedge clk65MHz)begin
-   Vsync<=vsync_char;
-   Hsync<=hsync_char;
+   Vsync<=vsync_out;
+   Hsync<=hsync_out;
  
-   vgaRed <= red_font;
-   vgaGreen <= green_font;
-   vgaBlue <= blue_font;
+   vgaRed <= red_out;
+   vgaGreen <= green_out;
+   vgaBlue <= blue_out;
    seg<=seg_wire;
    an<=an_wire;
 end

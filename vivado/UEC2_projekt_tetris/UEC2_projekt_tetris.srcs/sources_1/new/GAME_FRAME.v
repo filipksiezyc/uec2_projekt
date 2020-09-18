@@ -22,9 +22,9 @@
 
 module GAME_FRAME(
     input wire clk,
+    input wire hsync,
     input wire [10:0] hcount,
     input wire [10:0] vcount,
-    input wire hsync,
     input wire vsync,
     input wire hblnk,
     input wire vblnk,
@@ -83,7 +83,7 @@ always @* begin
                         VGAGreen_nxt=4'b1111;
                         VGABlue_nxt=0;
                     end
-                    else if((hcount>324&&hcount<344&&vcount>343&&vcount<423)||(hcount>324&&hcount<384&&vcount>323&&vcount<344)||(hcount>324&&hcount<384&&vcount>373&&vcount<393)||(hcount>363&&hcount<384&&vcount>343&&vcount<374)||(hcount>343&&hcount<384&&vcount>=(hcount+35)&&vcount<=(hcount+50)))begin
+                    else if((hcount>324&&hcount<344&&vcount>343&&vcount<423)||(hcount>324&&hcount<384&&vcount>323&&vcount<344)||(hcount>324&&hcount<384&&vcount>373&&vcount<393)||(hcount>363&&hcount<384&&vcount>343&&vcount<374)||(hcount>343&&hcount<384&&vcount>=(hcount+35)&&vcount<=(hcount+50)&&vcount<423))begin
                         VGARed_nxt=0;
                         VGAGreen_nxt=0;
                         VGABlue_nxt=4'b1111;
@@ -114,7 +114,7 @@ always @* begin
                         VGARed_nxt=4'b1111;
                         VGAGreen_nxt=0;
                         VGABlue_nxt=0;
-                    end
+                    end                         
                     else if((hcount>323&&hcount<334&&vcount>223&&vcount<324)||(hcount>373&&hcount<384&&vcount>223&&vcount<324)||(hcount>333&&hcount<354&&vcount<=(hcount-100)&&vcount>=(hcount-110)||(hcount>353&&hcount<374&&vcount>=(597-hcount)&&vcount<=(606-hcount))))begin
                           VGARed_nxt=4'b1111;
                           VGAGreen_nxt=0;
@@ -157,11 +157,37 @@ always @* begin
                    VGABlue_nxt = VGABlue;
                end
                end
-           else if((hcount>639&&hcount<691&&vcount>33&&vcount<44)||(hcount>649&&hcount<671&&vcount>33&&vcount<84))begin
+           else if((hcount>639&&hcount<691&&vcount>33&&vcount<45)||(hcount>659&&hcount<671&&vcount>33&&vcount<85))begin
                VGARed_nxt = 0;
                VGAGreen_nxt = 0;
                VGABlue_nxt = 0;
                end
+           else if((hcount>699&&hcount<751&&vcount>33&vcount<45)||(hcount>699&&hcount<751&&vcount>73&&vcount<85)||(hcount>699&&hcount<751&&vcount>53&vcount<65)||(hcount>699&&hcount<711&&vcount>33&vcount<85))begin
+               VGARed_nxt = 0;
+               VGAGreen_nxt = 0;
+               VGABlue_nxt = 0;
+               end
+          
+           else if((hcount>759&&hcount<811&&vcount>33&&vcount<45)||(hcount>779&&hcount<791&&vcount>33&&vcount<85))begin
+               VGARed_nxt = 0;
+               VGAGreen_nxt = 0;
+               VGABlue_nxt = 0;
+               end
+           else if((hcount>819&&hcount<871&&vcount>33&&vcount<45)||(hcount>819&&hcount<831&&vcount>33&&vcount<85)||(hcount>819&&hcount<871&&vcount>53&&vcount<65)||(hcount>859&&hcount<871&&vcount>33&&vcount<65)||(hcount>829&&hcount<871&&vcount>=(((64*hcount)/100)-476)&&vcount<=(((64*hcount)/100)-466)&&vcount<85))begin
+               VGARed_nxt=0;
+               VGAGreen_nxt=0;
+               VGABlue_nxt=0;
+           end
+           else if(hcount>879&&hcount<891&&vcount>33&&vcount<85)begin
+               VGARed_nxt=0;
+               VGAGreen_nxt=0;
+               VGABlue_nxt=0;
+           end
+           else if((hcount>899&&hcount<911&&vcount>33&&vcount<60)||(hcount>899&&hcount<951&&vcount>33&&vcount<45)||(hcount>939&&hcount<951&&vcount>59&&vcount<85)||(hcount>899&&hcount<551&&vcount>73&&vcount<85)||(hcount>899&&hcount<951&&vcount>53&&vcount<64)||(hcount>899&&hcount<951&&vcount>73&&vcount<85))begin
+              VGARed_nxt=0;
+              VGAGreen_nxt=0;
+              VGABlue_nxt=0; 
+           end
            else begin
                VGARed_nxt = 8;
                VGAGreen_nxt = 8; 
