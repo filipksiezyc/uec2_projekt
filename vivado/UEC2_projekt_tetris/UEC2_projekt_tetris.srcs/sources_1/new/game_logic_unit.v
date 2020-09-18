@@ -1,15 +1,16 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: AGH UST
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
 // 
 // Create Date: 08/24/2020 09:09:47 PM
 // Design Name: 
 // Module Name: game_logic_unit
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
+// Project Name: TETRIS for BASYS3 designed in Verilog 
+// Target Devices: BASYS3
+// Tool Versions: VIVADO 2017.3
+// Description: This module works as "brain" of this project. This module
+// doing all calculations and controll work of all other modules.
 // 
 // Dependencies: 
 // 

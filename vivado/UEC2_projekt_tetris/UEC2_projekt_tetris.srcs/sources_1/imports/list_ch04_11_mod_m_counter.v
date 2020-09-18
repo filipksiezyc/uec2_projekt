@@ -1,4 +1,26 @@
-// Listing 4.11
+//////////////////////////////////////////////////////////////////////////////////
+// Company: AGH University of Science and Technology
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
+// 
+// Create Date: ???
+// Design Name: 
+// Module Name: list_ch04_11_mod_m_counter
+// Project Name: TETRIS for BASYS3 designed in Verilog 
+// Target Devices: Basys3
+// Tool Versions: VIVADO 2017.3
+// Description: This module is used in UART module to count incoming 
+// bits.
+//
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// This module download link -> https://upel2.cel.agh.edu.pl/weaiib/mod/assign/view.php?id=23012 
+//
+//////////////////////////////////////////////////////////////////////////////////
+
+
 module mod_m_counter
    #(
     parameter N=4, // number of bits in counter

@@ -1,4 +1,25 @@
-// Listing 4.20
+//////////////////////////////////////////////////////////////////////////////////
+// Company: AGH University of Science and Technology
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
+// 
+// Create Date: ???
+// Design Name: 
+// Module Name: list_ch04_20_fifo
+// Project Name: TETRIS for BASYS3 designed in Verilog 
+// Target Devices: Basys3
+// Tool Versions: VIVADO 2017.3
+// Description: This module is used in UART module as First in First
+// Out (FIFO) buffer.
+//
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// This module download link -> https://upel2.cel.agh.edu.pl/weaiib/mod/assign/view.php?id=23012 
+//
+//////////////////////////////////////////////////////////////////////////////////
+
 module fifo
    #(
     parameter B=8, // number of bits in a word

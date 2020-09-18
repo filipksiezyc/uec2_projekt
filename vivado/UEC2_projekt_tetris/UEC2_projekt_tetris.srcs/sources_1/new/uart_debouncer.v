@@ -1,22 +1,23 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: AGH University of Science and Technology
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
 // 
 // Create Date: 17.09.2020 13:02:24
 // Design Name: 
 // Module Name: uart_debouncer
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
+// Project Name: TETRIS for BASYS3 designed in Verilog
+// Target Devices: BASYS3
+// Tool Versions: VIVADO 2017.3
+// Description: This module is used with uart module to prevent bouncing effect.
 // 
 // Dependencies: 
 // 
 // Revision:
 // Revision 0.01 - File Created
 // Additional Comments:
-// 
+// this module download link -> https://upel2.cel.agh.edu.pl/weaiib/mod/assign/view.php?id=23012 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 

@@ -1,4 +1,28 @@
 `timescale 1ns / 1ps
+
+//////////////////////////////////////////////////////////////////////////////////
+// Company: AGH University of Science and Technology
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
+// 
+// Create Date: 04/14/2020 04:06:24 PM
+// Design Name: 
+// Module Name: draw_rect_char
+// Project Name: TETRIS for BASYS3 designed in Verilog 
+// Target Devices: Basys3
+// Tool Versions: VIVADO 2017.3 
+// Description: This module is used as ROM fullfilled by character codes
+// readed while code is shown on screen.
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// download link-> https://upel2.cel.agh.edu.pl/weaiib/mod/assign/view.php?id=23011 
+//
+//////////////////////////////////////////////////////////////////////////////////
+
+
 // ROM with synchonous read (inferring Block RAM)
 // character ROM
 //  - 8-by-16 (8-by-2^4) font

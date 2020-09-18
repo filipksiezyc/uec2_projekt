@@ -1,15 +1,16 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: AGH University of Science and Technology
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
 // 
 // Create Date: 08/24/2020 08:49:57 PM
 // Design Name: 
 // Module Name: ingame_graphic
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
+// Project Name: TETRIS for BASYS3 designed in Verilog 
+// Target Devices: Basys3
+// Tool Versions: VIVADO 2017.3
+// Description: This module generate ingame graphic (draw falling piece
+// and fill places where piece landed with white color).
 // 
 // Dependencies: 
 // 

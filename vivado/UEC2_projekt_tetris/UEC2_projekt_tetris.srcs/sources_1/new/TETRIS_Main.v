@@ -1,16 +1,19 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: AGH University of Science and Technology
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
 // 
 // Create Date: 08/16/2020 11:33:57 PM
 // Design Name: 
 // Module Name: TETRIS_Main
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
+// Project Name: TETRIS for BASYS3 designed in Verilog 
+// Target Devices: Basys3
+// Tool Versions: VIVADO 2017.3
+// Description: This module is top module of TETRIS for BASYS3 project.  
+// Input signals are: UART reciever (rx), reset button (btnC) and BASYS3 clock signal (100MHz) 
+// Output signals are: UART transmiter, VGA connector outputs(horizontal and vertical synchronisation signals 
+// and RGB wires) and 7 SEG outputs.
+//
 // Dependencies: 
 // 
 // Revision:

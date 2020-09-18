@@ -46,14 +46,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports btnC]
 set_property CFGBVS VCCO [current_design]
 set_property CONFIG_VOLTAGE 3.3 [current_design]
 
-#USB HID (PS/2)
-#set_property PACKAGE_PIN C17 [get_ports PS2Clk]
-#set_property IOSTANDARD LVCMOS33 [get_ports PS2Clk]
-#set_property PULLUP true [get_ports PS2Clk]
-#set_property PACKAGE_PIN B17 [get_ports PS2Data]
-#set_property IOSTANDARD LVCMOS33 [get_ports PS2Data]
-#set_property PULLUP true [get_ports PS2Data]
-
 # constraints for UART
 set_property PACKAGE_PIN B18 [get_ports rx]
 set_property IOSTANDARD LVCMOS33 [get_ports rx]
@@ -86,7 +78,3 @@ set_property IOSTANDARD LVCMOS33 [get_ports {an[2]}]
 set_property PACKAGE_PIN W4 [get_ports {an[3]}]					
 set_property IOSTANDARD LVCMOS33 [get_ports {an[3]}]
 
-
-#LED FOR DEBUGG 
-#set_property PACKAGE_PIN U16 [get_ports {led}]					
-	#set_property IOSTANDARD LVCMOS33 [get_ports {led}]

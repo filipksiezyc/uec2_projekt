@@ -1,7 +1,24 @@
 `timescale 1 ns / 1 ps
 
-// Declare the module and its ports. This is
-// using Verilog-2001 syntax.
+//////////////////////////////////////////////////////////////////////////////////
+// Company: AGH University of Science and Technology
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
+// 
+// Create Date: 08/16/2020 11:33:57 PM
+// Design Name: 
+// Module Name: vga_timing
+// Project Name: TETRIS for BASYS3 designed in Verilog 
+// Target Devices: Basys3
+// Tool Versions: VIVADO 2017.3
+// Description: This module generate basic signals used to generate graphic. 
+//
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
 module vga_timing (
   input wire pclk,

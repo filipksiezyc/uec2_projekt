@@ -1,15 +1,17 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: AGH UST
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
 // 
 // Create Date: 30.08.2020 04:07:47
 // Design Name: 
 // Module Name: generate_piece
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
+// Project Name: TETRIS for BASYS3 designed in Verilog 
+// Target Devices: Basys3
+// Tool Versions: VIVADO 2017.3
+// Description: This module is used to recalculate (x,y) position to 
+// block-on-board position and also to test if next block move may cause
+// illegal moves.
 // 
 // Dependencies: 
 // 

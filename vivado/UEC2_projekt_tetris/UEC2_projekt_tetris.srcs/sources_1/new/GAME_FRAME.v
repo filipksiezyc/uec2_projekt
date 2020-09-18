@@ -1,16 +1,17 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: AGH UST
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
 // 
 // Create Date: 08/18/2020 02:23:40 PM
 // Design Name: 
 // Module Name: GAME_FRAME
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
+// Project Name: TETRIS for BASYS3 designed in Verilog
+// Target Devices: BASYS3
+// Tool Versions: VIVADO 2017.3
+// Description: This module draw frame for board and game description. Additionally dependently of current
+// state of game this may draw TITLESCREEN or GAME_OVER screen on board rectangle. 
+//
 // Dependencies: 
 // 
 // Revision:

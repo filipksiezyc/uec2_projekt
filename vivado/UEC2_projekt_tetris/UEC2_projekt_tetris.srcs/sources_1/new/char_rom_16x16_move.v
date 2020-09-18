@@ -1,5 +1,27 @@
 `timescale 1ns / 1ps
 
+//////////////////////////////////////////////////////////////////////////////////
+// Company: AGH University of Science and Technology
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
+// 
+// Create Date: 04/14/2020 04:06:24 PM
+// Design Name: 
+// Module Name: char_rom_16x16_move
+// Project Name: TETRIS for BASYS3 designed in Verilog 
+// Target Devices: Basys3
+// Tool Versions: VIVADO 2017.3 
+/// Description: This module generate codes used to read chars from font ROM.
+// and generate game instruction. 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+//
+//////////////////////////////////////////////////////////////////////////////////
+
+
 module char_rom_16x16_move
 	(
 		input wire clk,

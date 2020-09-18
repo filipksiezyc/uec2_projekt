@@ -1,4 +1,25 @@
-//Listing 8.3
+//////////////////////////////////////////////////////////////////////////////////
+// Company: AGH University of Science and Technology
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
+// 
+// Create Date: ???
+// Design Name: 
+// Module Name: list_ch08_03_uart_tx
+// Project Name: TETRIS for BASYS3 designed in Verilog 
+// Target Devices: Basys3
+// Tool Versions: VIVADO 2017.3
+// Description: This module is used in UART module as transmitter
+// part of UART.
+//
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// This module download link -> https://upel2.cel.agh.edu.pl/weaiib/mod/assign/view.php?id=23012 
+//
+//////////////////////////////////////////////////////////////////////////////////
+
 module uart_tx
    #(
      parameter DBIT = 8,     // # data bits

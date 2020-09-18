@@ -1,22 +1,22 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: AGH University of Science and Technology
+// Engineer: Filip Ksiê¿yc & Justyna Rudnicka
 // 
 // Create Date: 17.09.2020 15:56:13
 // Design Name: 
 // Module Name: sseg_score_disp
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
+// Project Name: TETRIS for BASYS3 designed in Verilog 
+// Target Devices: Basys3
+// Tool Versions: VIVADO 2017.3 
+// Description: This module transcode score to 7 SEG code.
 // 
 // Dependencies: 
 // 
 // Revision:
 // Revision 0.01 - File Created
-// Additional Comments:
-// 
+// This module download link -> https://upel2.cel.agh.edu.pl/weaiib/mod/assign/view.php?id=23012 
+//
 //////////////////////////////////////////////////////////////////////////////////
 
 
