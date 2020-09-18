@@ -157,6 +157,11 @@ always @* begin
                    VGABlue_nxt = VGABlue;
                end
                end
+           else if((hcount>639&&hcount<691&&vcount>33&&vcount<44)||(hcount>649&&hcount<671&&vcount>33&&vcount<84))begin
+               VGARed_nxt = 0;
+               VGAGreen_nxt = 0;
+               VGABlue_nxt = 0;
+               end
            else begin
                VGARed_nxt = 8;
                VGAGreen_nxt = 8; 

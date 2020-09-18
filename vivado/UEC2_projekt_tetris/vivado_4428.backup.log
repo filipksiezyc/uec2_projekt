@@ -1,0 +1,108 @@
+#-----------------------------------------------------------
+# Vivado v2017.3 (64-bit)
+# SW Build 2018833 on Wed Oct  4 19:58:22 MDT 2017
+# IP Build 2016188 on Wed Oct  4 21:52:56 MDT 2017
+# Start of session at: Fri Sep 18 00:31:27 2020
+# Process ID: 4428
+# Current directory: C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3028 C:\Users\Filip\Desktop\New folderz\uec2_projekt\vivado\UEC2_projekt_tetris\UEC2_projekt_tetris.xpr
+# Log file: C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/vivado.log
+# Journal file: C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.xpr}
+INFO: [Project 1-313] Project file moved from 'C:/Users/Juten/Documents/GitHub/uec2_projekt/vivado/UEC2_projekt_tetris' since last save.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_11_mod_m_counter.v', nor could it be found using path 'C:/Users/Juten/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_11_mod_m_counter.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_20_fifo.v', nor could it be found using path 'C:/Users/Juten/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_20_fifo.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_01_uart_rx.v', nor could it be found using path 'C:/Users/Juten/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_01_uart_rx.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_03_uart_tx.v', nor could it be found using path 'C:/Users/Juten/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_03_uart_tx.v'.
+CRITICAL WARNING: [Project 1-311] Could not find the file 'C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_04_uart.v', nor could it be found using path 'C:/Users/Juten/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_04_uart.v'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.3/data/ip'.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:08 . Memory (MB): peak = 797.793 ; gain = 83.941
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v}}] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/test_move.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/test_move.v}}
+file delete -force {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/PS2Receiver.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/test_move.v}
+export_ip_user_files -of_objects  [get_files {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v}}
+file delete -force {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/debouncer.v}
+add_files -norecurse {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_04_uart.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_03_uart_tx.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_11_mod_m_counter.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_15_disp_hex_mux.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch06_02_debounce.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_02_flag_buf.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_16_hex_mux_test.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_20_fifo.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_05_uart_test.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_21_fifo_test.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_01_uart_rx.v}}
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_21_fifo_test.v}}] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_05_uart_test.v}}] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_16_hex_mux_test.v}}] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_02_flag_buf.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_21_fifo_test.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_05_uart_test.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_16_hex_mux_test.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_02_flag_buf.v}}
+file delete -force {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_21_fifo_test.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_05_uart_test.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_16_hex_mux_test.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_02_flag_buf.v}
+export_ip_user_files -of_objects  [get_files C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_11_mod_m_counter.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_20_fifo.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_01_uart_rx.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_03_uart_tx.v] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_04_uart.v] -no_script -reset -force -quiet
+remove_files  {C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_11_mod_m_counter.v C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch04_20_fifo.v C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_01_uart_rx.v C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_03_uart_tx.v C:/Users/Filip/Desktop/tetris_uart/uec2_projekt/vivado/UEC2_projekt_tetris/MTM_UEC_lab2_6_verilog/MTM_UEC_lab2_6_verilog/list_ch08_04_uart.v}
+export_ip_user_files -of_objects  [get_files {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch06_02_debounce.v}}] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_15_disp_hex_mux.v}}] -no_script -reset -force -quiet
+remove_files  {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch06_02_debounce.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_15_disp_hex_mux.v}}
+file delete -force {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch06_02_debounce.v} {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch04_15_disp_hex_mux.v}
+set_property is_global_include true [get_files  {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_04_uart.v}}]
+set_property is_global_include false [get_files  {{C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/list_ch08_04_uart.v}}]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 2
+[Fri Sep 18 00:44:24 2020] Launched synth_1...
+Run output will be captured here: C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/synth_1/runme.log
+[Fri Sep 18 00:44:24 2020] Launched impl_1...
+Run output will be captured here: C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.3
+  **** Build date : Oct  4 2017-20:12:17
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210183711513A
+set_property PROGRAM.FILE {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.runs/impl_1/TETRIS_Main.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a35t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Sep 18 00:57:34 2020...

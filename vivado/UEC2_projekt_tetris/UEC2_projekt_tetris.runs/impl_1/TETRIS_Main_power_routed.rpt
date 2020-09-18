@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.3 (win64) Build 2018833 Wed Oct  4 19:58:22 MDT 2017
-| Date             : Fri Sep 18 00:51:52 2020
+| Date             : Fri Sep 18 18:24:03 2020
 | Host             : FilipPC running 64-bit major release  (build 9200)
 | Command          : report_power -file TETRIS_Main_power_routed.rpt -pb TETRIS_Main_power_summary_routed.pb -rpx TETRIS_Main_power_routed.rpx
 | Design           : TETRIS_Main
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.235        |
+| Total On-Chip Power (W)  | 0.280        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.163        |
+| Dynamic (W)              | 0.208        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 83.8         |
-| Junction Temperature (C) | 26.2         |
+| Max Ambient (C)          | 83.6         |
+| Junction Temperature (C) | 26.4         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.016 |        6 |       --- |             --- |
-| Slice Logic              |     0.006 |     9077 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     5851 |     20800 |           28.13 |
+| Clocks                   |     0.017 |        6 |       --- |             --- |
+| Slice Logic              |     0.022 |     9371 |       --- |             --- |
+|   LUT as Logic           |     0.022 |     6012 |     20800 |           28.90 |
 |   CARRY4                 |    <0.001 |      120 |      8150 |            1.47 |
-|   Register               |    <0.001 |     1260 |     41600 |            3.03 |
-|   F7/F8 Muxes            |    <0.001 |     1414 |     32600 |            4.34 |
+|   Register               |    <0.001 |     1318 |     41600 |            3.17 |
+|   F7/F8 Muxes            |    <0.001 |     1469 |     32600 |            4.51 |
 |   LUT as Shift Register  |    <0.001 |        2 |      9600 |            0.02 |
 |   LUT as Distributed RAM |    <0.001 |       12 |      9600 |            0.13 |
-|   Others                 |     0.000 |       36 |       --- |             --- |
-| Signals                  |     0.005 |     4824 |       --- |             --- |
+|   Others                 |     0.000 |       42 |       --- |             --- |
+| Signals                  |     0.037 |     5011 |       --- |             --- |
+| Block RAM                |    <0.001 |        1 |        50 |            2.00 |
 | MMCM                     |     0.122 |        1 |         5 |           20.00 |
-| I/O                      |     0.014 |       29 |       106 |           27.36 |
+| I/O                      |     0.010 |       29 |       106 |           27.36 |
 | Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.235 |          |           |                 |
+| Total                    |     0.280 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,9 +76,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.038 |       0.028 |      0.010 |
+| Vccint    |       1.000 |     0.086 |       0.076 |      0.010 |
 | Vccaux    |       1.800 |     0.081 |       0.068 |      0.013 |
-| Vcco33    |       3.300 |     0.005 |       0.004 |      0.001 |
+| Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -147,19 +148,22 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| TETRIS_Main                 |     0.163 |
+| TETRIS_Main                 |     0.208 |
 |   CLK_GENERATOR             |     0.122 |
 |     inst                    |     0.122 |
 |   FRAME_VIDEO_CONTROLL      |     0.002 |
-|   nolabel_line180           |    <0.001 |
+|   char_gen                  |    <0.001 |
+|   font_gen                  |    <0.001 |
+|   my_char                   |    <0.001 |
 |   random_blocks             |    <0.001 |
-|   tetris_logic              |     0.023 |
+|   score_manager             |    <0.001 |
+|   tetris_logic              |     0.071 |
 |     clear_row               |    <0.001 |
-|     clk1HZ_generator        |    <0.001 |
+|     clk1HZ_generator        |     0.001 |
 |     clk2HZ_generator        |    <0.001 |
-|     current_piece           |     0.002 |
+|     current_piece           |     0.044 |
 |     ingame_graphics         |    <0.001 |
-|     test_piece              |     0.003 |
+|     test_piece              |     0.007 |
 |   uart                      |    <0.001 |
 |     baud_gen_unit           |    <0.001 |
 |     fifo_rx_unit            |    <0.001 |

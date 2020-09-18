@@ -39,6 +39,8 @@ module ingame_graphic(
     output reg [3:0] VGARed_out,
     output reg [3:0] VGABlue_out,
     output reg [3:0] VGAGreen_out,
+    output reg [10:0] hcount_out,
+    output reg [10:0] vcount_out,
     output reg hsync_out,
     output reg vsync_out,
     output reg hblnk_out,
@@ -54,6 +56,7 @@ wire [10:0] current_block=(hcount/BLOCK_SIZE)+((vcount/BLOCK_SIZE)*SCREEN_WIDTH)
 reg [3:0] VGARed_nxt, VGAGreen_nxt, VGABlue_nxt; 
 reg hsync_nxt, vsync_nxt;
 reg hblnk_nxt, vblnk_nxt;
+reg [10:0] hcount_nxt, vcount_nxt;
 
 always @* begin
     if (reset) begin
@@ -64,6 +67,8 @@ always @* begin
         vsync_nxt=0;
         hblnk_nxt=0;
         vblnk_nxt=0;
+        hcount_nxt=0;
+        vcount_nxt=0;
     end
     else if(hcount>=(BLOCK_SIZE*LEFT_EDGE)&&hcount<(BLOCK_SIZE*(LEFT_EDGE+GAME_WIDTH))) begin //checking if we're in the playable area
     //next, we're chcecking if a part the active piece is within the current 32x32 block
@@ -131,6 +136,8 @@ always @* begin
     vsync_nxt=vsync;
     hblnk_nxt=hblnk;
     vblnk_nxt=vblnk;
+    hcount_nxt=hcount;
+    vcount_nxt=vcount;
 end  
     
 always @(posedge pclk) begin
@@ -141,5 +148,7 @@ always @(posedge pclk) begin
     vsync_out<=vsync_nxt;
     hblnk_out<=hblnk_nxt;
     vblnk_out<=vblnk_nxt;
+    hcount_out<=hcount_nxt;
+    vcount_out<=vcount_nxt;
 end
 endmodule

@@ -21,8 +21,6 @@
 
 
 module TETRIS_Main (
-//  input wire PS2Data,
-//  input wire PS2Clk,
   input wire clk,
   input wire btnC,
   
@@ -106,16 +104,7 @@ GAME_FRAME FRAME_VIDEO_CONTROLL(
    .hblnk_out(hblnk_frame),
    .vblnk_out(vblnk_frame)
     );
- /*    
-PS2Receiver Keyboard_Receiver(
-        .clk(clk50MHz),
-        .kclk(PS2Clk),
-        .kdata(PS2Data),
-        
-        .keycode(keycode)
-        );
 
- */
     
 wire [2:0] random_block;    
     
@@ -126,7 +115,7 @@ falserandom_generator random_blocks(
         .rand(random_block)
         );
 
-wire [7:0] r_data, keycode;
+wire [7:0] r_data, keycode, code;
 wire rx_empty;
 
 uart uart(
@@ -135,6 +124,7 @@ uart uart(
     .rx(rx),
     .tx(tx),
     .r_data(r_data),
+    .code(code),
     .rx_empty(rx_empty)
 );
 
@@ -162,6 +152,8 @@ game_logic_unit tetris_logic(
     .keycode(keycode),
 
     .state_ctr(state_fr),
+    .hcount_out(hcount_to_main),
+    .vcount_out(vcount_to_main),
     .VGARed_out(Red_to_main),
     .VGAGreen_out(Green_to_main),
     .VGABlue_out(Blue_to_main),
@@ -169,15 +161,13 @@ game_logic_unit tetris_logic(
     .vsync_out(vsync_to_main),
     .hblnk_out(hblnk_to_main),
     .vblnk_out(vblnk_to_main),
-    .hcount_out(hcount_to_main),
-    .vcount_out(vcount_to_main),
     .score1(score1_seg),
     .score2(score2_seg),
     .score3(score3_seg),
     .score4(score4_seg)
 );
 
-sseg_score_disp(
+sseg_score_disp score_manager(
     .clk(clk65MHz),
     .score1(score1_seg),//jednosci
     .score2(score2_seg),//dziesiatki
@@ -188,13 +178,65 @@ sseg_score_disp(
     .an(an_wire)
 );
 
+wire [3:0] red_font, green_font, blue_font;
+wire [3:0] char_line;
+wire [6:0] char_code;
+wire [7:0] char_pixels,char_xy;
+wire hsync_char, vsync_char;
+
+draw_rect_char 
+#(
+    .X_POSITION(700),
+    .Y_POSITION(223),
+    .X_WIDITH(128),
+    .Y_WIDITH(256)
+    )
+my_char(
+    .hcount_in(hcount_frame),
+    .vcount_in(vcount_frame),
+    .vblnk_in(vblnk_frame),
+    .hblnk_in(hblnk_frame),
+    .hsync_in(hsync_frame),
+    .vsync_in(vsync_frame),
+    .red_in(Red_Out),
+    .green_in(Green_Out),
+    .blue_in(Blue_Out),
+    .clk(clk65MHz),
+    .char_pixels(char_pixels),
+    .rst(btnC),
+    
+    .red_out(red_font),
+    .green_out(green_font),
+    .blue_out(blue_font),
+    .hsync_out(hsync_char),
+    .vsync_out(vsync_char),
+    .char_xy(char_xy),
+    .char_line(char_line)
+);
+
+char_rom_16x16 char_gen(
+    .clk(clk65MHz),
+    .char_xy(char_xy),
+
+    .char_code(char_code)
+);
+
+font_rom font_gen(
+    .clk(clk65MHz),
+    .addr({char_code,char_line}),
+
+    .char_line_pixels(char_pixels)
+); 
+
+
+
 always @(posedge clk65MHz)begin
-   Vsync<=vsync_frame;
-   Hsync<=hsync_frame;
+   Vsync<=vsync_char;
+   Hsync<=hsync_char;
  
-   vgaRed <= Red_Out;
-   vgaGreen <= Green_Out;
-   vgaBlue <= Blue_Out;
+   vgaRed <= red_font;
+   vgaGreen <= green_font;
+   vgaBlue <= blue_font;
    seg<=seg_wire;
    an<=an_wire;
 end

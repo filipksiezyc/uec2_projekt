@@ -108,6 +108,8 @@ generate_piece current_piece(
     .height(height)
 );
  
+
+wire [10:0] vcount_nxt, hcount_nxt; 
 wire [3:0] VGARed, VGAGreen, VGABlue;
 wire hsync_nxt, vsync_nxt;
 wire hblnk_nxt, vblnk_nxt;
@@ -135,9 +137,12 @@ ingame_graphic ingame_graphics(
     .VGAGreen_out(VGAGreen),
     .hsync_out(hsync_nxt),
     .vsync_out(vsync_nxt),
+    .hcount_out(hcount_nxt),
+    .vcount_out(vcount_nxt),
     .hblnk_out(hblnk_nxt),
     .vblnk_out(vblnk_nxt) 
 );
+ 
  
 reg [5:0] test_x_pos=(LEFT_EDGE+(GAME_WIDTH/2)), test_y_pos=0;
 reg [1:0] test_rotation=0;
@@ -399,8 +404,7 @@ always @(*) begin
                          score4_nxt=score4;
                      end
                      default: begin
-                         if ((((score2==0) && (score3==0) && (score4==0))&&clk1Hz)||
-                         (((score2!=0) || (score3!=0) || (score4!=0))&&clk2Hz)) begin
+                         if ((((score2==0) && (score3==0) && (score4==0))&&clk1Hz)) begin
                              y_pos_nxt=y_pos;
                              x_pos_nxt=x_pos;
                              rotation_nxt=rotation;
@@ -413,6 +417,24 @@ always @(*) begin
                              test_x_pos_nxt=x_pos;
                              test_rotation_nxt=rotation;
                              keycode_nxt=keycode_used;
+                             score1_nxt=score1;
+                             score2_nxt=score2;
+                             score3_nxt=score3;
+                             score4_nxt=score4;
+                         end
+                         else if (((score2!=0) || (score3!=0) || (score4!=0))&&clk2Hz) begin
+                             y_pos_nxt=y_pos;
+                             x_pos_nxt=x_pos;
+                             rotation_nxt=rotation;
+                             blk_code_nxt=blk_code;
+                             board_nxt=board;
+                             state_nxt=BUFFER;
+                             row_to_clear_nxt=row_to_clear;
+                             game_reset_nxt=0;
+                             test_y_pos_nxt=y_pos+1;
+                             test_x_pos_nxt=x_pos;
+                             test_rotation_nxt=rotation;
+                             keycode_nxt=8'h01;
                              score1_nxt=score1;
                              score2_nxt=score2;
                              score3_nxt=score3;
@@ -718,7 +740,7 @@ always @(*) begin
                              score3_nxt=score3;
                              score4_nxt=score4;
                          end
-                         else if((height+y_pos)==(GAME_HEIGHT-1)&& (!test_intersection) ) begin
+                         else if((height+y_pos)<(GAME_HEIGHT)&& (!check_if_intersects(blk1+32,blk2+32,blk3+32,blk4+32)) ) begin
                              board_nxt=board;
                              y_pos_nxt=y_pos+1;
                              x_pos_nxt=x_pos;
@@ -788,9 +810,8 @@ always @(*) begin
                              score3_nxt=score3;
                              score4_nxt=score4;
                          end
-                     end
-                     default: begin
-                         if (((score2!=0) || (score3!=0) || (score4!=0))&&clk2Hz) begin
+                      end
+                     8'h01: begin
                             if(((height+y_pos)<(GAME_HEIGHT)) && (!test_intersection) ) begin
                                 y_pos_nxt=y_pos+1;
                                 x_pos_nxt=x_pos;
@@ -843,26 +864,9 @@ always @(*) begin
                                 score3_nxt=score3;
                                 score4_nxt=score4;
                             end
-                         end
-                         else if((y_pos==0) && ((intersects_now)||(test_intersection))) begin
-                             y_pos_nxt=y_pos;
-                             x_pos_nxt=x_pos;
-                             rotation_nxt=rotation;
-                             blk_code_nxt=0;
-                             board_nxt=0;
-                             state_nxt=GAME_OVER;
-                             row_to_clear_nxt=row_to_clear;
-                             game_reset_nxt=0;
-                             test_y_pos_nxt=y_pos+1;
-                             test_x_pos_nxt=x_pos;
-                             test_rotation_nxt=rotation;
-                             keycode_nxt=0;
-                             score1_nxt=score1;
-                             score2_nxt=score2;
-                             score3_nxt=score3;
-                             score4_nxt=score4;
-                         end
-                         else if (((score2==0) && (score3==0) && (score4==0))&&clk1Hz)begin
+                      end
+             default: begin
+                      if (((score2==0) && (score3==0) && (score4==0))&&clk1Hz)begin
                              if(((height+y_pos)<(GAME_HEIGHT)) && (!test_intersection) ) begin
                                  y_pos_nxt=y_pos+1;
                                  x_pos_nxt=x_pos;
@@ -951,25 +955,25 @@ always @(*) begin
                              score4_nxt=score4;
                          end
                          else begin
-                             row_to_clear_nxt=row_to_clear;
-                             x_pos_nxt=x_pos;
-                             y_pos_nxt=y_pos;
-                             rotation_nxt=rotation;
-                             blk_code_nxt=blk_code;
-                             board_nxt=board;
-                             state_nxt=TEST_COLLISION;
-                             game_reset_nxt=0;
-                             test_y_pos_nxt=test_y_pos;
-                             test_x_pos_nxt=test_x_pos;
-                             test_rotation_nxt=test_rotation;
-                             keycode_nxt=keycode_used;
-                             score1_nxt=score1;
-                             score2_nxt=score2;
-                             score3_nxt=score3;
-                             score4_nxt=score4;
-                         end
-                     end
-                 endcase
+                                     row_to_clear_nxt=row_to_clear;
+                                     x_pos_nxt=x_pos;
+                                     y_pos_nxt=y_pos;
+                                     rotation_nxt=rotation;
+                                     blk_code_nxt=blk_code;
+                                     board_nxt=board;
+                                     state_nxt=TEST_COLLISION;
+                                     game_reset_nxt=0;
+                                     test_y_pos_nxt=test_y_pos;
+                                     test_x_pos_nxt=test_x_pos;
+                                     test_rotation_nxt=test_rotation;
+                                     keycode_nxt=keycode_used;
+                                     score1_nxt=score1;
+                                     score2_nxt=score2;
+                                     score3_nxt=score3;
+                                     score4_nxt=score4;
+                                 end
+                             end
+              endcase
              end
              
              CLEAR_ROW: begin
@@ -1088,7 +1092,11 @@ always @(*) begin
      end
  end
  
+ 
+ 
  always @(posedge pclk)begin
+         hcount_out<=hcount_nxt;
+         vcount_out<=vcount_nxt;
          VGARed_out<=VGARed;
          VGAGreen_out<=VGAGreen;
          VGABlue_out<=VGABlue;
@@ -1096,8 +1104,6 @@ always @(*) begin
          vsync_out<=vsync_nxt;
          hblnk_out<=hblnk_nxt;
          vblnk_out<=vblnk_nxt;
-         hcount_out<=hcount;
-         vcount_out<=vcount;
          state<=state_nxt;
          game_reset<=game_reset_nxt;
   

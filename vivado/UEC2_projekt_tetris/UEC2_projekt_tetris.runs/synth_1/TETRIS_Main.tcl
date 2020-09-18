@@ -16,6 +16,10 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
+set_param synth.incrementalSynthesisCache {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/.Xil/Vivado-5868-FilipPC/incrSyn}
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -31,10 +35,13 @@ set_property ip_output_repo {c:/Users/Filip/Desktop/New folderz/uec2_projekt/viv
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/GAME_FRAME.v}
+  {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/char_rom_16x16.v}
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clear_row.v}
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk1Hz.v}
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/clk2Hz.v}
+  {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/draw_rect_char.v}
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/falserandom_generator.v}
+  {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/imports/font_rom.v}
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/game_logic_unit.v}
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/generate_piece.v}
   {C:/Users/Filip/Desktop/New folderz/uec2_projekt/vivado/UEC2_projekt_tetris/UEC2_projekt_tetris.srcs/sources_1/new/ingame_graphic.v}
