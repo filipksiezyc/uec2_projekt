@@ -97,7 +97,7 @@ wire clk_in2_IP_CLK_DIVIDER;
 
   wire        clk65MHz_IP_CLK_DIVIDER;
   wire        clk_rand_IP_CLK_DIVIDER;
-  wire        clk_rand_IP_CLK_DIVIDER;
+  wire        clk_out3_IP_CLK_DIVIDER;
   wire        clk_out4_IP_CLK_DIVIDER;
   wire        clk_out5_IP_CLK_DIVIDER;
   wire        clk_out6_IP_CLK_DIVIDER;
